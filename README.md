@@ -49,6 +49,9 @@ Truy cập [localhost](http://localhost:8000/), nếu thấy hình tên lửa = 
 - Tạo 1 branch mới với tên là tên của bạn (tạo nickname đi, của tôi là ppvan, btw)
 - Làm việc trên branch đó, khi có thay đổi tạo pull request (tôi là người phê duyệt), đây là kĩ năng cơ bản nhưng nếu k rõ hôm nào họp t chỉ cho ae
 
+## Tip django
+[CONTRIBUTE.md](https://github.com/ppvan/tree/blob/main/CONTRIBUTE.md)
+
 ## Tiêu chuẩn code
 - Luôn đặt tên biến, hàm dạng `snake_case`
 - Hạn chế comment, nếu bạn phải comment để giải thích, nghĩa là code chưa đủ tốt
