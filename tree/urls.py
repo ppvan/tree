@@ -15,9 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from django.views.generic.base import TemplateView
+
+from . import settings
+
 
 urlpatterns = [
-    path('markdownx/', include('markdownx.urls')),
+    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     path('blog/', include('blog.urls')),
+    path('user/', include('user.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
