@@ -23,6 +23,7 @@
 - [Django Request and Response](https://docs.djangoproject.com/en/4.1/ref/request-response)
 - [Templates](https://docs.djangoproject.com/en/4.1/topics/templates/)
 - [Django shortcuts](https://docs.djangoproject.com/en/4.1/topics/http/shortcuts/)
+- [Django imagekit](https://github.com/matthewwithanm/django-imagekit)
 
 
 ## Django commands
