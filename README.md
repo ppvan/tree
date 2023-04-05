@@ -3,11 +3,10 @@
 ## Cài đặt môi trường
 
 ### Cài đặt Python
-> Cũng có thể tự cài đặt Python 3.10 [ở đây](https://www.python.org/downloads/windows/)
+> Cũng có thể tự cài đặt Python 3.10 (và pip) [ở đây](https://www.python.org/downloads/windows/)
 
-Khuyến khích sử dụng công cụ quản lý phiên bản Python [pyenv-win](https://github.com/pyenv-win/pyenv-win)
+Khuyến khích sử dụng công cụ quản lý phiên bản Python [pyenv-win](https://github.com/pyenv-win/pyenv-win) và [pipenv](https://pipenv.pypa.io/en/latest/) (quản lý môi trường phát triển + dependency)
 
-Vì tôi không dùng Windows nên chắc ae tự đọc hướng dẫn cài đặt nhé
 
 ### Cài đặt phiên bản python 3.10.10 với pyenv-win
 
@@ -42,12 +41,11 @@ Truy cập [localhost](http://localhost:8000/), nếu thấy hình tên lửa = 
 - [pipenv](https://pipenv.pypa.io/en/latest/)
 - [pyenv-win](https://github.com/pyenv-win/pyenv-win)
 
-> Những công cụ hơi phức tạp này giải quyết 1 số vấn đề trong lập trình và tăng tính chuyên nghiệp :v
+> Những công cụ này giải quyết vấn đề về môi trường phát triển, ví dụ như dependency, phiên bản python, cô lập môi trường phát triển giữa các dự án.
 
 ## Cách dùng git
-- Gửi mail cho tôi để được thêm vào repo
-- Tạo 1 branch mới với tên là tên của bạn (tạo nickname đi, của tôi là ppvan, btw)
-- Làm việc trên branch đó, khi có thay đổi tạo pull request (tôi là người phê duyệt), đây là kĩ năng cơ bản nhưng nếu k rõ hôm nào họp t chỉ cho ae
+- Chỉ làm việc trên branch của mình
+- Tạo pull request để merge code vào branch `main`
 
 ## Tip django
 [CONTRIBUTE.md](https://github.com/ppvan/tree/blob/main/CONTRIBUTE.md)
@@ -55,4 +53,5 @@ Truy cập [localhost](http://localhost:8000/), nếu thấy hình tên lửa = 
 ## Tiêu chuẩn code
 - Luôn đặt tên biến, hàm dạng `snake_case`
 - Hạn chế comment, nếu bạn phải comment để giải thích, nghĩa là code chưa đủ tốt
+- Sử dụng VScode + flake8 + autopep8 để format code
 - Tham khảo [Zen of Python](https://github.com/zedr/clean-code-python) cái này rất phức tạp, đọc sơ qua thôi

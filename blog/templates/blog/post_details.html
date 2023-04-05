@@ -1,0 +1,10 @@
+<div>
+    <img src="{{ post.cover_image.url }}" alt="">
+    <h1>{{ post.title }}
+    </h1>
+    <p>{{ post.content|safe }}</p>
+    <div>
+        <a href="{% url 'blog:update' post.pk %}">Update</a>
+        <a href="{% url 'blog:delete' post.pk %}">Delete</a>
+    </div>
+</div>
