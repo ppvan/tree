@@ -23,12 +23,15 @@ from . import settings
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
-    path('ckeditor/', include('ckeditor_uploader.urls')),
     path('blog/', include('blog.urls')),
     path('user/', include('user.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
+    path("__reload__/", include("django_browser_reload.urls")),  # Browser reload
     path('admin/', admin.site.urls),
 ]
 
+# In production, serve media files using a web server such as Nginx or Apache
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

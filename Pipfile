@@ -9,6 +9,7 @@ pillow = "*"
 django-imagekit = "*"
 django-ckeditor = "*"
 django-markdownx = "*"
+django-browser-reload = "*"
 
 [dev-packages]
 flake8 = "*"
