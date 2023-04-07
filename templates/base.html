@@ -20,7 +20,9 @@
     <header class="bg-[#ecf0f1] px-48 py-6">
         <nav class="flex w-full justify-between items-center">
             <div class="">
-                <img src="https://webcaycanh.com/wp-content/themes/cay/imgs/logo.png" alt="">
+                <a href="{% url 'home' %}">
+                    <img src="https://webcaycanh.com/wp-content/themes/cay/imgs/logo.png" alt="">
+                </a>
             </div>
             <div class="w-1/3">
                 <form action=""
@@ -47,8 +49,8 @@
                 </div>
                 {% else %}
                 <div class="rounded box-shadow items-center flex">
-                    <a href="{% url 'user:login' %}" class="btn bg-gray-400">Đăng nhập</a>
-                    <a href="{% url 'user:register' %}" class="btn bg-[#5ba503]">Đăng ký</a>
+                    <a href="{% url 'login' %}" class="btn bg-gray-400">Đăng nhập</a>
+                    <a href="{% url 'register' %}" class="btn bg-[#5ba503]">Đăng ký</a>
                 </div>
                 {% endif %}
             </div>

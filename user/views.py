@@ -16,7 +16,7 @@ from .tokens import account_activation_token
 
 
 class UserLoginView(auth_views.LoginView):
-    template_name = 'user/user_login.html'
+    template_name = 'user/login.html'
     next_page = 'home'
     authentication_form = UserAuthenticationForm
 
@@ -24,13 +24,13 @@ class UserLoginView(auth_views.LoginView):
 class UserRegisterView(View):
     def get(self, request):
         form = UserRegisterForm()
-        return render(request, 'user/user_register.html', {'form': form})
+        return render(request, 'user/register.html', {'form': form})
 
     def post(self, request):
         form = UserRegisterForm(request.POST)
 
         if not form.is_valid():
-            return render(request, 'user/user_register.html', {'form': form})
+            return render(request, 'user/register.html', {'form': form})
 
         user = form.save(commit=False)
         user.is_active = False
@@ -66,3 +66,23 @@ class UserActivateView(View):
             return redirect('home')
         else:
             return HttpResponse('Activation link is invalid!')
+
+
+class UserPasswordReset(auth_views.PasswordResetView):
+    template_name = 'user/password_reset.html'
+    email_template_name = 'user/password_reset_email.html'
+#     # subject_template_name = 'user/password_reset_subject.txt'
+    # success_url = '/user/password-reset/done'
+#     pass
+
+
+class UserPasswordResetDone(auth_views.PasswordResetDoneView):
+    template_name = 'user/password_reset_done.html'
+
+
+class UserPasswordResetConfirm(auth_views.PasswordResetConfirmView):
+    template_name = 'user/password_reset_confirm.html'
+
+
+class PasswordResetCompleteView(auth_views.PasswordResetCompleteView):
+    template_name = 'user/password_reset_complete.html'

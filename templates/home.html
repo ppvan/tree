@@ -3,13 +3,13 @@
 {% if user.is_authenticated %}
 <p>Welcome, {{ user.get_username }}. Thanks for logging in.</p>
 <p class="text-blue">
-<form action="{% url 'user:logout' %}" method="post">
+<form action="{% url 'logout' %}" method="post">
     {% csrf_token %}
     <input type="submit" value="Log Out">
 </form>
 </p>
 {% else %}
 <p>Welcome, new user. Please log in.</p>
-<p><a class="text-red-300" href="{% url 'user:login' %}">Log In</a></p>
+<p><a class="text-red-300" href="{% url 'login' %}">Log In</a></p>
 {% endif %}
 {% endblock content %}
