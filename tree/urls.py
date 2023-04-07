@@ -27,7 +27,6 @@ urlpatterns = [
          extra_context={'greeting': 'Hello world'}), name='test'),
     path('blog/', include('blog.urls')),
     path('user/', include('user.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('__reload__/', include('django_browser_reload.urls')),  # Browser reload
     path('admin/', admin.site.urls),

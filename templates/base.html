@@ -32,23 +32,25 @@
                     </button>
                 </form>
             </div>
-            <div class="rounded flex items-center gap-2">
+            <div class="rounded flex items-stretch gap-2">
                 <div id="cart" class="bg-slate-100 rounded-full cursor-pointer flex items-center justify-between gap-2">
                     <div class="cart-icon bg-[#5ba503] rounded-full flex w-10 h-10">
                         <i class="m-auto text-lg fa fa-shopping-cart text-white"></i>
                     </div>
-                    <!-- <span class="text-[#7f8c8d] opacity-95">Giỏ hàng: </span>
-                    <div class="text-[#7f8c8d] opacity-95">
-                        <span class="" id="cart-num">100</span>
-                        <span class="">|</span>
-                        <span class="" id="cart-price">1.000.000đ</span>
-                    </div> -->
                 </div>
 
-                <div class="rounded box-shadow">
-                    <a href="{% url 'login' %}" class="btn bg-gray-400">Đăng nhập</a>
-                    <a href="#  " class="btn bg-[#5ba503]">Đăng ký</a>
+                {% if user.is_authenticated %}
+                <div
+                    class="cursor-pointer bg-[#76be8e] px-2 py-1 rounded-full box-shadow items-center flex justify-between">
+                    <span class="text-white font-bold mx-3 grow max-w-max">{{ user.get_username }}</span>
+                    <img class="object-cover w-10 rounded-full" src="{{ user.profile.avatar.url }}" alt="">
                 </div>
+                {% else %}
+                <div class="rounded box-shadow items-center flex">
+                    <a href="{% url 'user:login' %}" class="btn bg-gray-400">Đăng nhập</a>
+                    <a href="{% url 'user:register' %}" class="btn bg-[#5ba503]">Đăng ký</a>
+                </div>
+                {% endif %}
             </div>
 
 

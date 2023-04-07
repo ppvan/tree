@@ -12,6 +12,7 @@ django-markdownx = "*"
 django-browser-reload = "*"
 django-crispy-forms = "*"
 crispy-tailwind = "*"
+six = "*"
 
 [dev-packages]
 flake8 = "*"
