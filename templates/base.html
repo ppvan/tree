@@ -7,53 +7,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'output.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tailwind-dev.css' %}?{% now 'U' %}">
     <link rel="shortcut icon" href="{% static 'tree/app.ico' %}" type="image/x-icon">
 
     <!-- CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <title>Document</title>
 </head>
 
 <body>
-    <header class="px-48 pt-6">
+    <header class="bg-[#ecf0f1] px-48 py-6">
         <nav class="flex w-full justify-between items-center">
             <div class="">
                 <img src="https://webcaycanh.com/wp-content/themes/cay/imgs/logo.png" alt="">
             </div>
             <div class="w-1/3">
                 <form action=""
-                    class="h-fit overflow-hidden rounded-full border-2 items-stretch border-slate-900 focus-within:border-green-500 w-full flex">
-                    <input class="p-2 pl-4 outline-none h-full grow block" type="text" placeholder="Từ khóa">
+                    class="h-fit bg-white overflow-hidden rounded-full border-2 items-stretch border-slate-900 focus-within:border-green-500 w-full flex">
+                    <input class="p-2 pl-4 border-none outline-none h-full grow block" type="text"
+                        placeholder="Từ khóa">
                     <button class="p-2 pt-[0.65rem] hover:bg-green-500 hover:text-white transition-colors">
                         <i class="fa fa-search text-lg"></i>
                     </button>
                 </form>
             </div>
-            <div class="rounded">
-                <div id="cart"
-                    class="bg-slate-100 rounded-full cursor-pointer p-2 flex items-center justify-between gap-2">
-                    <div class="cart-icon bg-[#5ba503] rounded-full flex w-8 h-8">
-                        <i class="m-auto fa fa-shopping-cart text-white"></i>
+            <div class="rounded flex items-center gap-2">
+                <div id="cart" class="bg-slate-100 rounded-full cursor-pointer flex items-center justify-between gap-2">
+                    <div class="cart-icon bg-[#5ba503] rounded-full flex w-10 h-10">
+                        <i class="m-auto text-lg fa fa-shopping-cart text-white"></i>
                     </div>
-                    <span class="text-[#aa938d] opacity-95">Giỏ hàng: </span>
-                    <div class="text-[#aa938d] opacity-95">
+                    <!-- <span class="text-[#7f8c8d] opacity-95">Giỏ hàng: </span>
+                    <div class="text-[#7f8c8d] opacity-95">
                         <span class="" id="cart-num">100</span>
                         <span class="">|</span>
                         <span class="" id="cart-price">1.000.000đ</span>
-                    </div>
+                    </div> -->
+                </div>
+
+                <div class="rounded box-shadow">
+                    <a href="{% url 'login' %}" class="btn bg-gray-400">Đăng nhập</a>
+                    <a href="#  " class="btn bg-[#5ba503]">Đăng ký</a>
                 </div>
             </div>
+
+
         </nav>
     </header>
+    <hr>
 
-    <main class="mt-40 px-48 h-[480px]">
+    <main class="bg-[#ffffff] px-48 h-[600px]">
         {% block content %}
         {% endblock content %}
     </main>
 
+    <hr>
 
-    <footer class="bg-white">
+    <footer class="bg-[#ecf0f1]">
         <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
             <div class="md:flex md:justify-between">
                 <div class="mb-6 md:mb-0">

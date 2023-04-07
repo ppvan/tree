@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.link {
+    @apply text-[#5ba503] hover:text-[#255f1c];
+}
+
+.btn {
+    @apply text-white p-2 border-2 rounded-lg;
+}
+
+.primary {
+    @apply bg-[#5ba503];
+}
