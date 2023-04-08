@@ -35,30 +35,27 @@ class UserRegisterView(View):
         user = form.save(commit=False)
         user.is_active = False
         user.save()
+        self._send_activation_email(request, user)
 
+        return redirect('home')
+
+    def _send_activation_email(request, user):
         current_site = get_current_site(request)
         subject = 'Activate Your MySite Account'
-        message = render_to_string('user/activation_email.html', {
+        message = render_to_string('user/account_activation_email.html', {
             'user': user,
             'domain': current_site.domain,
             'uid': urlsafe_base64_encode(force_bytes(user.pk)),
             'token': account_activation_token.make_token(user),
         })
         user.email_user(subject, message)
-        print("Email sent")
-        return redirect('home')
     pass
 
 
 class UserActivateView(View):
     def get(self, request, uidb64, token):
-        try:
-            uid = force_str(urlsafe_base64_decode(uidb64))
-            user = User.objects.get(pk=uid)
-        except (TypeError, ValueError, OverflowError, User.DoesNotExist):
-            user = None
-
-        if user is not None and account_activation_token.check_token(user, token):
+        user = self._decode_user(uidb64, token)
+        if user:
             user.is_active = True
             user.profile.email_confirmed = True
             user.save()
@@ -67,13 +64,19 @@ class UserActivateView(View):
         else:
             return HttpResponse('Activation link is invalid!')
 
+    def _decode_user(uidb64, token):
+        try:
+            uid = force_str(urlsafe_base64_decode(uidb64))
+            user = User.objects.get(pk=uid)
+        except (TypeError, ValueError, OverflowError, User.DoesNotExist):
+            user = None
+
+        return user if user and account_activation_token.check_token(user, token) else None
+
 
 class UserPasswordReset(auth_views.PasswordResetView):
     template_name = 'user/password_reset.html'
     email_template_name = 'user/password_reset_email.html'
-#     # subject_template_name = 'user/password_reset_subject.txt'
-    # success_url = '/user/password-reset/done'
-#     pass
 
 
 class UserPasswordResetDone(auth_views.PasswordResetDoneView):
