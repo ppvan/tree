@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.models import User
@@ -15,10 +16,24 @@ from .tokens import account_activation_token
 # Create your views here.
 
 
+def test_view(request):
+
+    messages.info(request, 'This is a test message 1')
+    messages.success(request, 'This is a test message 2')
+    messages.warning(request, 'This is a test message 3')
+    messages.error(request, 'This is a test message 4')
+    return render(request, 'test.html')
+
+
 class UserLoginView(auth_views.LoginView):
     template_name = 'user/login.html'
     next_page = 'home'
     authentication_form = UserAuthenticationForm
+
+    def form_valid(self, form):
+        user = form.get_user()
+        messages.success(self.request, f'Chào mừng {user}')
+        return super().form_valid(form)
 
 
 class UserRegisterView(View):
@@ -36,13 +51,13 @@ class UserRegisterView(View):
         user.is_active = False
         user.save()
         self._send_activation_email(request, user)
-
+        messages.success(request, 'Kiểm tra email để kích hoạt tài khoản')
         return redirect('home')
 
-    def _send_activation_email(request, user):
+    def _send_activation_email(self, request, user):
         current_site = get_current_site(request)
-        subject = 'Activate Your MySite Account'
-        message = render_to_string('user/account_activation_email.html', {
+        subject = 'Kích hoạt tài khoản của bạn'
+        message = render_to_string('user/activation_email.html', {
             'user': user,
             'domain': current_site.domain,
             'uid': urlsafe_base64_encode(force_bytes(user.pk)),
@@ -64,7 +79,7 @@ class UserActivateView(View):
         else:
             return HttpResponse('Activation link is invalid!')
 
-    def _decode_user(uidb64, token):
+    def _decode_user(self, uidb64, token):
         try:
             uid = force_str(urlsafe_base64_decode(uidb64))
             user = User.objects.get(pk=uid)

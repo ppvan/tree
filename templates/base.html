@@ -60,7 +60,18 @@
     </header>
     <hr>
 
-    <main class="bg-[#ffffff] px-48 h-[600px]">
+    <main class="bg-[#ffffff] px-48 min-h-[600px]">
+        {% if messages %}
+        <div class="relative flex flex-col gap-1 mt-1 items-end">
+            {% for message in messages %}
+            <div {% if message.tags %} class="message {{ message.tags }}" {% else %}class="message" {% endif %}>
+                <p>{{ message }}</p>
+                <button class="text-lg px-2">&times;</button>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
         {% block content %}
         {% endblock content %}
     </main>

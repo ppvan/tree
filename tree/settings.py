@@ -143,9 +143,24 @@ CKEDITOR_FILENAME_GENERATOR = 'utils.get_filename'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # User settings
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'tailwind'
 CRISPY_TEMPLATE_PACK = 'tailwind'
+
+"""In production, you should set the following environment variables:
+But this is just my second gmail account, so I don't care if it's exposed.
+"""
+
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    # SMTP settings
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST_USER = 'phucdevmail@gmail.com'
+    EMAIL_HOST_PASSWORD = 'lcfxnceqhdvwqkla'

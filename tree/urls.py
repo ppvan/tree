@@ -22,8 +22,6 @@ from . import settings
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
-    path('test/', TemplateView.as_view(template_name='test.html',
-         extra_context={'greeting': 'Hello world'}), name='test'),
     path('blog/', include('blog.urls')),
     path('user/', include('user.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
