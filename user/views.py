@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth import views as auth_views
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib.sites.shortcuts import get_current_site
 from django.http import HttpResponse
@@ -10,7 +11,8 @@ from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.views import View
 
-from .forms import UserAuthenticationForm, UserRegisterForm
+from .forms import (ProfileForm, UserAuthenticationForm, UserRegisterForm,
+                    UserUpdateForm)
 from .tokens import account_activation_token
 
 # Create your views here.
@@ -23,6 +25,37 @@ def test_view(request):
     messages.warning(request, 'This is a test message 3')
     messages.error(request, 'This is a test message 4')
     return render(request, 'test.html')
+
+
+class ProfileView(LoginRequiredMixin, View):
+    def get(self, request):
+        profile = request.user.profile
+        u_form = UserUpdateForm(instance=request.user)
+        p_form = ProfileForm(instance=profile)
+
+        return render(request, 'user/profile.html', {'u_form': u_form, 'p_form': p_form})
+
+    def post(self, request):
+        profile = request.user.profile
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+
+        print(request.user.email)
+
+        p_form = ProfileForm(request.POST, request.FILES, instance=profile)
+
+        context = {
+            'u_form': u_form,
+            'p_form': p_form
+        }
+
+        if not (u_form.is_valid() and p_form.is_valid()):
+            return render(request, 'user/profile.html', context)
+
+        u_form.save()
+        p_form.save()
+
+        messages.success(request, 'Cập nhật thành công')
+        return redirect('profile')
 
 
 class UserLoginView(auth_views.LoginView):
