@@ -39,8 +39,6 @@ class ProfileView(LoginRequiredMixin, View):
         profile = request.user.profile
         u_form = UserUpdateForm(request.POST, instance=request.user)
 
-        print(request.user.email)
-
         p_form = ProfileForm(request.POST, request.FILES, instance=profile)
 
         context = {
@@ -110,7 +108,7 @@ class UserActivateView(View):
             login(request, user)
             return redirect('home')
         else:
-            return HttpResponse('Activation link is invalid!')
+            return HttpResponse('Liên kết kích hoạt không hợp lệ')
 
     def _decode_user(self, uidb64, token):
         try:
