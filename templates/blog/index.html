@@ -1,0 +1,10 @@
+{% for post in posts %}
+<div>
+    <img src="{{ post.cover_image }}" alt="">
+    <h1><a href="{% url 'blog:get' post.pk %}">{{ post.title }}</a></h1>
+    <p>{{ post.content|safe }}</p>
+</div>
+{% endfor %}
+<div>
+    <a href="{% url 'blog:new' %}">New Post</a>
+</div>

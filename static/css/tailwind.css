@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.link {
+    @apply text-[#5ba503] hover:text-[#255f1c];
+}
+
+.btn {
+    @apply text-white p-2 border-2 rounded-lg;
+}
+
+.primary {
+    @apply bg-[#5ba503];
+}
+
+.message {
+    @apply flex justify-between bg-slate-500 text-white p-2 rounded-lg w-96;
+}
+
+.info {
+    @apply bg-[#3498db]; 
+}
+
+.success {
+    @apply bg-[#5ba503];
+}
+
+.warning {
+    @apply bg-[#c8a30c];
+}
+
+.error {
+    @apply bg-[#e74c3c];
+}

@@ -12,6 +12,7 @@
   - [Examples](#examples)
     - [A dead simple view](#a-dead-simple-view)
     - [A view with template](#a-view-with-template)
+    - [Start tailwindcss](#start-tailwindcss)
 
 
 <br />
@@ -85,4 +86,9 @@ def index(request):
     }
 
     return render(request, 'index.html', context)
+```
+
+### Start tailwindcss
+```bash
+./tailwindcss -i ./static/tailwind.css -o ./static/output.css --watch
 ```
