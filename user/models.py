@@ -30,6 +30,9 @@ class Profile(models.Model):
                                  options={'quality': 60})
     bio = models.TextField(max_length=500, blank=True)
 
+    def full_name(self):
+        return f'{self.user.first_name} {self.user.last_name}'
+
     def __str__(self):
         return f'{self.user.username} Profile'
 

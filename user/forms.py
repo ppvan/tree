@@ -11,28 +11,42 @@ class UserRegisterForm(UserCreationForm):
 
     def __init__(self, *args, **kwargs):
         super(UserCreationForm, self).__init__(*args, **kwargs)
-        self.fields['username'].label = 'Tài khoản'
-        self.fields['username'].help_text = 'Ngắn hơn 150 ký tự. Chỉ chứa chữ cái, số và @/./+/-/_'
 
-        self.fields['email'].label = 'Email'
-
-        self.fields['password1'].help_text = 'Ít nhất 8 ký tự. Đầy đủ các ký tự chữ và số.'
+        # Work around cus password1 and password2 are not fields
+        self.fields['password1'].help_text = ''
         self.fields['password1'].label = 'Mật khẩu'
 
         self.fields['password2'].label = 'Nhập lại mật khẩu'
         self.fields['password2'].help_text = 'Mật khẩu y như cũ (để xác nhận)'
 
-        self.error_messages['invalid_login'] = 'Mật khẩu hoặc tài khoản không đúng'
-
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        fields = ['username', 'email', 'first_name', 'last_name', 'password1', 'password2']
+
+        labels = {
+            'username': 'Tài khoản',
+            'email': 'Email',
+            'first_name': 'Họ',
+            'last_name': 'Tên',
+        }
+
+        help_texts = {
+            'username': 'Ngắn hơn 150 ký tự. Chỉ chứa chữ cái, số và @/./+/-/_',
+            'email': 'Địa chỉ email hợp lệ',
+            'first_name': 'Ngắn hơn 150 ký tự',
+            'last_name': 'Ngắn hơn 30 ký tự',
+        }
 
 
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['avatar', 'bio']
+
+        labels = {
+            'avatar': 'Ảnh đại diện',
+            'bio': 'Giới thiệu'
+        }
 
 
 class UserPasswordResetForm(PasswordResetForm):
@@ -67,4 +81,10 @@ class UserUpdateForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['username', 'email']
+        fields = ['username', 'email', 'first_name', 'last_name']
+
+        labels = {
+            'username': 'Tài khoản',
+            'first_name': 'Họ',
+            'last_name': 'Tên',
+        }

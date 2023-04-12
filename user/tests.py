@@ -7,20 +7,41 @@ from django.test import TestCase
 
 class UserTestCase(TestCase):
     def setUp(self):
-        self.user = User.objects.create_user(
+        pass
+
+    def test_user_created(self):
+        user = User.objects.create_user(
             username='testuser',
             email='test@gmail.com',
             password='testpassword'
         )
+        user.save()
+        user.refresh_from_db()
+
+        self.assertEqual(user.username, 'testuser', 'User not created')
+        self.assertEqual(user.email, 'test@gmail.com', 'Email not set')
+        self.assertTrue(user.check_password('testpassword'), 'Password not set')
+        self.assertFalse(user.profile.email_confirmed, 'User active before email confirmation')
+        self.assertFalse(user.is_staff, 'User is staff on normal creation')
 
     def test_profile_created(self):
-        self.user.refresh_from_db()
-        self.assertEqual(self.user.profile.user, self.user, 'Profile not created')
+        user = User.objects.create_user(
+            username='testprofile',
+            email='test@gmail.com',
+            password='testpassword'
+        )
+        user.refresh_from_db()
+        self.assertEqual(user.profile.user, user, 'Profile not created')
         pass
 
     def test_profile_avatar(self):
-        self.user.refresh_from_db()
-        self.assertEqual(self.user.profile.avatar, 'avatars/default.png', 'Avatar not set')
+        user = User.objects.create_user(
+            username='testavatar',
+            email='test@gmail.com',
+            password='testpassword'
+        )
+        user.refresh_from_db()
+        self.assertEqual(user.profile.avatar, 'avatars/default.png', 'Avatar not set')
 
     def test_dupplicate_username(self):
         with self.assertRaises(IntegrityError) as context:
@@ -29,6 +50,3 @@ class UserTestCase(TestCase):
             u1.save()
             u2.save()
             self.assertTrue('UNIQUE constraint failed' in str(context.exception))
-
-    def test_password_reset(self):
-        pass
