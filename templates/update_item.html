@@ -1,0 +1,26 @@
+
+
+{%extends "base.html"%}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+    <div id="update_item" class="w-1/2 mx-auto p-4 rounded bg-[#ced6e0] shadow-md">
+        <legend class="my-4 mb-8 text-2xl">
+          <h1>Cập nhật sản phẩm</h1>
+        </legend>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div id="id_submit" class="my-4 text-white text-lg">
+              <input class="cursor-pointer bg-[#5ba503] p-2 rounded w-full h-full" type="submit" value="Submit">
+            </div>
+        </form>
+       
+    </div>
+ 
+</div>
+
+
+{% endblock content %}

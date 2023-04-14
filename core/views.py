@@ -1,4 +1,4 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render,HttpResponse,redirect
 from .models import Product
 from django.views import View
 from .forms import ProductForm
@@ -21,4 +21,29 @@ class Add_item(View):
             return HttpResponse("ban nhap sai du lieu")
         p.save()
         return HttpResponse("da them san pham")
-        
+
+
+def list_item(request):
+    p = Product.objects.all()
+    context = {'products':p}
+    return render(request,'list_item.html',context)
+
+
+def delete_item(request,pk):
+    p = Product.objects.get(id=pk)
+    if request.method == "POST":
+        p.delete()
+        return redirect('/core/list-item/')
+    return render(request, 'delete_item.html',{'pr':p})
+
+
+def update_item(request,pk):
+    product = Product.objects.get(id=pk)
+    form = ProductForm(instance=product)
+    if request.method == 'POST':
+        form = ProductForm(request.POST,instance=product)
+        if form.is_valid():
+            form.save()
+            return redirect('/core/list-item/')
+    context={'form':form}
+    return render(request,'update_item.html',context)
