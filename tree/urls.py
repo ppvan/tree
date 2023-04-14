@@ -27,6 +27,7 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('__reload__/', include('django_browser_reload.urls')),  # Browser reload
     path('admin/', admin.site.urls),
+    path('core/',include('core.urls',namespace='core')),
 ]
 
 # In production, serve media files using a web server such as Nginx or Apache

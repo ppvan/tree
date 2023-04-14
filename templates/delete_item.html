@@ -1,0 +1,16 @@
+
+
+{%extends "base.html"%}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<p>Are you sure you want to delete?</p>
+<form action="{% url 'core:delete_item' pr.id %}" method="post">
+    {% csrf_token %}
+    <a class="cursor-pointer bg-[#5ba503] p-2 rounded " href="{% url 'core:list_item'%}">Cancel</a>
+    <input type="submit" name="Confirm" class="cursor-pointer bg-[#5ba503] p-2 rounded ">
+</form>
+  
+
+
+{% endblock content %}

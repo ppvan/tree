@@ -23,6 +23,9 @@ class Product(BaseModel):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     summary = models.TextField()
 
+    def __str__(self):
+        return self.name
+
 
 class ProductImage(BaseModel):
 
@@ -55,14 +58,14 @@ class Address(BaseModel):
     receiver = models.CharField(max_length=255)
     phone = models.CharField(max_length=255)
 
-    user = models.ForeignKey('user.User', on_delete=models.CASCADE)
+    # user = models.ForeignKey('user.User', on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.address1} - {self.address2}"
 
 
 class Order(BaseModel):
-    user = models.ForeignKey('user.User', on_delete=models.CASCADE)
+    # user = models.ForeignKey('user.User', on_delete=models.CASCADE)
     address = models.ForeignKey(Address, on_delete=models.SET_NULL, null=True)
     state = models.CharField(max_length=255)
 
