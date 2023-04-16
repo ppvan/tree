@@ -108,6 +108,15 @@
         </div>
         {% endif %}
 
+        <div class="" ">
+            <nav class="flex justify-center leading-4r ">
+                <a href="{% url 'home'%}" class="nav__item-link p-3 m-4 text-2xl">Home</a>
+                <a href="" class="nav__item-link p-3 m-4 text-2xl">About us</a>
+                <a href="" class="nav__item-link p-3 m-4 text-2xl">Product</a>
+                <a href="" class="nav__item-link p-3 m-4 text-2xl">New</a>
+                <a href="{% url 'core:list_item'%}" class="nav__item-link p-3 m-4 text-2xl">Administrator</a>
+            </nav>
+        </div>
         {% block content %}
         {% endblock content %}
     </main>
