@@ -1,8 +1,7 @@
 {
     "scripts": {
-        "pythonPath": "export pySitePackages=$(python3 -c \"import sysconfig; print(sysconfig.get_path('purelib'))\")",
-        "build": "npm run pythonPath && npx tailwindcss build ../static/css/tailwind.css -o ../static/css/tailwind-prod.css",
-        "dev": "npm run pythonPath && npx tailwindcss -i ../static/css/tailwind.css -o ../static/css/tailwind-dev.css --watch"
+        "build": "npx tailwindcss build ../static/css/tailwind.css -o ../static/css/tailwind-prod.css",
+        "dev": "npx tailwindcss -i ../static/css/tailwind.css -o ../static/css/tailwind-dev.css --watch"
     },
     "dependencies": {
         "@tailwindcss/forms": "^0.5.3",

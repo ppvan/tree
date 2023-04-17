@@ -4,7 +4,7 @@ const Path = require("path");
 const pwd = process.env.PWD;
 
 // We can add 3-party python packages here
-const pySitePackages = "/home/ppvan/.local/share/virtualenvs/poll-bMafyLXJ/lib/python3.10/site-packages";
+const pySitePackages = "../venv/lib/python3.10/site-packages";
 
 // We can add current project paths here
 const projectPaths = [
