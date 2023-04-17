@@ -13,7 +13,7 @@ def item_list(request):
     return render(request, "item_list.html", context)
 
 
-class Add_item(View):
+class AddItemView(View):
     def get(self, request):
         p = ProductForm()
         context = {'pr': p}
