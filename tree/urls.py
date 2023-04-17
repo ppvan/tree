@@ -20,4 +20,5 @@ urlpatterns = [
     path('markdownx/', include('markdownx.urls')),
     path('blog/', include('blog.urls')),
     path('admin/', admin.site.urls),
+    path('core/', include('core.urls')),
 ]

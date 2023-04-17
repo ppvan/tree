@@ -1,0 +1,13 @@
+{
+    "scripts": {
+        "build": "npx tailwindcss build ../static/css/tailwind.css -o ../static/css/tailwind-prod.css",
+        "dev": "npx tailwindcss -i ../static/css/tailwind.css -o ../static/css/tailwind-dev.css --watch"
+    },
+    "dependencies": {
+        "@tailwindcss/forms": "^0.5.3",
+        "@types/jquery": "^3.5.16"
+    },
+    "devDependencies": {
+        "tailwindcss": "^3.3.1"
+    }
+}
