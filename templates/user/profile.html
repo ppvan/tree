@@ -1,42 +1,34 @@
-{% extends 'base.html' %}
+{% extends "layout/forms.html" %}
+
 
 {% load crispy_forms_tags %}
 {% load tailwind_filters %}
 
-{% block content %}
-<div class="container p-2 py-10 h-full flex items-stretch">
-
-    <div id="register" class="w-1/2 mx-auto p-4 rounded bg-[#ced6e0] shadow-md">
-
-
-        <div href="{% url 'profile' %}" class="p-1 flex rounded justify-between items-center gap-6">
-            <div>
-                <img class="object-cover w-12 border-2 border-[#76be8e] rounded-full"
-                    src="{{ user.profile.avatar.url }}" alt="">
-            </div>
-            <div class="grow">
-                <h1 class="text-lg font-bold">{{ user.profile.full_name }}</h1>
-                <p class="text-sm text-gray-500">{{ user.email }}</p>
-            </div>
+{% block formblock %}
+<div id="profile" class="w-1/2 mx-auto p-4 rounded bg-[#ced6e0] shadow-md">
+    <div href="{% url 'profile' %}" class="p-1 flex rounded justify-between items-center gap-6">
+        <div>
+            <img class="object-cover w-12 border-2 border-[#76be8e] rounded-full" src="{{ user.profile.avatar.url }}"
+                alt="">
         </div>
+        <div class="grow">
+            <h1 class="text-lg font-bold">{{ user.profile.full_name }}</h1>
+            <p class="text-sm text-gray-500">{{ user.email }}</p>
+        </div>
+    </div>
 
-        <form action="" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <fieldset>
-                <legend class="my-4 text-2xl">
-                    <h1>Hồ sơ</h1>
-                </legend>
-                {{ u_form|crispy }}
-                {{ p_form|crispy }}
-            </fieldset>
-            <div id="id_submit" class="my-4 text-white text-lg">
-                <input class="cursor-pointer bg-[#5ba503] p-2 rounded w-full h-full" type="submit" value="Cập nhật">
-            </div>
-        </form>
-    </div>
-    <div class="rounded overflow-hidden grow">
-        <img class="h-full object-cover"
-            src="https://anhdepfree.com/wp-content/uploads/2020/06/chau-cay-canh-tranh-tri-dep.jpg" alt="">
-    </div>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset>
+            <legend class="my-4 text-2xl">
+                <h1>Hồ sơ</h1>
+            </legend>
+            {{ u_form|crispy }}
+            {{ p_form|crispy }}
+        </fieldset>
+        <div id="id_submit" class="my-4 text-white text-lg">
+            <input class="cursor-pointer bg-[#5ba503] p-2 rounded w-full h-full" type="submit" value="Cập nhật">
+        </div>
+    </form>
 </div>
-{% endblock content %}
+{% endblock formblock %}

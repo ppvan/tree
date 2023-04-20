@@ -1,11 +1,15 @@
 from django.urls import path
+from django.views.generic import TemplateView
 
-from .views import AddItemView, delete_item, list_item, update_item
+from .views import (AddProductView, DeleteProductView, DetailProductView,
+                    ListProductView, UpdateProductView)
 
 app_name = 'core'
 urlpatterns = [
-    path('add-product/', AddItemView.as_view(), name='add_item'),
-    path('list-product/', list_item, name='list_item'),
-    path('delete-product/<int:pk>', delete_item, name='delete_item'),
-    path('update-product/<int:pk>', update_item, name='update_item'),
+    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('add/', AddProductView.as_view(), name='add_product'),
+    path('list/', ListProductView.as_view(), name='list_product'),
+    path('<int:pk>/', DetailProductView.as_view(), name='detail_product'),
+    path('<int:pk>/delete', DeleteProductView.as_view(), name='delete_product'),
+    path('<int:pk>/update', UpdateProductView.as_view(), name='update_product'),
 ]

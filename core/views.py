@@ -1,53 +1,37 @@
-from django.shortcuts import HttpResponse, redirect, render
-from django.views import View
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
+from django.urls import reverse_lazy
+from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
+                                  UpdateView)
 
-from .forms import ProductForm
 from .models import Product
 
 
-# Create your views here.
-def item_list(request):
-    context = {
-        'items': Product.objects.all()
-    }
-    return render(request, "item_list.html", context)
+class AddProductView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    model = Product
+    fields = ['name', 'price', 'summary']
+    template_name = 'core/product_new.html'
+    success_url = reverse_lazy('core:list_product')
+    success_message = "Sản phẩm %(name)s được thêm thành công"
 
 
-class AddItemView(View):
-    def get(self, request):
-        p = ProductForm()
-        context = {'pr': p}
-        return render(request, "add_item.html", context)
-
-    def post(self, request):
-        p = ProductForm(request.POST)
-        if not p.is_valid():
-            return HttpResponse("ban nhap sai du lieu")
-        p.save()
-        return HttpResponse("da them san pham")
+class ListProductView(ListView):
+    model = Product
+    template_name = 'core/products_list.html'
+    context_object_name = 'products_list'
 
 
-def list_item(request):
-    p = Product.objects.all()
-    context = {'products': p}
-    return render(request, 'list_item.html', context)
+class DetailProductView(DetailView):
+    model = Product
+    template_name = 'core/product_detail.html'
 
 
-def delete_item(request, pk):
-    p = Product.objects.get(id=pk)
-    if request.method == "POST":
-        p.delete()
-        return redirect('/core/list-item/')
-    return render(request, 'delete_item.html', {'pr': p})
+class UpdateProductView(UpdateView):
+    model = Product
+    fields = ['name', 'price', 'summary']
+    template_name = 'core/product_update.html'
+    success_url = reverse_lazy('core:list_product')
 
 
-def update_item(request, pk):
-    product = Product.objects.get(id=pk)
-    form = ProductForm(instance=product)
-    if request.method == 'POST':
-        form = ProductForm(request.POST, instance=product)
-        if form.is_valid():
-            form.save()
-            return redirect('/core/list-item/')
-    context = {'form': form}
-    return render(request, 'update_item.html', context)
+class DeleteProductView(DeleteView):
+    model = Product

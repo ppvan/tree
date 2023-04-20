@@ -1,0 +1,49 @@
+{%extends "layout/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+
+    <legend class="my-4 mb-8 text-2xl">
+        <h1>Sản phẩm</h1>
+    </legend>
+    <a href="{% url 'core:add_product' %}" class="cursor-pointer bg-[#5ba503] p-2 rounded">Thêm sản phẩm</a>
+
+    <div id="list_item" class="my-4">
+        <table class="table-auto w-full bg-green-600">
+            <thead>
+                <tr class="header">
+                    <td class="border border-slate-900">STT</td>
+                    <td class="border border-slate-900">Tên sản phẩm</td>
+                    <td class="border border-slate-900">Giá</td>
+                    <td class="border border-slate-900">Xóa</td>
+                    <td class="border border-slate-900">Cập nhật</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for product in products_list %}
+                <tr>
+                    <td class="border border-slate-900">{{ forloop.counter }}</td>
+                    <td class="border border-slate-900">{{product.name}}</td>
+                    <td class="border border-slate-900">{{product.price}}</td>
+                    <td class="border border-slate-900">
+                        <a href="{% url 'core:delete_product' product.id %}" class="">Delete</a>
+                    </td>
+                    <td class="border border-slate-900">
+                        <a href="{% url 'core:update_product' product.id %}" class="">Update</a>
+                    </td>
+                </tr>
+                {%endfor%}
+
+            </tbody>
+        </table>
+
+
+    </div>
+
+</div>
+
+
+
+{% endblock content %}
