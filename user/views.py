@@ -17,6 +17,7 @@ from django.views.generic import CreateView
 from .forms import (
     ProfileForm,
     UserAuthenticationForm,
+    UserPasswordResetConfirmForm,
     UserPasswordResetForm,
     UserRegisterForm,
     UserUpdateForm,
@@ -151,6 +152,6 @@ class UserPasswordResetConfirm(
     SuccessMessageMixin, auth_views.PasswordResetConfirmView
 ):
     template_name = "user/password_reset_confirm.html"
-    labels = {"new_password1": "Mật khẩu mới", "new_password2": "Nhập lại mật khẩu mới"}
+    form_class = UserPasswordResetConfirmForm
     success_message = "Đổi mật khẩu thành công"
     success_url = reverse_lazy("login")

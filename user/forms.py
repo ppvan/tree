@@ -68,16 +68,21 @@ class UserPasswordResetForm(PasswordResetForm):
 
 
 class UserPasswordResetConfirmForm(SetPasswordForm):
-    new_password1 = forms.CharField(widget=forms.PasswordInput)
-    new_password2 = forms.CharField(widget=forms.PasswordInput)
+    error_messages = {
+        "password_mismatch": "Mật khẩu không trùng nhau",
+    }
 
-    class Meta:
-        model = User
-        fields = ["new_password1", "new_password2"]
-        labels = {
-            "new_password1": "Mật khẩu mới",
-            "new_password2": "Nhập lại mật khẩu mới",
-        }
+    new_password1 = forms.CharField(
+        label="Mật khẩu mới",
+        widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}),
+        strip=False,
+        help_text="Mật khẩu phải có ít nhất 8 ký tự và không được trùng với mật khẩu cũ",
+    )
+    new_password2 = forms.CharField(
+        label="Mật khẩu mới (xác nhận)",
+        strip=False,
+        widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}),
+    )
 
 
 class UserAuthenticationForm(AuthenticationForm):
