@@ -19,31 +19,24 @@ class BaseModel(models.Model):
 
 
 class Product(BaseModel):
-    name = models.CharField(max_length=255)
-    price = models.DecimalField(max_digits=10, decimal_places=0)
-    summary = models.TextField()
-    thumbnail = models.ImageField(upload_to="img",default="")
-    def __str__(self):
-        return self.name
-
-
-class ProductImage(BaseModel):
     def get_path(instance, filename):
         extension = filename.split(".")[-1]
         uuid_name = uuid.uuid1().hex
         return MEDIA_PATH / f"{uuid_name}.{extension}"
 
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    image = ProcessedImageField(
+    name = models.CharField(max_length=255)
+    price = models.DecimalField(max_digits=10, decimal_places=0)
+    summary = models.TextField()
+    thumbnail = ProcessedImageField(
         upload_to=get_path,
-        default="avatars/default.png",
+        default="product_images/default.png",
         processors=[ResizeToFill(400, 400)],
         format="PNG",
         options={"quality": 60},
     )
 
     def __str__(self):
-        return f"{self.product.name} - {self.image.url}"
+        return self.name
 
 
 class Category(BaseModel):
