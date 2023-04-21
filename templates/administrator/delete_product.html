@@ -1,0 +1,12 @@
+{% extends 'administrator/master.html'%}
+{% block content %}
+<div class="form_delete">
+    <p class="question_delete">Are you sure you want to delete?</p>
+    <form action="{% url 'core:delete_product' pr.id %}" method="post">
+    {% csrf_token %}
+    <a class="btn btn-cancel" href="{% url 'core:list_product'%}">Cancel</a>
+    <input type="submit" name="Confirm" class="btn btn-submit">
+</form>
+</div>
+
+{%endblock content%}
