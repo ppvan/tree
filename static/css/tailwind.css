@@ -6,6 +6,17 @@ html {
     font-family: 'Lato', sans-serif;
 }
 
+#list_item {
+    @apply flex justify-between text-gray-700 mt-8;
+}
+
+#list_item table {
+    @apply table table-auto;
+}
+
+#list_item table th {
+    @apply text-left;
+}
 
 .link {
     @apply text-[#5ba503] hover:text-[#255f1c];

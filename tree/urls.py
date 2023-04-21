@@ -20,7 +20,7 @@ from django.urls import include, path
 from . import settings
 
 urlpatterns = [
-    path('product/', include('core.urls')),
+    path('', include('core.urls')),
     path('blog/', include('blog.urls')),
     path('user/', include('user.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),

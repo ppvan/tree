@@ -1,5 +1,6 @@
 {%extends "layout/base.html" %}
 {% load crispy_forms_tags %}
+{% load humanize %}
 
 {% block content %}
 <div class="container">
@@ -9,15 +10,15 @@
     </legend>
     <a href="{% url 'core:add_product' %}" class="cursor-pointer bg-[#5ba503] p-2 rounded">Thêm sản phẩm</a>
 
-    <div id="list_item" class="my-4">
-        <table class="table-auto w-full bg-green-600">
+    <div id="list_item">
+        <table class="table-auto w-full p-2">
             <thead>
-                <tr class="header">
-                    <td class="border border-slate-900">STT</td>
-                    <td class="border border-slate-900">Tên sản phẩm</td>
-                    <td class="border border-slate-900">Giá</td>
-                    <td class="border border-slate-900">Xóa</td>
-                    <td class="border border-slate-900">Cập nhật</td>
+                <tr>
+                    <td class="text-center border-slate-900">STT</td>
+                    <td class="border-slate-900">Tên sản phẩm</td>
+                    <td class="border-slate-900">Giá</td>
+                    <td class="border-slate-900">Xóa</td>
+                    <td class="border-slate-900">Cập nhật</td>
                 </tr>
             </thead>
 
@@ -25,8 +26,8 @@
                 {% for product in products_list %}
                 <tr>
                     <td class="border border-slate-900">{{ forloop.counter }}</td>
-                    <td class="border border-slate-900">{{product.name}}</td>
-                    <td class="border border-slate-900">{{product.price}}</td>
+                    <td class="border border-slate-900">{{ product.name }}</td>
+                    <td class="border border-slate-900">{{ product.price|intcomma }} ₫</td>
                     <td class="border border-slate-900">
                         <a href="{% url 'core:delete_product' product.id %}" class="">Delete</a>
                     </td>

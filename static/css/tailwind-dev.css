@@ -1034,11 +1034,6 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-green-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 163 74 / var(--tw-bg-opacity));
-}
-
 .fill-current {
   fill: currentColor;
 }
@@ -1046,11 +1041,6 @@ video {
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.object-fill {
-  -o-object-fit: fill;
-     object-fit: fill;
 }
 
 .p-1 {
@@ -1116,6 +1106,10 @@ video {
 
 .pt-\[0\.65rem\] {
   padding-top: 0.65rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .text-2xl {
@@ -1254,6 +1248,23 @@ video {
 
 html {
   font-family: 'Lato', sans-serif;
+}
+
+#list_item {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+#list_item table {
+  display: table;
+  table-layout: auto;
+}
+
+#list_item table th {
+  text-align: left;
 }
 
 .link {
