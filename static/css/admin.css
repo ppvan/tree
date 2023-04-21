@@ -84,8 +84,8 @@ a {
     right: 0;
     top: 0;
     width: 100%;
-    background-color: rgb(0, 28, 64);
-    padding-right: 30px;
+    background-color: #16a085;
+    padding-right: 12px;
 }
 
 .app-nav {
@@ -98,6 +98,7 @@ a {
 
 .app-nav__item {
     display: block;
+    border-radius: 0.3rem;
     padding: 15px;
     color: rgb(0, 28, 64);
     background: rgb(255, 212, 59);
@@ -116,7 +117,7 @@ a {
     width: 250px;
     padding-left: 10px;
     padding-right: 10px;
-    background: rgb(0, 28, 64);
+    background: #104d29;
     overflow: auto;
 }
 
@@ -124,6 +125,9 @@ a {
     color: white;
     text-align: center;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .app-sidebar__user-avatar {
     border-radius: 50% !important;
@@ -131,6 +135,7 @@ a {
     border: 3px solid white;
     background: white;
     margin-bottom: 10px;
+    margin: auto;
 }
 .app-sidebar__user-name{
     font-size: 17px;

@@ -1,5 +1,8 @@
 {% extends "layout/adminbase.html" %}
 {% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load humanize %}
 <div class="app-title">
     <a href="" class="">Danh sách sản phẩm</a>
 </div>
@@ -40,13 +43,18 @@
                         {% for product in products%}
                         <tr>
                             <td class="border"></td>
-                            <td class="border">{{product.name}}</td>
-                            <td class="border" "><img src=" {{ product.thumbnail.url }}" alt="" style="width: 50px; height: 50px;></td>
-                                <td class=" border"></td>
-                            <td class="border"></td>
-                            <td class="border"></td>
-                            <td class="border"></td>
-                            <td class="border">{{product.price}}</td>
+                            <td class="border">
+                                <a href="{% url 'core:detail_product' product.id %}" class="hover:text-blue-400">
+                                    {{ product.name }}
+                                </a>
+                            </td>
+                            <td class="border">
+                                <img src="{{ product.thumbnail.url }}" alt="" style="width: 50px; height: 50px;">
+                            </td>
+                            <td class="border">{{ product.quantity }}</td>
+                            <td class="border">{{ product.state }}</td>
+                            <td class="border"> </td>
+                            <td class="border">{{ product.price|intcomma }} đ</td>
                             <td class="border">
                                 <a href="{%  url 'core:delete_product' product.id %}" class="btn btn-sm btn-trash"><i
                                         class="fa fa-trash-alt"></i></a>
