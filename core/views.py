@@ -1,4 +1,4 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.views.generic import (
@@ -28,8 +28,16 @@ class PageTitleViewMixin:
         return context
 
 
+class AdminRequiredMixin(UserPassesTestMixin):
+    def test_func(self):
+        return self.request.user.groups.filter(name="Admins").exists()
+
+
 class AddProductView(
-    LoginRequiredMixin, PageTitleViewMixin, SuccessMessageMixin, CreateView
+    AdminRequiredMixin,
+    PageTitleViewMixin,
+    SuccessMessageMixin,
+    CreateView,
 ):
     model = Product
     form_class = ProductForm
@@ -40,10 +48,13 @@ class AddProductView(
     success_message = "Sản phẩm %(name)s được thêm thành công"
 
 
-class ListProductView(ListView):
+class ListProductView(AdminRequiredMixin, ListView):
     model = Product
     template_name = "core/products_list.html"
     context_object_name = "products"
+
+    def test_func(self):
+        return self.request.user.groups.filter(name="Admins").exists()
 
 
 class DetailProductView(DetailView):
@@ -51,7 +62,7 @@ class DetailProductView(DetailView):
     template_name = "core/product_detail.html"
 
 
-class UpdateProductView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+class UpdateProductView(AdminRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Product
     form_class = ProductForm
     template_name = "core/product_update.html"
@@ -59,7 +70,7 @@ class UpdateProductView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     success_message = "Sản phẩm %(name)s đã được cập nhật thành công"
 
 
-class DeleteProductView(SuccessMessageMixin, DeleteView):
+class DeleteProductView(AdminRequiredMixin, SuccessMessageMixin, DeleteView):
     model = Product
     template_name = "core/product_delete.html"
     success_url = reverse_lazy("core:list_product")
