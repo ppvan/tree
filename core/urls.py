@@ -1,14 +1,30 @@
 from django.urls import path
+from django.views.generic import TemplateView
 
 from .views import (
-    AddItemView, delete_item, list_item, update_item,list_product,delete_product,list_catagory,list_post,add_product,update_product)
+    AddProductView,
+    DeleteProductView,
+    DetailProductView,
+    ListProductView,
+    UpdateProductView,
+)
 
-app_name = 'core'
+app_name = "core"
 urlpatterns = [
-    path('list-product/',list_product,name='list_product'),
-    path('delete-product/<int:pk>', delete_product, name='delete_product'),
-    path('list-catagory/',list_catagory,name='list_catagory'),
-    path('list-post/',list_post,name='list_post'),
-    path('add-product/', add_product, name='add_product'),
-    path('update-product/<int:pk>', update_product, name='update_product'),
+    path("", TemplateView.as_view(template_name="home.html"), name="home"),
+    path(
+        "category/list/",
+        TemplateView.as_view(template_name="admin/list_category.html"),
+        name="list_catagory",
+    ),
+    path(
+        "post/list/",
+        TemplateView.as_view(template_name="admin/list_post.html"),
+        name="list_post",
+    ),
+    path("product/add/", AddProductView.as_view(), name="add_product"),
+    path("product/list/", ListProductView.as_view(), name="list_product"),
+    path("product/<int:pk>/", DetailProductView.as_view(), name="detail_product"),
+    path("product/<int:pk>/delete", DeleteProductView.as_view(), name="delete_product"),
+    path("product/<int:pk>/update", UpdateProductView.as_view(), name="update_product"),
 ]

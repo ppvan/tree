@@ -16,18 +16,16 @@ Including another URLconf
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
-from django.views.generic.base import TemplateView
 
 from . import settings
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('', include('core.urls')),
     path('blog/', include('blog.urls')),
     path('user/', include('user.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('__reload__/', include('django_browser_reload.urls')),  # Browser reload
     path('admin/', admin.site.urls),
-    path('core/', include('core.urls')),
 ]
 
 # In production, serve media files using a web server such as Nginx or Apache

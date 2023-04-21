@@ -58,7 +58,7 @@ class ProfileView(LoginRequiredMixin, View):
 
 class UserLoginView(auth_views.LoginView):
     template_name = 'user/login.html'
-    next_page = 'home'
+    next_page = 'core:home'
     authentication_form = UserAuthenticationForm
 
     def form_valid(self, form):
@@ -83,7 +83,7 @@ class UserRegisterView(View):
         user.save()
         self._send_activation_email(request, user)
         messages.success(request, 'Kiểm tra email để kích hoạt tài khoản')
-        return redirect('home')
+        return redirect('core:home')
 
     def _send_activation_email(self, request, user):
         current_site = get_current_site(request)
@@ -106,7 +106,7 @@ class UserActivateView(View):
             user.profile.email_confirmed = True
             user.save()
             login(request, user)
-            return redirect('home')
+            return redirect('core:home')
         else:
             return HttpResponse('Liên kết kích hoạt không hợp lệ')
 

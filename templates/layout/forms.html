@@ -1,0 +1,16 @@
+{% extends "layout/base.html" %}
+
+{% load crispy_forms_tags %}
+{% load tailwind_filters %}
+
+{% block content %}
+<div class="container p-2 py-10 h-full flex items-stretch">
+    {% block formblock %}
+
+    {% endblock formblock %}
+    <div class="rounded overflow-hidden grow">
+        <img class="h-full object-cover"
+            src="https://anhdepfree.com/wp-content/uploads/2020/06/chau-cay-canh-tranh-tri-dep.jpg" alt="">
+    </div>
+</div>
+{% endblock content %}
