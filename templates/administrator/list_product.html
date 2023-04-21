@@ -1,0 +1,63 @@
+{% extends 'administrator/master.html'%}
+{% block content %}
+<div class="app-title">
+    <a href="" class="">Danh sách sản phẩm</a>
+</div>
+<div class="row">
+    <div class="col">
+        <div class="tile">
+            <div class="row element-bottom">
+                <div class="col-sm-2">   
+                    <a href="{% url 'core:add_product' %}" class="btn btn-sm btn-add"><i class="fa fa-plus"></i>
+                        Tạo sản phẩm mới</a>
+                </div>
+                <div class="col-sm-2">   
+                    <a href="" class="btn btn-sm btn-print"><i class="fa fa-print"></i>
+                    In dữ liệu</a>
+                </div>
+                <div class="col-sm-2">   
+                    <a href="" class="btn btn-sm btn-delete-all"><i class="fa fa-trash-alt"></i>
+                        Xóa tất cả</a>
+                </div>
+            </div>
+            <div id="list_item" class="">
+                <table class="counter">
+                    <thead>
+                        <tr class="header">
+                            <td class="border">STT</td>
+                            <td class="border">Tên sản phẩm</td>
+                            <td class="border">Ảnh</td>
+                            <td class="border">Số lượng</td>
+                            <td class="border">Tình trạng</td>
+                            <td class="border">Danh mục</td>
+                            <td class="border">Giá</td>
+                            <td class="border">Chức năng</td>
+                            
+                        </tr>
+                    </thead>
+        
+                    <tbody>
+                        {% for product in products%}
+                            <tr>
+                                <td class="border"></td>
+                                <td class="border">{{product.name}}</td>
+                                <td class="border" "><img src="{{product.thumbnail.url}}" alt=""style="width: 50px; height: 50px;></td>
+                                <td class="border"></td>
+                                <td class="border"></td>
+                                <td class="border"></td>
+                                <td class="border"></td>
+                                <td class="border">{{product.price}}</td>
+                                <td class="border">
+                                    <a href="{%  url 'core:delete_product' product.id %}" class="btn btn-sm btn-trash"><i class="fa fa-trash-alt"></i></a>
+                                    <a href="{%  url 'core:update_product' product.id %}" class="btn btn-sm btn-edit"><i class="fa fa-pen-to-square"></i></a>
+                                </td>
+                               
+                            </tr>
+                        {% endfor%}           
+                    </tbody>
+                </table>  
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
