@@ -1,6 +1,8 @@
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
+from django.views import View
+from django.shortcuts import render
 from django.views.generic import (
     CreateView,
     DeleteView,
@@ -10,7 +12,7 @@ from django.views.generic import (
 )
 
 from .forms import ProductForm
-from .models import Product
+from .models import Category,Product
 
 
 class PageTitleViewMixin:
@@ -75,3 +77,13 @@ class DeleteProductView(AdminRequiredMixin, SuccessMessageMixin, DeleteView):
     template_name = "core/product_delete.html"
     success_url = reverse_lazy("core:list_product")
     success_message = "Sản phẩm %(name)s đã được xóa thành công"
+
+
+def category_product(request):
+    categories = Category.objects.all()
+    products = Product.objects.all()
+    context = {
+        'products': products,
+        'categories': categories
+    }
+    return render(request,"core/product_category.html",context)
