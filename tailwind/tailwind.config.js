@@ -9,6 +9,7 @@ const pySitePackages = "../venv/lib/python3.10/site-packages";
 // We can add current project paths here
 const projectPaths = [
     Path.join(pwd, "../templates/**/*.{html,js}"),
+    Path.join(pwd, "../static/**/*.{html,js}"),
     // add js file paths if you need
 ];
 
