@@ -10,6 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/tailwind-dev.css' %}?{% now 'U' %}">
+    <link rel="stylesheet" href="{% static 'css/product-category.css' %}?{% now 'U' %}">
     <link rel="shortcut icon" href="{% static 'tree/app.ico' %}" type="image/x-icon">
 
     <!-- Fonts -->
@@ -20,11 +21,12 @@
         rel="stylesheet">
     <!-- CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <title>{{ title|default:"Tree" }}</title>
 </head>
 
 <body>
-    <header class="bg-[#ecf0f1] px-48 py-6">
+    <header class="bg-light-green px-32 py-6 ">
         <nav class="flex w-full justify-between items-center">
             <!-- Begin Logo section -->
             <div id="logo" class="">
@@ -104,9 +106,18 @@
 
         </nav>
     </header>
-    <hr>
+    <div class="header__bottom">
+        <nav class="navbar">
+            <a href="" class="nav__item-link">Home</a>
+            <a href="" class="nav__item-link">About us</a>
+            <a href="" class="nav__item-link">Product</a>
+            <a href="" class="nav__item-link">News</a>
+            <a href="" class="nav__item-link">Administrator</a>
+        </nav>
+    </div>
 
-    <main class="bg-[#ffffff] px-48 min-h-[600px]">
+    <main class="bg-[#ffffff] px-32 min-h-[600px]">
+        
         {% if messages %}
         <div id="messages-container" class="relative flex flex-col gap-1 mt-1 items-end">
             {% for message in messages %}
