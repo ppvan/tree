@@ -6,4 +6,8 @@ $(document).ready(function () {
 
     $('.message').fadeOut(5000, "swing");
 
+    $('#profile-menu').focusout(function () {
+        $('#profile-menu').addClass('hidden');
+        console.log("focusout");
+    });
 });
