@@ -49,3 +49,24 @@ html {
 .error {
     @apply bg-[#e74c3c];
 }
+
+
+.post {
+    @apply bg-gray-50 border border-slate-100 rounded overflow-hidden p-2;
+}
+
+.post img {
+    @apply object-contain mb-4;
+}
+
+.post h2 {
+    @apply text-xl text-[#44bd32] font-semibold;
+}
+
+.post hr {
+    @apply w-1/3 text-gray-400 h-4;
+}
+
+.post p {
+    @apply text-gray-900 py-1 text-justify
+}

@@ -1,8 +1,8 @@
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
+from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import View
-from django.shortcuts import render
 from django.views.generic import (
     CreateView,
     DeleteView,
@@ -12,7 +12,7 @@ from django.views.generic import (
 )
 
 from .forms import ProductForm
-from .models import Category,Product
+from .models import Category, Product
 
 
 class PageTitleViewMixin:
@@ -32,7 +32,9 @@ class PageTitleViewMixin:
 
 class AdminRequiredMixin(UserPassesTestMixin):
     def test_func(self):
-        return self.request.user.groups.filter(name="Admins").exists()
+        user = self.request.user
+        admin_group = user.groups.filter(name="Admins").exists()
+        return user.is_superuser or admin_group
 
 
 class AddProductView(
@@ -54,9 +56,6 @@ class ListProductView(AdminRequiredMixin, ListView):
     model = Product
     template_name = "core/products_list.html"
     context_object_name = "products"
-
-    def test_func(self):
-        return self.request.user.groups.filter(name="Admins").exists()
 
 
 class DetailProductView(DetailView):
@@ -82,8 +81,5 @@ class DeleteProductView(AdminRequiredMixin, SuccessMessageMixin, DeleteView):
 def category_product(request):
     categories = Category.objects.all()
     products = Product.objects.all()
-    context = {
-        'products': products,
-        'categories': categories
-    }
-    return render(request,"core/product_category.html",context)
+    context = {"products": products, "categories": categories}
+    return render(request, "core/product_category.html", context)
