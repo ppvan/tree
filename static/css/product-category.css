@@ -1,7 +1,7 @@
 .header__bottom {
     position: sticky;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 8%);
-    z-index: 1000;
+    z-index: 1;
 }
 .navbar {
     display: flex;

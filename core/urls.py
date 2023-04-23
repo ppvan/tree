@@ -3,11 +3,11 @@ from django.views.generic import TemplateView
 
 from .views import (
     AddProductView,
+    CategoryProductView,
     DeleteProductView,
     DetailProductView,
     ListProductView,
     UpdateProductView,
-    category_product,
 )
 
 app_name = "core"
@@ -28,5 +28,5 @@ urlpatterns = [
     path("product/<int:pk>/", DetailProductView.as_view(), name="detail_product"),
     path("product/<int:pk>/delete", DeleteProductView.as_view(), name="delete_product"),
     path("product/<int:pk>/update", UpdateProductView.as_view(), name="update_product"),
-    path("product/category", category_product, name="category_product"),
+    path("product/category", CategoryProductView.as_view(), name="category_product"),
 ]
