@@ -7,6 +7,7 @@ from . import views
 
 urlpatterns = [
     path("test/", views.test_view, name="test"),
+    path("design/", views.test_design, name="design"),
     # Profile view and update
     path("profile/", views.ProfileView.as_view(), name="profile"),
     # Login / logout

@@ -1,4 +1,19 @@
 {% extends "layout/base.html" %}
+
+
+{% block navbar %}
+{% include "components/navbar.html" %}
+{% endblock navbar %}
+
+{% block message %}
+{% include "components/messages.html" %}
+{% endblock message %}
+
+{% block searchbar %}
+{% include 'components/searchbar.html' %}
+{% endblock %}
+
+
 {% block content %}
 {% if user.is_authenticated %}
 <p>Welcome, {{ user.get_username }}. Thanks for logging in.</p>

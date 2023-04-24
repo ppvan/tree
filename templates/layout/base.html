@@ -37,16 +37,8 @@
             <!-- End Logo section -->
 
             <!-- Begin search section -->
-            <div class="w-1/3">
-                <form action=""
-                    class="h-fit bg-white overflow-hidden rounded-full border-2 items-stretch border-slate-900 focus-within:border-green-500 w-full flex">
-                    <input class="p-2 pl-4 border-none outline-none h-full grow block" type="text"
-                        placeholder="Từ khóa">
-                    <button class="p-2 pt-[0.65rem] hover:bg-green-500 hover:text-white transition-colors">
-                        <i class="fa fa-search text-lg"></i>
-                    </button>
-                </form>
-            </div>
+            {% block searchbar %}
+            {% endblock %}
             <!-- End search section -->
 
             <div class="rounded flex items-stretch gap-2">
@@ -106,28 +98,12 @@
 
         </nav>
     </header>
-    <div class="header__bottom">
-        <nav class="navbar">
-            <a href="" class="nav__item-link">Home</a>
-            <a href="" class="nav__item-link">About us</a>
-            <a href="" class="nav__item-link">Product</a>
-            <a href="" class="nav__item-link">News</a>
-            <a href="" class="nav__item-link">Administrator</a>
-        </nav>
-    </div>
+    {% block navbar %}
+    {% endblock navbar %}
 
     <main class="bg-[#ffffff] px-32 min-h-[600px]">
-
-        {% if messages %}
-        <div id="messages-container" class="relative flex flex-col gap-1 mt-1 items-end">
-            {% for message in messages %}
-            <div {% if message.tags %} class="message {{ message.tags }}" {% else %}class="message" {% endif %}>
-                <p>{{ message }}</p>
-                <button class="text-lg px-2">&times;</button>
-            </div>
-            {% endfor %}
-        </div>
-        {% endif %}
+        {% block message %}
+        {% endblock message %}
 
         {% block content %}
         {% endblock content %}
