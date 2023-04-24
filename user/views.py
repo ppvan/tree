@@ -27,6 +27,10 @@ from .tokens import account_activation_token
 # Create your views here.
 
 
+def test_design(request):
+    return render(request, "layout/admin.html")
+
+
 def test_view(request):
     messages.info(request, "This is a test message 1")
     messages.success(request, "This is a test message 2")

@@ -1,51 +1,54 @@
-from django.shortcuts import get_object_or_404, redirect, render
-from django.http import HttpResponse
+from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
+from django.shortcuts import get_object_or_404, redirect
+from django.urls import reverse_lazy
+from django.views import View
+from django.views.generic import CreateView, DetailView, ListView, UpdateView
+
 from .forms import PostForm
 from .models import Post
+
 # Create your views here.
 
 
-def index(request):
-    return render(request, 'blog/index.html', {'posts': Post.objects.all()})
+class ListPostView(ListView):
+    model = Post
+    paginate_by = 8
+    template_name = "blog/posts_list.html"
+    context_object_name = "posts_list"
 
 
-def get(request, pk: int):
-    post = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/post_details.html', {'post': post})
+class AddPostView(SuccessMessageMixin, CreateView):
+    model = Post
+    form_class = PostForm
+    template_name = "blog/post_new.html"
+    success_url = reverse_lazy("blog:list_posts")
+    success_message = "Thêm bài viết thành công!"
 
 
-def post(request):
-    if request.method == 'POST':
-        form = PostForm(request.POST, request.FILES)
-        if form.is_valid():
-            post = form.save()
-            return redirect('blog:get', pk=post.pk)
-        else:
-            # print(form.errors)
-            return HttpResponse(f"{form.errors}")
-    else:
-        form = PostForm()
-        return render(request, 'blog/post_new.html', {'form': form})
+class UpdatePostView(SuccessMessageMixin, UpdateView):
+    model = Post
+    form_class = PostForm
+    template_name = "blog/post_update.html"
+    success_url = reverse_lazy("blog:list_posts")
+    success_message = "Cập nhật bài viết thành công!"
 
 
-def update(request, pk: int):
+class DeletePostView(SuccessMessageMixin, View):
+    model = Post
+    form_class = PostForm
+    template_name = "blog/post_delete.html"
+    success_url = reverse_lazy("blog:list_posts")
+    success_message = "Xóa bài viết thành công!"
 
-    post = get_object_or_404(Post, pk=pk)
-
-    if request.method == 'POST':
-        form = PostForm(instance=post, data=request.POST, files=request.FILES)
-        if form.is_valid():
-            post = form.save()
-            return redirect('blog:get', pk=post.pk)
-        else:
-            # print(form.errors)
-            return HttpResponse(f"{form.errors}")
-    else:
-        form = PostForm(instance=post)
-        return render(request, 'blog/post_update.html', {'form': form, 'id': pk})
+    def post(self, request, pk: int):
+        post = get_object_or_404(Post, pk=pk)
+        post.delete()
+        messages.success(request, self.success_message)
+        return redirect("blog:list_posts")
 
 
-def delete(request, pk: int):
-    post = get_object_or_404(Post, pk=pk)
-    post.delete()
-    return redirect('blog:index')
+class PostDetailView(DetailView):
+    model = Post
+    form_class = PostForm
+    template_name = "blog/post_detail.html"

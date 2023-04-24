@@ -21,8 +21,8 @@
                         </a>
                     </li>
                     {% endfor%}
-                    
-                    
+
+
                 </ul>
             </div>
         </div>
@@ -31,7 +31,7 @@
             <div class="category__product-list">
                 <div class="row-container">
                     {% for product in products%}
-                    <a href="" class="category__product-item"> 
+                    <a href="" class="category__product-item">
                         <img src="{{product.thumbnail.url}}" alt="" class="category__product-img">
                         <p class="category__product_name">{{product.name}}</p>
                         <p class="category__product_price">{{product.price}} $</p>
@@ -47,12 +47,12 @@
                 </li>
                 <li class="pagination-item pagination-item__icon-first">
                     <a href="" class="pagination-item__link">
-                     1
+                        1
                     </a>
                 </li>
                 <li class="pagination-item pagination-item__icon-first">
                     <a href="" class="pagination-item__link">
-                       2
+                        2
                     </a>
                 </li>
                 <li class="pagination-item pagination-item__icon-first">
@@ -60,10 +60,10 @@
                         <i class="fa fa-angle-double-right"></i>
                     </a>
                 </li>
-                
+
             </ul>
         </div>
-        
+
     </div>
 </div>
 {% endblock content %}

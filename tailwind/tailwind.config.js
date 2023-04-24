@@ -29,7 +29,11 @@ console.log(`tailwindcss will scan ${contentPaths}`);
 module.exports = {
     content: contentPaths,
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                'lato': ['Lato', 'sans-serif']
+            }
+        },
     },
     plugins: [
         // require('@tailwindcss/forms'),
