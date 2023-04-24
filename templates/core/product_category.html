@@ -1,5 +1,4 @@
 {% extends "layout/base.html" %}
-{% load static %}
 {% block content %}
 <div class="container">
     <div class="row-container">
@@ -31,7 +30,7 @@
             <div class="category__product-list">
                 <div class="row-container">
                     {% for product in products%}
-                    <a href="" class="category__product-item"> 
+                    <a href="{% url 'core:detail_product' product.id%}" class="category__product-item"> 
                         <img src="{{product.thumbnail.url}}" alt="" class="category__product-img">
                         <p class="category__product_name">{{product.name}}</p>
                         <p class="category__product_price">{{product.price}} $</p>
