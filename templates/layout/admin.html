@@ -14,8 +14,8 @@
 </head>
 
 <body>
-    <main class="flex w-full items-stretch h-[100vh] font-lato">
-        <aside class="bg-[#667260] w-1/6 min-h-fit p-4 pt-0 flex flex-col gap-12 items-stretch text-[#F5F6F4]">
+    <main class="flex w-full items-stretch h-screen font-lato">
+        <aside class="bg-[#667260] w-1/6 p-4 pt-0 flex flex-col gap-12 items-stretch text-[#F5F6F4]">
             <div class="p-3 flex border-b">
                 <img class="object-contain w-10" src="{% static 'tree/app.ico' %}" alt="">
                 <span class="text-2xl font-bold text-[#d6d7d9]">Tree</span>
@@ -42,17 +42,22 @@
             </nav>
         </aside>
         <span class="bg-[#131712] w-[1px] opacity-60"></span>
-        <section class="bg-green-500 grow  text-[#F5F6F4]">
-            <header class="h-[4.2rem] bg-slate-600 flex justify-between items-center">
-                <a href="{% url 'core:home' %}" class="flex items-center gap-2 p-2 opacity-80 hover:opacity-100">
+        <section class="flex flex-col grow text-[#131712]">
+            <header class="h-[4.1rem] flex justify-between items-center">
+                <a href="{% url 'core:home' %}" class="flex items-center gap-2 p-2 px-6 opacity-80 hover:opacity-100">
                     <i class="fas fa-home"></i>
                     <span>Trang chủ</span>
                 </a>
-                <a href="{% url 'profile' %}" class="p-4 flex items-center gap-4 text-[#F5F6F4]">
+                <a href="{% url 'profile' %}" class="p-4 flex items-center gap-4">
                     <span class="text-lg font-medium opacity-70 hover:opacity-100">{{ user.profile.full_name }}</span>
                     <img class="rounded-full w-10" src="{{ user.profile.avatar.url }}" alt="">
                 </a>
             </header>
+            <hr>
+            <div class="p-4 w-full h-full overflow-y-auto">
+                {% block content %}
+                {% endblock content %}
+            </div>
         </section>
     </main>
 </body>

@@ -13,6 +13,7 @@ from .models import Post
 
 class ListPostView(ListView):
     model = Post
+    paginate_by = 8
     template_name = "blog/posts_list.html"
     context_object_name = "posts_list"
 
