@@ -15,8 +15,12 @@
                 <p><a href="{% url 'core:detail_product' product_id%}">{{item.name}}</a></p>
             </td>
             <td class="border">
-                <input type="number" class="product-qty-{{product_id}}" value="{{item.qty}}" style="vertical-align: bottom;" />
-                <button class="update-cart-item" data-item="{{product_id}}"><i class="fa fa-sync"></i></button>
+                {% comment %} <input type="number" class="product-qty-{{product_id}}" value="{{item.qty}}" style="vertical-align: bottom;" /> {% endcomment %}
+                <div class="input-group-number">
+                    <button class="case-minus" data-item="{{product_id}}"><i class="fas fa-minus"></i></button>
+                    <input class="case-number product-qty-{{product_id}}" type="" min="0" value="{{item.qty}}" disabled> 
+                    <button  class="case-plus" data-item="{{product_id}}"><i class="fas fa-plus"></i></button>
+                </div>
                 <button class="delete-cart-item" data-item="{{product_id}}"><i class="fa fa-trash"></i></button>
             </td>
             <td class="border">{{item.price}}</td>
@@ -34,7 +38,9 @@
         </tr>
         {% if totalitems %}
         <tr>
-            
+            <td></td>
+            <td></td>
+            <td></td>
             <td class="border">
                 <a href="" class="">Checkout <i class=""></i></a>
             </td>
