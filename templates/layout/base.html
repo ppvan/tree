@@ -10,7 +10,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/tailwind-dev.css' %}?{% now 'U' %}">
-    <link rel="stylesheet" href="{% static 'css/product-category.css' %}?{% now 'U' %}">
     <link rel="shortcut icon" href="{% static 'tree/app.ico' %}" type="image/x-icon">
 
     <!-- Fonts -->
@@ -98,8 +97,7 @@
 
         </nav>
     </header>
-    {% block navbar %}
-    {% endblock navbar %}
+    <hr>
 
     <main class="bg-[#ffffff] px-32 min-h-[600px]">
         {% block message %}
