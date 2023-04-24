@@ -19,7 +19,7 @@
                     <p>MSP: 98</p>
                 </div>
                 <div class="flex justify-between">
-                    <p class="text-red-800 product-price">{{ product.price|intcomma }}</p>
+                    <p class="text-red-800 product-price-{{product.id}}">{{ product.price|intcomma }}</p>
                     <p>Số lượng: {{ product.quantity }}</p>
                 </div>
                 <div>
@@ -30,10 +30,11 @@
 
                 <div class="grow"></div>
                 <div class="flex justify-between py-4">
-                    <input type="number" value="1" style="width: 3rem;" id="productQty">
-                    <input type="hidden" class="product-id" value="{{product.id}}">
-                    <input type="hidden" class="product-name" value="{{product.name}}">
-                    <button class="btn bg-green-600 add-to-cart">Thêm vào giỏ hàng</button>
+                    <input type="number" value="1" style="width: 3rem;" class="product-qty-{{product.id}}" id="productQty">
+                    <input type="hidden" class="product-image-{{product.id}}" value="{{product.thumbnail.url}}" />
+                    <input type="hidden" class="product-id-{{product.id}}" value="{{product.id}}">
+                    <input type="hidden" class="product-name-{{product.id}}" value="{{product.name}}">
+                    <button class="btn bg-green-600 add-to-cart" data-index="{{product.id}}">Thêm vào giỏ hàng</button>
                     <button class="btn btn-submit bg-red-600">Đặt hàng ngay</button>
                 </div>
             </div>

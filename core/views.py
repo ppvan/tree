@@ -90,6 +90,7 @@ class CategoryProductView(View):
 def add_to_cart(request):
     cart_p = {}
     cart_p[str(request.GET['id'])]= {
+        'thumbnail': request.GET['thumbnail'],
         'name':request.GET['name'],
         'qty':request.GET['qty'],
         'price':request.GET['price'],
@@ -116,6 +117,7 @@ def cart_list(request):
             total += int(item['qty']) * float(item['price'])
         return render(request, "core/cart.html", {'cart_data':request.session['cartdata'], 'totalitems':len(request.session['cartdata']), 'total_price':total})
     return render(request, "core/cart.html", {'cart_data':'', 'totalitems':0, 'total_price':total})
+
 
 def delete_cart_item(request):
     p_id = request.GET['id']

@@ -14,20 +14,23 @@ $(document).ready(function () {
 
 $(document).on('click', ".add-to-cart", function(){
     var _vm = $(this);
-    var _qty = $("#productQty").val();
-    var _productId = $(".product-id").val();
-    var _productName = $(".product-name").val();
-    var _productPrice = parseFloat($(".product-price").text().replace(' d', ''));
+    var _index=_vm.attr('data-index');
+    var _qty = $(".product-qty-" + _index).val();
+    var _productId = $(".product-id-" + _index).val();
+    var _productImage=$(".product-image-" + _index).val();
+    var _productName = $(".product-name-" + _index).val();
+    var _productPrice = parseFloat($(".product-price-" + _index).text().replace(' d', ''));
     
-    console.log(_qty, _productId, _productName, _productPrice);
+    console.log(_qty, _productId, _productImage, _productName, _productPrice);
 
     $.ajax({
         url: '/add-to-cart',
         data:{
             'id': _productId,
+            'thumbnail': _productImage,
             'qty': _qty,
             'name': _productName,
-            'price': _productPrice
+            'price': _productPrice,
         },
         dataType: 'json',
         beforeSend: function(){
