@@ -14,7 +14,6 @@ class ProductForm(forms.ModelForm):
             "summary": "Thông tin về cây",
             "thumbnail": "Ảnh sản phẩm",
             "category": "Danh mục",
-
         }
 
         widgets = {
@@ -23,3 +22,10 @@ class ProductForm(forms.ModelForm):
             "summary": forms.Textarea(attrs={"class": "text-area-input text-input"}),
             "thumbnail": forms.FileInput(attrs={"class": "file-input"}),
         }
+
+
+class AddToCartForm(forms.Form):
+    product_id = forms.IntegerField(widget=forms.HiddenInput())
+    quantity = forms.IntegerField(
+        widget=forms.NumberInput(attrs={"class": "form-control", "value": 1, "min": 1})
+    )

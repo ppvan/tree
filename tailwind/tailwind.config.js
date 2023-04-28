@@ -31,7 +31,10 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                'lato': ['Lato', 'sans-serif']
+                'lato': ['Lato', 'sans-serif'],
+                'roboto': ['Roboto', 'sans-serif'],
+                'source': ['Source Sans Pro', 'sans-serif'],
+                'code': ['Source Code Pro', 'monospace'],
             }
         },
     },

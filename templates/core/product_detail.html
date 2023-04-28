@@ -5,12 +5,12 @@
 {% load humanize %}
 
 {% block content %}
-<div class="container rounded flex my-16 items-stretch">
+<div class="container overflow-hidden rounded flex my-16 items-stretch">
     <div id="product" class="bg-white border rounded w-2/3">
         <h1 class="text-3xl p-4">Cây Kim Ngân Củ To</h1>
         <div id="product-info" class="flex text-gray-800">
             <div id="product-image">
-                <img class="w-96 rounded"
+                <img class="w-96 rounded border"
                     src="https://webcaycanh.com/wp-content/uploads/2023/04/cay-hanh-phuc-to-420x420.jpg" alt="">
             </div>
             <div id="product-detail" class="flex flex-col gap-3 flex-1 px-4">
@@ -33,8 +33,8 @@
 
                 <div class="grow"></div>
                 <div class="flex justify-between py-4">
+
                     <button class="btn bg-green-600">Thêm vào giỏ hàng</button>
-                    <button class="btn btn-submit bg-red-600">Đặt hàng ngay</button>
                 </div>
             </div>
         </div>
@@ -61,7 +61,7 @@
     </div>
 
     <div id="sidebar" class="w-1/3 ml-1 border rounded">
-        <img class="object-cover" src="{% static 'tree/sidebar.jpg' %}" alt="">
+        <img class="object-cover rounded" src="{% static 'tree/sidebar.jpg' %}" alt="">
     </div>
 </div>
 {% endblock content %}

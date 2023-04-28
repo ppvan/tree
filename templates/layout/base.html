@@ -24,8 +24,8 @@
     <title>{{ title|default:"Tree" }}</title>
 </head>
 
-<body>
-    <header class="bg-light-green px-32 py-6 ">
+<body class="bg-[#BEE9E8]">
+    <header class="bg-[#F6FAF0] px-32 shadow py-6 ">
         <nav class="flex w-full justify-between items-center">
             <!-- Begin Logo section -->
             <div id="logo" class="">
@@ -37,6 +37,7 @@
 
             <!-- Begin search section -->
             {% block searchbar %}
+            {% include 'components/searchbar.html' %}
             {% endblock %}
             <!-- End search section -->
 
@@ -70,9 +71,9 @@
                         </a>
 
                         {% if user.is_superuser or user|has_group:"Admins" %}
-                        <a href="{% url 'core:list_product' %}"
+                        <a href="{% url 'core:list_products' %}"
                             class="hover:bg-[#99bda4] bg-[#7f9f89] border-3 border-green-200 p-1 flex justify-between items-center gap-2">
-                            <div class="w-10 flex"><i class="m-auto     fas fa-edit"></i></div>
+                            <div class="w-10 flex"><i class="m-auto fas fa-edit"></i></div>
                             <span class="grow">Bảng điều khiển</span>
                         </a>
                         {% endif %}
@@ -98,18 +99,15 @@
         </nav>
     </header>
     <hr>
-
-    <main class="bg-[#ffffff] px-32 min-h-[600px]">
+    <main class="px-32 min-h-[600px]">
         {% block message %}
         {% endblock message %}
 
         {% block content %}
         {% endblock content %}
     </main>
-
     <hr>
-
-    <footer class="bg-[#ecf0f1]">
+    <footer class="bg-[#F6FAF0]">
         <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
             <div class="md:flex md:justify-between">
                 <div class="mb-6 md:mb-0">

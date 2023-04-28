@@ -10,4 +10,7 @@ $(document).ready(function () {
         $('#profile-menu').addClass('hidden');
         console.log("focusout");
     });
+
+    // Workaround for Django MarkdownX
+    $('#id_content')[0].cols = 60;
 });

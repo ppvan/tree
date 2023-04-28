@@ -46,8 +46,8 @@ class AddProductView(
     form_class = ProductForm
 
     title = "Thêm sản phẩm"
-    template_name = "core/product_new.html"
-    success_url = reverse_lazy("core:list_product")
+    template_name = "core/product_add.html"
+    success_url = reverse_lazy("core:list_products")
     success_message = "Sản phẩm %(name)s được thêm thành công"
 
 

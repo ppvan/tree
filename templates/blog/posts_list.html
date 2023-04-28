@@ -1,18 +1,10 @@
 {% extends "layout/admin.html" %}
-
+{% load static %}
+{% load crispy_forms_tags %}
+{% load humanize %}
 
 {% block content %}
 <div id="posts_list" class="flex flex-col h-full gap-6">
-    {% if messages %}
-    <div id="messages-container" class="relative flex flex-col gap-1 mt-1 items-end">
-        {% for message in messages %}
-        <div {% if message.tags %} class="message {{ message.tags }}" {% else %}class="message" {% endif %}>
-            <p>{{ message }}</p>
-            <button class="text-lg px-2">&times;</button>
-        </div>
-        {% endfor %}
-    </div>
-    {% endif %}
     <div class="flex items-center justify-between h-10">
         <h2 class="px-1 text-[1.2rem]">Danh sách các bài viết</h2>
         <a href="{% url 'blog:new' %}" class="p-3 bg-[#667260] rounded hover:bg-[#373d32] text-gray-50">

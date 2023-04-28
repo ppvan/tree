@@ -20,12 +20,13 @@ from django.urls import include, path
 from . import settings
 
 urlpatterns = [
-    path('', include('core.urls')),
-    path('blog/', include('blog.urls')),
-    path('user/', include('user.urls')),
-    path('ckeditor/', include('ckeditor_uploader.urls')),
-    path('__reload__/', include('django_browser_reload.urls')),  # Browser reload
-    path('admin/', admin.site.urls),
+    path("", include("core.urls")),
+    path("blog/", include("blog.urls")),
+    path("user/", include("user.urls")),
+    path("ckeditor/", include("ckeditor_uploader.urls")),
+    path("__reload__/", include("django_browser_reload.urls")),  # Browser reload
+    path("markdownx/", include("markdownx.urls")),
+    path("admin/", admin.site.urls),
 ]
 
 # In production, serve media files using a web server such as Nginx or Apache

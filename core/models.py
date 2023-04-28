@@ -33,7 +33,8 @@ class Product(BaseModel):
 
     name = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=10, decimal_places=0)
-    summary = models.TextField()
+    summary = models.TextField(default="")
+    description = models.TextField(default="")
     quantity = models.PositiveIntegerField(default=0)
     category = models.ForeignKey(
         Category, on_delete=models.CASCADE, default=True, null=False

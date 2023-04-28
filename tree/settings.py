@@ -38,10 +38,12 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.humanize",
+    "django.forms",
     "ckeditor",
     "ckeditor_uploader",
     "imagekit",
     "django_browser_reload",
+    "markdownx",
     "crispy_forms",
     "crispy_tailwind",
     "blog",
@@ -77,6 +79,8 @@ TEMPLATES = [
         },
     },
 ]
+
+FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",

@@ -1,10 +1,10 @@
 import uuid
 from pathlib import Path
 
-from ckeditor.fields import RichTextField
 from django.db import models
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
+from markdownx.models import MarkdownxField
 
 # Create your models here.
 
@@ -27,7 +27,7 @@ class Post(models.Model):
         options={"quality": 60},
     )
     summary = models.CharField(max_length=200, default="")
-    content = RichTextField()
+    content = MarkdownxField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

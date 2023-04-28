@@ -1,6 +1,9 @@
 <form method="POST" action="{% url 'blog:new' %}" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.media }}
-    {{ form.as_p }}
-    <input type="submit" value="Submit">
+    {{ form|crispy }}
+
+    <div class="float-right">
+        <input type="submit" value="Submit">
+    </div>
 </form>

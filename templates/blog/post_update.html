@@ -1,10 +1,15 @@
-{% extends "blog/base.html" %}
-
+{% extends "layout/admin.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load humanize %}
 {% block content %}
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.media }}
-    {{ form.as_p }}
-    <input type="submit" value="Submit">
+    {{ form|crispy }}
+    <div class="float-left">
+        <input class="btn border-none cursor-pointer bg-[#667260] hover:bg-[#373d32]" type="submit"
+            value="Cập nhật bài viết">
+    </div>
 </form>
 {% endblock content %}

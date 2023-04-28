@@ -1,5 +1,6 @@
 {% load static %}
-
+{% load crispy_forms_tags %}
+{% load humanize %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,18 +15,18 @@
 </head>
 
 <body>
-    <main class="flex w-full items-stretch h-screen font-lato">
+    <main class="flex w-full justify-between     items-stretch h-screen font-lato">
         <aside class="bg-[#667260] w-1/6 p-4 pt-0 flex flex-col gap-12 items-stretch text-[#F5F6F4]">
             <div class="p-3 flex border-b">
                 <img class="object-contain w-10" src="{% static 'tree/app.ico' %}" alt="">
                 <span class="text-2xl font-bold text-[#d6d7d9]">Tree</span>
             </div>
             <nav class="flex flex-col gap-2 justify-center">
-                <a class="p-3 rounded-lg text-lg opacity-90 hover:bg-[#33382E]">
+                <a href="{% url 'core:list_products' %}" class="p-3 rounded-lg text-lg opacity-90 hover:bg-[#33382E]">
                     <i class="fas fa-bag-shopping"></i>
                     <span>Quản lí sản phẩm</span>
                 </a>
-                <a class="p-3 rounded-lg text-lg opacity-90 hover:bg-[#33382E]">
+                <a href="{% url 'blog:list_posts' %}" class="p-3 rounded-lg text-lg opacity-90 hover:bg-[#33382E]">
                     <i class="fas fa-edit"></i> Quản lí bài viết
                 </a>
                 <a class="p-3 rounded-lg text-lg opacity-90 hover:bg-[#33382E]">
@@ -41,7 +42,9 @@
                 </a>
             </nav>
         </aside>
-        <span class="bg-[#131712] w-[1px] opacity-60"></span>
+
+        <span class="bg-slate-500 w-[2px] opacity-60"></span>
+
         <section class="flex flex-col grow text-[#131712]">
             <header class="h-[4.1rem] flex justify-between items-center">
                 <a href="{% url 'core:home' %}" class="flex items-center gap-2 p-2 px-6 opacity-80 hover:opacity-100">
@@ -55,11 +58,18 @@
             </header>
             <hr>
             <div class="p-4 w-full h-full overflow-y-auto">
+                {% block message %}
+                {% include "components/messages.html" %}
+                {% endblock message %}
                 {% block content %}
                 {% endblock content %}
             </div>
         </section>
     </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/main.js'%}?{% now 'U' %}"></script>
 </body>
 
 </html>
