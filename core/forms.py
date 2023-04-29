@@ -25,7 +25,5 @@ class ProductForm(forms.ModelForm):
 
 
 class AddToCartForm(forms.Form):
-    product_id = forms.IntegerField(widget=forms.HiddenInput())
-    quantity = forms.IntegerField(
-        widget=forms.NumberInput(attrs={"class": "form-control", "value": 1, "min": 1})
-    )
+    product_id = forms.IntegerField()
+    quantity = forms.IntegerField(initial=1)

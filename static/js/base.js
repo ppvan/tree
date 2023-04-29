@@ -1,3 +1,5 @@
+console.log("base.js loaded");
+
 function getCookie(name) {
     let cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -13,11 +15,9 @@ function getCookie(name) {
     }
     return cookieValue;
 }
-const csrftoken = getCookie('csrftoken');
+// const csrftoken = getCookie('csrftoken');
 window.$ = jQuery;
 $(document).ready(function () {
-
-    console.log($);
     // UI Effects section
     $('#avatar').click(function () {
         $('#profile-menu').toggleClass('hidden grid');
@@ -31,15 +31,15 @@ $(document).ready(function () {
     });
 
     $('#quantity-decrease').click(function () {
-        let quantity = parseInt($('#quantity').text());
+        let quantity = parseInt($('#id_quantity').val());
         if (quantity > 1) {
-            $('#quantity').text(quantity - 1);
+            $('#id_quantity').val(quantity - 1);
         }
     });
 
     $('#quantity-increase').click(function () {
-        let quantity = parseInt($('#quantity').text());
-        $('#quantity').text(quantity + 1);
+        let quantity = parseInt($('#id_quantity').val());
+        $('#id_quantity').val(quantity + 1);
     });
 
     // Workaround for Django MarkdownX

@@ -32,20 +32,25 @@
                 </div>
 
                 <div class="grow"></div>
-                <div class="flex items-center justify-between py-4">
-                    <div class="flex gap-2 border rounded overflow-hidden">
-                        <button class="bg-gray-200 hover:bg-slate-600 hover:text-white p-1 px-2" id="quantity-decrease">
+                <form action="{% url 'core:add_to_cart' %}" method="post"
+                    class="flex items-center justify-between py-4">
+                    {% csrf_token %}
+                    <div class="flex border rounded overflow-hidden">
+                        <button type="button" class="bg-gray-200 hover:bg-slate-600 hover:text-white p-1 px-2"
+                            id="quantity-decrease">
                             <i class="fas fa-minus"></i>
                         </button>
-                        <span class="text-lg px-3" id="quantity">1</span>
-                        <button class="bg-gray-200 p-1 px-2 hover:bg-slate-600 hover:text-white" id="quantity-increase">
+                        <input type="hidden" name="product_id" value="{{ product.id }}">
+                        <input name="quantity" readonly class="text-lg text-center w-12 outline-none" id="id_quantity"
+                            value="1"></input>
+                        <button type="button" class="bg-gray-200 p-1 px-2 hover:bg-slate-600 hover:text-white"
+                            id="quantity-increase">
                             <i class="fas fa-plus"></i>
                         </button>
-
                     </div>
                     <button data-product-id="{{ product.id }}" data-quantity="{{ 1 }}" id="add-to-cart"
                         class="btn bg-green-600">Thêm vào giỏ hàng</button>
-                </div>
+                </form>
             </div>
         </div>
         <hr>
@@ -73,9 +78,9 @@
     <div id="sidebar" class="w-1/3 ml-1 border rounded">
         <img class="object-cover rounded" src="{% static 'tree/sidebar.jpg' %}" alt="">
     </div>
-
-    {% block js %}
-    <script defer src="{% static 'js/cart.js' %}"></script>
-    {% endblock js %}
 </div>
 {% endblock content %}
+
+{% block js %}
+<script src="{% static 'js/cart.js' %}"></script>
+{% endblock js %}

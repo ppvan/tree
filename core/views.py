@@ -1,9 +1,7 @@
-import json
-
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
-from django.http import JsonResponse
-from django.shortcuts import get_object_or_404, render
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import (
@@ -14,9 +12,8 @@ from django.views.generic import (
     UpdateView,
 )
 
-from .forms import ProductForm
+from .forms import AddToCartForm, ProductForm
 from .models import Category, Order, OrderItem, Product
-from .serializers import ModelSerializer
 
 
 class PageTitleViewMixin:
@@ -84,16 +81,17 @@ class DeleteProductView(AdminRequiredMixin, SuccessMessageMixin, DeleteView):
 
 class AddToCartView(LoginRequiredMixin, View):
     def post(self, request):
-        payload = json.loads(request.body)
-
-        product = get_object_or_404(Product, pk=payload["productId"])
-        order, _created = Order.objects.get_or_create(
-            user=request.user, state=Order.PENDING
-        )
-        order_item = self._update_item(order, product, payload["quantity"])
-
-        serializer = ModelSerializer(order_item)
-        return JsonResponse(serializer.to_dict(), status=200)
+        form = AddToCartForm(request.POST)
+        if form.is_valid():
+            product_id = form.cleaned_data["product_id"]
+            product = get_object_or_404(Product, pk=product_id)
+            order, _created = Order.objects.get_or_create(
+                user=request.user, state=Order.PENDING
+            )
+            self._update_item(order, product, form.cleaned_data["quantity"])
+            return redirect("core:cart_list")
+        else:
+            return HttpResponse("Fobidden", status=403)
 
     def _update_item(self, order, product, quantity):
         order_item, _created = OrderItem.objects.get_or_create(
@@ -102,6 +100,25 @@ class AddToCartView(LoginRequiredMixin, View):
         order_item.quantity = quantity
         order_item.save()
         return order_item
+
+
+class CartListView(LoginRequiredMixin, ListView):
+    model = OrderItem
+    template_name = "core/cart_list.html"
+    context_object_name = "order_items"
+
+    def get_queryset(self):
+        order, _created = Order.objects.get_or_create(
+            user=self.request.user, state=Order.PENDING
+        )
+        return OrderItem.objects.filter(order=order)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["order"] = Order.objects.get_or_create(
+            user=self.request.user, state=Order.PENDING
+        )[0]
+        return context
 
 
 def category_product(request):

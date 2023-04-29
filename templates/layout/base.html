@@ -44,11 +44,12 @@
             <div class="rounded flex items-stretch gap-2">
 
                 <!-- Begin cart section -->
-                <div id="cart" class="bg-slate-100 rounded-full cursor-pointer flex items-center justify-between gap-2">
+                <a id="cart" href="{% url 'core:cart_list' %}"
+                    class="bg-slate-100 rounded-full cursor-pointer flex items-center justify-between gap-2">
                     <div class="cart-icon bg-[#5ba503] rounded-full flex w-10 h-10">
                         <i class="m-auto text-lg fa fa-shopping-cart text-white"></i>
                     </div>
-                </div>
+                </a>
                 <!-- End cart section -->
 
                 <!-- Begin profile section -->
@@ -99,7 +100,7 @@
         </nav>
     </header>
     <hr>
-    <main class="px-32 min-h-[600px]">
+    <main class="px-32 min-h-[600px] flex">
         {% block message %}
         {% endblock message %}
 
@@ -195,8 +196,7 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
-        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         var USER = "{{ request.user }}";
     </script>

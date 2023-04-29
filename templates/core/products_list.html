@@ -1,4 +1,7 @@
 {% extends "layout/admin.html" %}
+{% load static %}
+{% load humanize %}
+
 
 {% block content %}
 <div class="w-full h-full">
@@ -11,7 +14,8 @@
             </div>
 
             <div>
-                <a href="{% url 'core:add_product' %}" class="btn bg-[#667260] hover:bg-[#373d32]">Thêm sản phẩm</a>
+                <a href="{% url 'core:add_product' %}" class="btn text-white bg-[#667260] hover:bg-[#373d32]">Thêm sản
+                    phẩm</a>
             </div>
         </div>
 
@@ -36,19 +40,19 @@
                         </tr>
                     </thead>
                     <tbody class="bg-[#ecf0f1]">
-                        {% for i in '0123456789'|make_list %}
+                        {% for product in products %}
                         <tr class="border-b">
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                Microsoft Surface Pro
+                                {{ product.name }}
                             </th>
                             <td class=" px-6 py-4">
-                                White
+                                {{ product.category }}
                             </td>
                             <td class="px-6 py-4">
-                                Laptop PC
+                                {{ product.id }}
                             </td>
                             <td class="px-6 py-4">
-                                $1999
+                                {{ product.price|intcomma }} đ
                             </td>
                         </tr>
                         {% endfor %}

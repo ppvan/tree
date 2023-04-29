@@ -28,7 +28,7 @@ html {
 }
 
 .btn {
-    @apply text-white p-2 border-2 rounded-lg;
+    @apply p-2 border-2 rounded-lg;
 }
 
 .primary {

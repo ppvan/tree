@@ -4,6 +4,7 @@ from django.views.generic import TemplateView
 from .views import (
     AddProductView,
     AddToCartView,
+    CartListView,
     DeleteProductView,
     DetailProductView,
     ListProductView,
@@ -32,4 +33,5 @@ urlpatterns = [
     path("product/category", category_product, name="category_product"),
     # Add to cart
     path("cart/add/", AddToCartView.as_view(), name="add_to_cart"),
+    path("cart/list/", CartListView.as_view(), name="cart_list"),
 ]

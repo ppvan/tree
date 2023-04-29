@@ -88,6 +88,9 @@ class Order(BaseModel):
     def __str__(self):
         return (self.user.username, self.state).__str__()
 
+    def total_price(self):
+        return sum(item.total_price() for item in self.orderitem_set.all())
+
 
 class Payment(BaseModel):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
@@ -105,3 +108,6 @@ class OrderItem(BaseModel):
 
     def __str__(self):
         return f"{self.quantity} of {self.product.name}"
+
+    def total_price(self):
+        return self.quantity * self.product.price
