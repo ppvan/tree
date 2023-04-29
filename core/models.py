@@ -5,6 +5,8 @@ from django.db import models
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
 
+from user.models import User
+
 # Create your models here.
 
 MEDIA_PATH = Path("product_images")
@@ -67,12 +69,24 @@ class Address(BaseModel):
 
 
 class Order(BaseModel):
-    # user = models.ForeignKey('user.User', on_delete=models.CASCADE)
-    address = models.ForeignKey(Address, on_delete=models.SET_NULL, null=True)
-    state = models.CharField(max_length=255)
+    PENDING = "PE"
+    DELIVERY = "DE"
+    COMPLETED = "CO"
+    CANCEL = "CA"
+
+    ORDER_STATUS = [
+        (PENDING, "Chưa xác nhận"),
+        (DELIVERY, "Đang giao"),
+        (COMPLETED, "Hoàn thành"),
+        (CANCEL, "Đã hủy"),
+    ]
+
+    state = models.CharField(max_length=2, choices=ORDER_STATUS, default=PENDING)
+    user = models.ForeignKey(User, to_field="username", on_delete=models.CASCADE)
+    # address = models.ForeignKey(Address, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
-        return self.name
+        return (self.user.username, self.state).__str__()
 
 
 class Payment(BaseModel):

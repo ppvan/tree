@@ -1,7 +1,11 @@
-from django.contrib.auth.mixins import UserPassesTestMixin
+import json
+
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
-from django.shortcuts import render
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
+from django.views import View
 from django.views.generic import (
     CreateView,
     DeleteView,
@@ -11,7 +15,8 @@ from django.views.generic import (
 )
 
 from .forms import ProductForm
-from .models import Category, Product
+from .models import Category, Order, OrderItem, Product
+from .serializers import ModelSerializer
 
 
 class PageTitleViewMixin:
@@ -75,6 +80,28 @@ class DeleteProductView(AdminRequiredMixin, SuccessMessageMixin, DeleteView):
     template_name = "core/product_delete.html"
     success_url = reverse_lazy("core:list_product")
     success_message = "Sản phẩm %(name)s đã được xóa thành công"
+
+
+class AddToCartView(LoginRequiredMixin, View):
+    def post(self, request):
+        payload = json.loads(request.body)
+
+        product = get_object_or_404(Product, pk=payload["productId"])
+        order, _created = Order.objects.get_or_create(
+            user=request.user, state=Order.PENDING
+        )
+        order_item = self._update_item(order, product, payload["quantity"])
+
+        serializer = ModelSerializer(order_item)
+        return JsonResponse(serializer.to_dict(), status=200)
+
+    def _update_item(self, order, product, quantity):
+        order_item, _created = OrderItem.objects.get_or_create(
+            order=order, product=product
+        )
+        order_item.quantity = quantity
+        order_item.save()
+        return order_item
 
 
 def category_product(request):

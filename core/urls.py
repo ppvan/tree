@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 
 from .views import (
     AddProductView,
+    AddToCartView,
     DeleteProductView,
     DetailProductView,
     ListProductView,
@@ -29,4 +30,6 @@ urlpatterns = [
     path("product/<int:pk>/delete", DeleteProductView.as_view(), name="delete_product"),
     path("product/<int:pk>/update", UpdateProductView.as_view(), name="update_product"),
     path("product/category", category_product, name="category_product"),
+    # Add to cart
+    path("cart/add/", AddToCartView.as_view(), name="add_to_cart"),
 ]
