@@ -10,6 +10,7 @@ from .views import (
     ListProductView,
     UpdateProductView,
     HomePageView,
+    ProductByCategoryView,
     category_product,
 )
 
@@ -17,9 +18,9 @@ app_name = "core"
 urlpatterns = [
     path("", HomePageView.as_view(), name="home"),
     path(
-        "category/list/",
-        TemplateView.as_view(template_name="admin/list_category.html"),
-        name="list_catagory",
+        "category/<slug:slug>/",
+        ProductByCategoryView.as_view(),
+        name="product_by_category",
     ),
     path(
         "post/list/",

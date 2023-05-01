@@ -1,7 +1,7 @@
 {% extends "layout/admin.html" %}
 {% load static %}
 {% load humanize %}
-
+{% load concurency %}
 
 {% block content %}
 <div class="w-full h-full">
@@ -52,7 +52,7 @@
                                 {{ product.id }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ product.price|vnd_format }} đ
+                                {{ product.price|vnd_format }}
                             </td>
                         </tr>
                         {% endfor %}

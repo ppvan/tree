@@ -65,6 +65,11 @@ class DetailProductView(DetailView):
     model = Product
     template_name = "core/product_detail.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["categories"] = Category.objects.order_by("label")[:8]
+        return context
+
 
 class UpdateProductView(AdminRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Product
@@ -132,6 +137,14 @@ class HomePageView(TemplateView):
         context["posts"] = Post.objects.order_by("-updated_at")[:4]
         context["categories"] = Category.objects.all()
         return context
+
+
+class ProductByCategoryView(View):
+    def get(self, request, slug):
+        category = get_object_or_404(Category, slug=slug)
+        products = Product.objects.filter(category=category)
+        context = {"products": products, "category": category}
+        return render(request, "core/product_by_category.html", context)
 
 
 def category_product(request):

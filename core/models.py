@@ -42,7 +42,7 @@ class Product(BaseModel):
     summary = models.TextField(default="")
     description = models.TextField(default="")
     quantity = models.PositiveIntegerField(default=0)
-    category = models.ManyToManyField(Category)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     thumbnail = ProcessedImageField(
         upload_to=hashed_filename,
         default="product_images/default.png",

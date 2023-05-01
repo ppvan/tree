@@ -20,7 +20,7 @@
                 <img class="object-none" src="{{ post.cover_image.url }}" alt="">
             </a>
             <a class="" href="{% url 'blog:post_detail' post.id %}">
-                <h2>{{ post.title }}</h2>
+                <h2>{{ post.title|truncatewords:4 }}</h2>
             </a>
             <hr class="">
             <div class="flex justify-end items-center gap-3">

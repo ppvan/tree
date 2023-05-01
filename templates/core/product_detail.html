@@ -3,10 +3,11 @@
 {% load crispy_forms_tags %}
 {% load static %}
 {% load humanize %}
+{% load concurency %}
 
 {% block content %}
 <div class="container overflow-hidden rounded flex my-16 items-stretch">
-    <div id="product" class="bg-white border rounded w-2/3">
+    <div id="product" class="bg-white border rounded w-3/4">
         <h1 class="text-3xl p-4">Cây Kim Ngân Củ To</h1>
         <div id="product-info" class="flex text-gray-800">
             <div id="product-image">
@@ -16,7 +17,7 @@
             <div id="product-detail" class="flex flex-col gap-3 flex-1 px-4">
                 <div class="flex justify-between">
                     <p>Tình trạng: {{ product.state }}</p>
-                    <p>MSP: 98</p>
+                    <p>MSP: {{ product.id }}</p>
                 </div>
                 <div id="product-price" class="flex justify-between">
                     <p class=" text-red-800">{{ product.price|vnd_format }} đ</p>
@@ -24,11 +25,7 @@
                 </div>
                 <div>
                     <p class="text-2xl text-black py-2 pt-4">Mô tả ngắn</p>
-                    <p>Cây Có chiều cao cả chậu là 1m8, tán rộng khoảng 65cm. Phù hợp để trang trí nội thất cho các
-                        không
-                        gian lớn, như đại sảnh, văn phòng chung, phòng khách, phòng sếp, quà tặng khai trương, tân
-                        gia....
-                    </p>
+                    <p>{{ product.summary }}</p>
                 </div>
 
                 <div class="grow"></div>
@@ -56,27 +53,19 @@
         <hr>
         <div id="long-description" class="text-justify text-base p-3 text-gray-800">
             <h2 class="text-2xl my-4">Thông tin chi tiết</h2>
-            <p>
-                Cây Hạnh Phúc dáng Tree to được nhiều người chọn mua, để tặng sếp hoặc đặt ở những văn phòng lớn, phòng
-                khách lớn, tặng khai trương, tân gia. Với ý nghĩa mang đến hạnh phúc và sự phát triển vững bền.
-
-                Cây có thân to cứng cáp và vững trãi. Dáng tree là dáng có thân cây thẳng và phía bên trên của cây sẽ là
-                tán
-                lá tròn đều. Cây thường có chiều cao cả chậu là 1m8 – 1m9. Cây thuộc dạng thân gỗ xanh tốt quanh năm,
-                không
-                rụng lá. Cây càng chăm càng đẹp.
-
-                Cây sống tốt trong môi trường văn phòng, lẫn ngoài trời. Cây thuộc hành mộc tuy nhiên cây có tên hạnh
-                phúc
-                nên phù hợp tất cả với các mệnh mang đến cho gia chủ hạnh phúc. Đối với gia chủ mệnh hỏa và mộc thì sẽ
-                thuận
-                lợi hơn, làm ăn may mắn giúp sự nghiệp và tiền bạc phát triển.
-            </p>
+            <p>{{ product.description }}</p>
         </div>
     </div>
 
-    <div id="sidebar" class="w-1/3 ml-1 border rounded">
-        <img class="object-cover rounded" src="{% static 'tree/sidebar.jpg' %}" alt="">
+    <div id="sidebar" class="w-1/5 bg-white gap-2 ml-1 border rounded overflow-hidden flex flex-col">
+        <h1 class="bg-[#16a34a] text-white text-lg px-2 py-4">Các loại cây bán chạy</h1>
+        {% for cate in categories %}
+        <a href="{% url 'core:product_by_category' cate.slug %}"
+            class="flex justify-left gap-3 items-center p-2 px-8 text-base font-semibold hover:text-[#16a34a]">
+            <i class="fa-solid fa-tag"></i>
+            <span>{{ cate.label }}</span>
+        </a>
+        {% endfor %}
     </div>
 </div>
 {% endblock content %}
