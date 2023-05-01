@@ -130,6 +130,7 @@ class HomePageView(TemplateView):
         context = super().get_context_data()
         context["products"] = Product.objects.order_by("-created_at")[:8]
         context["posts"] = Post.objects.order_by("-updated_at")[:4]
+        context["categories"] = Category.objects.all()
         return context
 
 

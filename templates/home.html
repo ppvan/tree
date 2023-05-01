@@ -66,59 +66,21 @@
         </div>
 
         <div class="grid grid-cols-4 px-4 gap-4">
+            {% for category in categories %}
             <div class="rounded overflow-hidden group relative flex flex-col items-center justify-center">
                 <img class="object-fill w-full group-hover:brightness-75 transition"
                     src="https://webcaycanh.com/wp-content/uploads/2020/02/cay-canh-de-ban-255x255.jpg" alt="">
                 <a href="#" class="m-auto flex-col justify-center absolute flex items-center h-1/2 w-full ">
                     <h2
                         class="m-auto group-hover:text-[#E7E7E7] text-white text-lg uppercase font-semibold drop-shadow-md">
-                        Cây cảnh để bàn
+                        {{ category.label }}
                     </h2>
                     <span
                         class="text-white transition bg-[#515751] opacity-0 m-auto text-center group-hover:opacity-100 duration-100 top-0 border rounded p-2 px-3">Chi
                         tiết</span>
                 </a>
             </div>
-
-            <div class="rounded overflow-hidden group relative flex flex-col items-center justify-center">
-                <img class="object-fill w-full group-hover:brightness-75 transition"
-                    src="https://webcaycanh.com/wp-content/uploads/2020/02/cay-canh-de-ban-255x255.jpg" alt="">
-                <a href="#" class="m-auto flex-col justify-center absolute flex items-center h-1/2 w-full ">
-                    <h2
-                        class="m-auto group-hover:text-[#E7E7E7] text-white text-lg uppercase font-semibold drop-shadow-md">
-                        Cây cảnh để bàn
-                    </h2>
-                    <span
-                        class="text-white transition bg-[#515751] opacity-0 m-auto text-center group-hover:opacity-100 duration-100 top-0 border rounded p-2 px-3">Chi
-                        tiết</span>
-                </a>
-            </div>
-            <div class="rounded overflow-hidden group relative flex flex-col items-center justify-center">
-                <img class="object-fill w-full group-hover:brightness-75 transition"
-                    src="https://webcaycanh.com/wp-content/uploads/2020/02/cay-canh-de-ban-255x255.jpg" alt="">
-                <a href="#" class="m-auto flex-col justify-center absolute flex items-center h-1/2 w-full ">
-                    <h2
-                        class="m-auto group-hover:text-[#E7E7E7] text-white text-lg uppercase font-semibold drop-shadow-md">
-                        Cây cảnh để bàn
-                    </h2>
-                    <span
-                        class="text-white transition bg-[#515751] opacity-0 m-auto text-center group-hover:opacity-100 duration-100 top-0 border rounded p-2 px-3">Chi
-                        tiết</span>
-                </a>
-            </div>
-            <div class="rounded overflow-hidden group relative flex flex-col items-center justify-center">
-                <img class="object-fill w-full group-hover:brightness-75 transition"
-                    src="https://webcaycanh.com/wp-content/uploads/2020/02/cay-canh-de-ban-255x255.jpg" alt="">
-                <a href="#" class="m-auto flex-col justify-center absolute flex items-center h-1/2 w-full ">
-                    <h2
-                        class="m-auto group-hover:text-[#E7E7E7] text-white text-lg uppercase font-semibold drop-shadow-md">
-                        Cây cảnh để bàn
-                    </h2>
-                    <span
-                        class="text-white transition bg-[#515751] opacity-0 m-auto text-center group-hover:opacity-100 duration-100 top-0 border rounded p-2 px-3">Chi
-                        tiết</span>
-                </a>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>

@@ -1,16 +1,12 @@
-import uuid
-from pathlib import Path
-
 from django.db import models
 from django.utils.text import slugify
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
 
 from user.models import User
+from tree.utils import hashed_filename
 
 # Create your models here.
-
-MEDIA_PATH = Path("product_images")
 
 
 class BaseModel(models.Model):
@@ -23,7 +19,13 @@ class BaseModel(models.Model):
 
 class Category(BaseModel):
     label = models.CharField(max_length=255, unique=True)
-    image = models.ImageField(upload_to="category_images", default="")
+    image = ProcessedImageField(
+        upload_to=hashed_filename,
+        default="category/default.png",
+        processors=[ResizeToFill(320, 320)],
+        format="PNG",
+        options={"quality": 60},
+    )
     slug = models.SlugField(max_length=255, unique=True)
 
     def save(self, *args, **kwargs):
@@ -35,21 +37,14 @@ class Category(BaseModel):
 
 
 class Product(BaseModel):
-    def get_path(instance, filename):
-        extension = filename.split(".")[-1]
-        uuid_name = uuid.uuid1().hex
-        return MEDIA_PATH / f"{uuid_name}.{extension}"
-
     name = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=10, decimal_places=0)
     summary = models.TextField(default="")
     description = models.TextField(default="")
     quantity = models.PositiveIntegerField(default=0)
-    category = models.ForeignKey(
-        Category, on_delete=models.CASCADE, default=True, null=False
-    )
+    category = models.ManyToManyField(Category)
     thumbnail = ProcessedImageField(
-        upload_to=get_path,
+        upload_to=hashed_filename,
         default="product_images/default.png",
         processors=[ResizeToFill(400, 400)],
         format="PNG",
