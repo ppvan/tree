@@ -10,10 +10,12 @@ from django.views.generic import (
     DetailView,
     ListView,
     UpdateView,
+    TemplateView,
 )
 
 from .forms import AddToCartForm, ProductForm
 from .models import Category, Order, OrderItem, Product
+from blog.models import Post
 
 
 class PageTitleViewMixin:
@@ -118,6 +120,16 @@ class CartListView(LoginRequiredMixin, ListView):
         context["order"] = Order.objects.get_or_create(
             user=self.request.user, state=Order.PENDING
         )[0]
+        return context
+
+
+class HomePageView(TemplateView):
+    template_name = "home.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+        context["products"] = Product.objects.order_by("-created_at")[:8]
+        context["posts"] = Post.objects.order_by("-updated_at")[:4]
         return context
 
 

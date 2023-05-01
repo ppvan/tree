@@ -27,10 +27,11 @@
                             {{ item.product.name }}</a>
                     </td>
                     <td class="border-y p-1 border-gray-500 text-left px-2" colspan="2">
-                        {{ item.product.price|intcomma }} đ
+                        {{ item.product.price|vnd_format }} đ
                     </td>
                     <td class="border-y p-1 border-gray-500 text-center" colspan="1">{{ item.quantity }}</td>
-                    <td class="border-y p-1 border-gray-500 text-right px-2" colspan="3">{{ item.total_price|intcomma }}
+                    <td class="border-y p-1 border-gray-500 text-right px-2" colspan="3">{{ item.total_price|vnd_format
+                        }}
                         đ
                     </td>
                 </tr>
@@ -44,7 +45,7 @@
             <table class="w-full">
                 <tbody>
                     <td class="font-semibold px-2">Tạm tính</td>
-                    <td class="text-right px-2">{{ order.total_price|intcomma }} đ</td>
+                    <td class="text-right px-2">{{ order.total_price|vnd_format }} đ</td>
                 </tbody>
             </table>
         </div>

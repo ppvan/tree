@@ -2,6 +2,7 @@ import uuid
 from pathlib import Path
 
 from django.db import models
+from django.utils.text import slugify
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
 
@@ -21,7 +22,13 @@ class BaseModel(models.Model):
 
 
 class Category(BaseModel):
-    label = models.CharField(max_length=255)
+    label = models.CharField(max_length=255, unique=True)
+    image = models.ImageField(upload_to="category_images", default="")
+    slug = models.SlugField(max_length=255, unique=True)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.label)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.label

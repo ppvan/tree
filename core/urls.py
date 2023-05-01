@@ -9,12 +9,13 @@ from .views import (
     DetailProductView,
     ListProductView,
     UpdateProductView,
+    HomePageView,
     category_product,
 )
 
 app_name = "core"
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="home.html"), name="home"),
+    path("", HomePageView.as_view(), name="home"),
     path(
         "category/list/",
         TemplateView.as_view(template_name="admin/list_category.html"),
