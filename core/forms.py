@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Product
+from .models import Product, Category
 
 
 class ProductForm(forms.ModelForm):
@@ -25,6 +25,14 @@ class ProductForm(forms.ModelForm):
             "quantity": "Số lượng",
             "description": "Mô tả chi tiết",
         }
+
+
+class CategoryForm(forms.ModelForm):
+    class Meta:
+        model = Category
+        fields = ["label", "image"]
+
+        labels = {"label": "Tên danh mục", "image": "Ảnh mô tả"}
 
 
 class AddToCartForm(forms.Form):

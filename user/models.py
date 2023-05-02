@@ -15,7 +15,7 @@ class Profile(models.Model):
 
     avatar = ProcessedImageField(
         upload_to=hashed_filename,
-        default="avatars/default.png",
+        default="defaults/avatar.png",
         processors=[ResizeToFill(64, 64)],
         format="PNG",
         options={"quality": 60},

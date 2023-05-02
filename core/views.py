@@ -13,7 +13,7 @@ from django.views.generic import (
     TemplateView,
 )
 
-from .forms import AddToCartForm, ProductForm
+from .forms import AddToCartForm, ProductForm, CategoryForm
 from .models import Category, Order, OrderItem, Product
 from blog.models import Post
 
@@ -145,6 +145,45 @@ class ProductByCategoryView(View):
         products = Product.objects.filter(category=category)
         context = {"products": products, "category": category}
         return render(request, "core/product_by_category.html", context)
+
+
+class CheckoutView(LoginRequiredMixin, View):
+    pass
+
+
+class CategoryListView(ListView):
+    model = Category
+    template_name = "core/categories_list.html"
+    context_object_name = "categories"
+    ordering = ["-updated_at"]
+
+
+class CategoryCreateView(AdminRequiredMixin, SuccessMessageMixin, CreateView):
+    model = Category
+    form_class = CategoryForm
+    template_name = "core/category_add.html"
+    success_url = reverse_lazy("core:category_list")
+    success_message = "Danh mục '%(label)s' đã được thêm thành công"
+
+
+class CategoryUpdateView(AdminRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = Category
+    form_class = CategoryForm
+    template_name = "core/category_update.html"
+    success_url = reverse_lazy("core:category_list")
+    success_message = "Danh mục '%(label)s' đã được cập nhật thành công"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["cate"] = self.get_object()
+        return context
+
+
+class CategoryDeleteView(AdminRequiredMixin, SuccessMessageMixin, DeleteView):
+    model = Category
+    template_name = "core/category_delete.html"
+    success_url = reverse_lazy("core:category_list")
+    success_message = "Danh mục đã được xóa thành công"
 
 
 def category_product(request):

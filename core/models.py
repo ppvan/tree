@@ -21,7 +21,7 @@ class Category(BaseModel):
     label = models.CharField(max_length=255, unique=True)
     image = ProcessedImageField(
         upload_to=hashed_filename,
-        default="category/default.png",
+        default="defaults/category.png",
         processors=[ResizeToFill(320, 320)],
         format="PNG",
         options={"quality": 60},
@@ -45,7 +45,7 @@ class Product(BaseModel):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     thumbnail = ProcessedImageField(
         upload_to=hashed_filename,
-        default="product_images/default.png",
+        default="defaults/product.png",
         processors=[ResizeToFill(400, 400)],
         format="PNG",
         options={"quality": 60},
