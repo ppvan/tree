@@ -23,7 +23,7 @@
                         <img src="{{ item.product.thumbnail.url }}" alt="">
                     </td>
                     <td class="border-y p-1 pl-4 text-lg border-gray-500" colspan="4">
-                        <a href="{% url 'core:detail_product' item.product.id %}"
+                        <a href="{% url 'core:product_detail' item.product.id %}"
                             class="text-green-600 hover:text-green-400">
                             {{ item.product.name }}</a>
                     </td>

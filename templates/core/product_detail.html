@@ -29,8 +29,7 @@
                 </div>
 
                 <div class="grow"></div>
-                <form action="{% url 'core:add_to_cart' %}" method="post"
-                    class="flex items-center justify-between py-4">
+                <form action="{% url 'core:cart_add' %}" method="post" class="flex items-center justify-between py-4">
                     {% csrf_token %}
                     <div class="flex border rounded overflow-hidden">
                         <button type="button" class="bg-gray-200 hover:bg-slate-600 hover:text-white p-1 px-2"
