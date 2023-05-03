@@ -62,9 +62,16 @@ class AddProductTest(TestCase):
             self.assertTrue("NOT NULL constraint failed" in str(context.exception))
 
 
-class UpdateProductTest(TestCase):
+class CategoryTest(TestCase):
     def setUp(self):
         pass
 
-    def test_update_product(self):
-        pass
+    def test_add_category(self):
+        """Positive test case for adding a category"""
+        category = Category.objects.create(label="Test Category")
+        category.save()
+
+    def test_add_category_with_invalid_label(self):
+        """Negative test case for adding a category with invalid label"""
+        category = Category.objects.create(label="")
+        self.assertRaises(ValidationError, category.full_clean)

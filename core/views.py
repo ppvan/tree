@@ -75,7 +75,7 @@ class UpdateProductView(AdminRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Product
     form_class = ProductForm
     template_name = "core/product_update.html"
-    success_url = reverse_lazy("core:list_product")
+    success_url = reverse_lazy("core:product_list")
     success_message = "Sản phẩm %(name)s đã được cập nhật thành công"
 
 
