@@ -4,6 +4,7 @@ from pathlib import Path
 from django.db import models
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
+from markdownx.utils import markdownify
 from tree.utils import hashed_filename
 from markdownx.models import MarkdownxField
 
@@ -23,3 +24,6 @@ class Post(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+    def markdown(self):
+        return markdownify(self.content)

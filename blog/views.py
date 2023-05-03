@@ -7,6 +7,7 @@ from django.views.generic import CreateView, DetailView, ListView, UpdateView
 
 from .forms import PostForm
 from .models import Post
+from core.models import Category
 
 # Create your views here.
 
@@ -53,3 +54,9 @@ class PostDetailView(DetailView):
     model = Post
     form_class = PostForm
     template_name = "blog/post_detail.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["post"] = Post.objects.get(pk=self.kwargs["pk"])
+        context["categories"] = Category.objects.all()
+        return context
