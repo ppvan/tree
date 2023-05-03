@@ -8,11 +8,10 @@
 {% block content %}
 <div class="container overflow-hidden rounded flex my-16 items-stretch">
     <div id="product" class="bg-white border rounded w-3/4">
-        <h1 class="text-3xl p-4">Cây Kim Ngân Củ To</h1>
+        <h1 class="text-3xl p-4">{{ product.name }}</h1>
         <div id="product-info" class="flex text-gray-800">
             <div id="product-image">
-                <img class="w-96 rounded border"
-                    src="https://webcaycanh.com/wp-content/uploads/2023/04/cay-hanh-phuc-to-420x420.jpg" alt="">
+                <img class="w-96 rounded border" src="{{ product.thumbnail.url }}" alt="">
             </div>
             <div id="product-detail" class="flex flex-col gap-3 flex-1 px-4">
                 <div class="flex justify-between">
@@ -20,7 +19,7 @@
                     <p>MSP: {{ product.id }}</p>
                 </div>
                 <div id="product-price" class="flex justify-between">
-                    <p class=" text-red-800">{{ product.price|vnd_format }} đ</p>
+                    <p class=" text-red-800">{{ product.price|vnd_format }}</p>
                     <p>Kho : {{ product.quantity }}</p>
                 </div>
                 <div>
@@ -45,7 +44,8 @@
                         </button>
                     </div>
                     <button data-product-id="{{ product.id }}" data-quantity="{{ 1 }}" id="add-to-cart"
-                        class="btn bg-green-600">Thêm vào giỏ hàng</button>
+                        class="btn bg-green-600 text-white hover:bg-green-700 hover:text-gray-300">Thêm vào giỏ
+                        hàng</button>
                 </form>
             </div>
         </div>
