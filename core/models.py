@@ -5,6 +5,7 @@ from imagekit.processors import ResizeToFill
 
 from user.models import User
 from tree.utils import hashed_filename
+from django.core.validators import MinValueValidator
 
 # Create your models here.
 
@@ -18,7 +19,7 @@ class BaseModel(models.Model):
 
 
 class Category(BaseModel):
-    label = models.CharField(max_length=255, unique=True)
+    label = models.CharField(max_length=255, unique=True, blank=False)
     image = ProcessedImageField(
         upload_to=hashed_filename,
         default="defaults/category.png",
@@ -37,12 +38,14 @@ class Category(BaseModel):
 
 
 class Product(BaseModel):
-    name = models.CharField(max_length=255)
-    price = models.DecimalField(max_digits=10, decimal_places=0)
+    name = models.CharField(max_length=255, unique=True, blank=False)
+    price = models.DecimalField(
+        max_digits=10, decimal_places=0, validators=[MinValueValidator(0)]
+    )
     summary = models.TextField(default="")
     description = models.TextField(default="")
     quantity = models.PositiveIntegerField(default=0)
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     thumbnail = ProcessedImageField(
         upload_to=hashed_filename,
         default="defaults/product.png",
