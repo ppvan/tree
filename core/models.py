@@ -1,11 +1,11 @@
+from django.core.validators import MinValueValidator
 from django.db import models
 from django.utils.text import slugify
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
 
-from user.models import User
 from tree.utils import hashed_filename
-from django.core.validators import MinValueValidator
+from user.models import User
 
 # Create your models here.
 
@@ -38,7 +38,7 @@ class Category(BaseModel):
 
 
 class Product(BaseModel):
-    name = models.CharField(max_length=255, unique=True, blank=False)
+    name = models.CharField(max_length=255, blank=False)
     price = models.DecimalField(
         max_digits=10, decimal_places=0, validators=[MinValueValidator(0)]
     )
@@ -53,6 +53,9 @@ class Product(BaseModel):
         format="PNG",
         options={"quality": 60},
     )
+
+    class Meta:
+        unique_together = ("name", "category")
 
     def state(self):
         return "Còn hàng" if self.quantity > 0 else "Hết hàng"
