@@ -1,0 +1,210 @@
+[
+    {
+        "model": "core.category",
+        "pk": 1,
+        "fields": {
+            "label": "Cây Cảnh Để Bàn",
+            "slug": "cay-canh-e-ban",
+            "image": "af6a7750ea8f11ed97c2c6ee28ef19bd.jpg",
+            "created_at": "2023-05-04T22:23:56Z",
+            "updated_at": "2023-05-04T22:23:56Z"
+        }
+    },
+    {
+        "model": "core.product",
+        "pk": 1,
+        "fields": {
+            "name": "Sen Đá Hạt Lựu",
+            "price": "15000",
+            "summary": "Sen đá Hạt Lựu hay còn gọi là Sen đá Sỏi Dây. Phần lá có màu xanh, mập tròn, đỉnh có màu phớt đỏ trông rất đặc biệt.",
+            "thumbnail": "b5bddbb0ea8f11ed97c2c6ee28ef19bd.jpg",
+            "description": "Là một trong những dòng sen khá khác biệt, lá cây mập, đầu lá hơi đỏ. Cây mọc dành thành dây có thể trồng vào giỏ treo để cây rủ xuống.",
+            "category": 1,
+            "quantity": 100,
+            "created_at": "2023-05-04T22:23:56Z",
+            "updated_at": "2023-05-04T22:23:56Z"
+        }
+    },
+    {
+        "model": "core.category",
+        "pk": 2,
+        "fields": {
+            "label": "Cây Cảnh Phong Thủy",
+            "slug": "cay-canh-phong-thuy",
+            "image": "bd7f5e1eea8f11ed97c2c6ee28ef19bd.jpg",
+            "created_at": "2023-05-04T22:24:19Z",
+            "updated_at": "2023-05-04T22:24:19Z"
+        }
+    },
+    {
+        "model": "core.product",
+        "pk": 2,
+        "fields": {
+            "name": "Cây Phát Tài 5 thân cao 1m6",
+            "price": "430000",
+            "summary": "Cây Phát Tài 5 thân có chiều cao 1m6 tùy vào độ phát triển lá mà có thể cao hơn nữa, phù hợp để các góc lớn của văn phòng, phòng khách rộng. Cây thường được tặng làm quà, tân gia, khai trương cửa hàng...",
+            "thumbnail": "c3bbdbccea8f11ed97c2c6ee28ef19bd.jpg",
+            "description": "Cây Phát Tài 5 thân cao 1m6 có lá màu xanh xòe rộng đi kèm với các gân màu vàng. Lá xanh tốt quanh năm. Cây thường ra hoa vào gần tết. Chậu cây gồm 5 thân trong phong thủy có ý nghĩa là sức khỏe, cây mang ý nghĩa phát tài. Khi gia chủ sở hữu cây sẽ vừa có sức khỏe và tiền tài. Phù hợp làm quà tặng khai trương, tân gia, cây để phòng khách, phòng giám đốc, sảnh khách sạn, quầy lễ tân lớn.",
+            "category": 2,
+            "quantity": 100,
+            "created_at": "2023-05-04T22:24:19Z",
+            "updated_at": "2023-05-04T22:24:19Z"
+        }
+    },
+    {
+        "model": "core.category",
+        "pk": 3,
+        "fields": {
+            "label": "Cây Cảnh Trong Nhà",
+            "slug": "cay-canh-trong-nha",
+            "image": "ca98b9baea8f11ed97c2c6ee28ef19bd.jpg",
+            "created_at": "2023-05-04T22:24:41Z",
+            "updated_at": "2023-05-04T22:24:41Z"
+        }
+    },
+    {
+        "model": "core.product",
+        "pk": 3,
+        "fields": {
+            "name": "Cây Kim Ngân Củ To",
+            "price": "2300000",
+            "summary": "Cây có chiều cao cả chậu 1m3 - 1m5 đường kính chậu là 40cm. Phù hợp để phòng sếp, đại sảnh, phòng khách, tặng sếp, tặng tân gia, trang trí các không gian sang trọng và cao cấp.",
+            "thumbnail": "d99dc1daea8f11ed97c2c6ee28ef19bd.jpg",
+            "description": "Bạn đang tìm kiếm một cây dễ sống để được trong nhà, dạng thân gỗ, xanh tốt quanh năm. Nhưng nó phải độc lạ, hoàng tráng để xứng tầm với không gian thì cây Kim Ngân củ to là một sự lựa chọn hoàn hảo.",
+            "category": 3,
+            "quantity": 100,
+            "created_at": "2023-05-04T22:24:41Z",
+            "updated_at": "2023-05-04T22:24:41Z"
+        }
+    },
+    {
+        "model": "core.category",
+        "pk": 4,
+        "fields": {
+            "label": "Cây Cảnh Sen Đá",
+            "slug": "cay-canh-sen-a",
+            "image": "eacaa86aea8f11ed97c2c6ee28ef19bd.jpg",
+            "created_at": "2023-05-04T22:25:35Z",
+            "updated_at": "2023-05-04T22:25:35Z"
+        }
+    },
+    {
+        "model": "core.product",
+        "pk": 4,
+        "fields": {
+            "name": "Cây Nhất Mạt Hương",
+            "price": "125000",
+            "summary": "Cây có chiều cao khoảng 25 - 30cm cả chậu, phù hợp làm cây để ban công, hiên nhà. Với mùi thơm của cây giúp gia chủ sản khoái và lấy lại cân bằng.",
+            "thumbnail": "fa94acc8ea8f11ed97c2c6ee28ef19bd.jpg",
+            "description": "Cây Nhất Mạt Hương hay còn có tên gọi khác là cây Sen Đá Lá Thơm. Sở dĩ cây có tên như vậy vì cây có chứa tinh dầu thơm trong lá và thân. Khi bạn chạm nhẹ vào cây sẽ tỏa ra mùi hương thơm dễ chịu giống mùi bạc hà. Trong phong thủy cây mang ý nghĩa giúp giữ tài chính, giúp gia chủ chi tiêu hợp lý. Ngoài ra cây còn tác dụng đuổi côn trùng và muỗi.",
+            "category": 4,
+            "quantity": 100,
+            "created_at": "2023-05-04T22:25:35Z",
+            "updated_at": "2023-05-04T22:25:35Z"
+        }
+    },
+    {
+        "model": "core.category",
+        "pk": 5,
+        "fields": {
+            "label": "Cây Cảnh Văn Phòng",
+            "slug": "cay-canh-van-phong",
+            "image": "09c2d95eea9011ed97c2c6ee28ef19bd.jpg",
+            "created_at": "2023-05-04T22:26:27Z",
+            "updated_at": "2023-05-04T22:26:27Z"
+        }
+    },
+    {
+        "model": "core.product",
+        "pk": 5,
+        "fields": {
+            "name": "Cây Cúc Mâm Xôi",
+            "price": "279000",
+            "summary": "Cây cúc mâm xôi với tán rộng 70cm chiều cao 60. Rất hợp chọn làm cây trưng tết đặt ở trước cửa nhà để đón khách. Với ý nghĩa trường thọ và may mắn.",
+            "thumbnail": "1282eba6ea9011ed97c2c6ee28ef19bd.jpg",
+            "description": "Cây Cúc Mâm Xôi là một trong những cây tết mà được nhiều người lựa chọn để trưng tết. Không chỉ đẹp với sắc hoa vàng nở kín cả một góc. Mà cây còn mang ý nghĩa cho sự trường thọ, phúc lộc và may mắn.",
+            "category": 5,
+            "quantity": 100,
+            "created_at": "2023-05-04T22:26:27Z",
+            "updated_at": "2023-05-04T22:26:27Z"
+        }
+    },
+    {
+        "model": "core.category",
+        "pk": 6,
+        "fields": {
+            "label": "Cây Thủy Sinh",
+            "slug": "cay-thuy-sinh",
+            "image": "1ae7da72ea9011ed97c2c6ee28ef19bd.jpg",
+            "created_at": "2023-05-04T22:26:56Z",
+            "updated_at": "2023-05-04T22:26:56Z"
+        }
+    },
+    {
+        "model": "core.product",
+        "pk": 6,
+        "fields": {
+            "name": "Cây Kim Ngân Thủy Sinh Lớn",
+            "price": "450000",
+            "summary": "Cây có chiều cả cả bình thủy tinh khoảng 45 -50cm, đường kính gốc từ 10 - 11cm. Cây phù hợp để bàn giám đốc, tặng khai trương, tân gia, bàn tiếp khách lớn....",
+            "thumbnail": "37287f5cea9011ed97c2c6ee28ef19bd.jpg",
+            "description": "Cây thủy sinh đã và đang được rất nhiều người ưa chuộng và lựa chọn vì dễ sống, dễ chăm sóc và sạch sẽ. Trong số đó loại cây thủy sinh được nhiều người mua nhất là cây Kim Ngân. Cây Kim Ngân thủy sinh lớn mang ý nghĩa phong thủy giúp gia chủ có nhiều tiền bạc. Cây phù hợp làm cây để phòng giám đốc, cây tặng tân gia, khai trương…",
+            "category": 6,
+            "quantity": 100,
+            "created_at": "2023-05-04T22:26:56Z",
+            "updated_at": "2023-05-04T22:26:56Z"
+        }
+    },
+    {
+        "model": "core.category",
+        "pk": 7,
+        "fields": {
+            "label": "Xương Rồng Cảnh",
+            "slug": "xuong-rong-canh",
+            "image": "4dd8b1e0ea9011ed97c2c6ee28ef19bd.jpg",
+            "created_at": "2023-05-04T22:28:22Z",
+            "updated_at": "2023-05-04T22:28:22Z"
+        }
+    },
+    {
+        "model": "core.product",
+        "pk": 7,
+        "fields": {
+            "name": "Cây Xương Rồng Trụ",
+            "price": "45000",
+            "summary": "Xương rộng trụ có kích thước từ 20cm - 200cm. Cây ít phải chăm sóc và có hoa màu trắng. Phù hợp decor quán cà phê, cửa hàng, shop thời trang...",
+            "thumbnail": "60f20434ea9011ed97c2c6ee28ef19bd.jpg",
+            "description": "Một trong những xu thế decor quán, shop, cửa hàng…đang rất được ưa chuộng chính là trồng cây xương rồng trụ. Với thân cây to, hình dáng đơn giản giúp không gian và vật thể nổi bật hơn. Cây ít phải chăm sóc, trồng ở điều kiện nắng có thể ra hoa trắng, mùi thơm dịu.",
+            "category": 7,
+            "quantity": 100,
+            "created_at": "2023-05-04T22:28:22Z",
+            "updated_at": "2023-05-04T22:28:22Z"
+        }
+    },
+    {
+        "model": "core.category",
+        "pk": 8,
+        "fields": {
+            "label": "Phụ Kiện",
+            "slug": "phu-kien",
+            "image": "731563ccea9011ed97c2c6ee28ef19bd.jpg",
+            "created_at": "2023-05-04T22:29:24Z",
+            "updated_at": "2023-05-04T22:29:24Z"
+        }
+    },
+    {
+        "model": "core.product",
+        "pk": 8,
+        "fields": {
+            "name": "Bộ Đĩa Tự Tưới",
+            "price": "6000",
+            "summary": "Hiện tại bộ đĩa cây tự tưới chỉ có 1 cỡ duy nhất đường kính 12cm, như vậy nó sẽ phù hợp với những chậu cây văn phòng có đường kính nhỏ hơn 12cm, bàn làm việc của bạn sẽ luôn sạch sẽ và không còn phải lo việc tưới cây",
+            "thumbnail": "898bc5d8ea9011ed97c2c6ee28ef19bd.jpg",
+            "description": "Trong 10 năm trồng và chăm sóc cây thì chúng tôi thấy vấn đề khách hàng gặp phải rất nhiều đối với cây để bàn là tưới nước. Nên hôm nay để khắc phục vấn đề đó Web cây cảnh xin giới thiệu bộ đĩa tự tưới cho cây văn phòng đầu tiên tại Việt Nam.",
+            "category": 8,
+            "quantity": 100,
+            "created_at": "2023-05-04T22:29:24Z",
+            "updated_at": "2023-05-04T22:29:24Z"
+        }
+    }
+]

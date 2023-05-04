@@ -1,0 +1,28 @@
+[
+    {
+        "model": "core.category",
+        "pk": 1,
+        "fields": {
+            "created_at": "2023-05-04T13:36:37.499Z",
+            "updated_at": "2023-05-04T13:36:37.499Z",
+            "label": "Test",
+            "image": "b1a936b4ea8011ed9a5dd0abd504e40d.png",
+            "slug": "test"
+        }
+    },
+    {
+        "model": "core.product",
+        "pk": 1,
+        "fields": {
+            "created_at": "2023-05-04T13:37:17.082Z",
+            "updated_at": "2023-05-04T13:37:17.082Z",
+            "name": "Test",
+            "price": "10000",
+            "summary": "S",
+            "description": "S",
+            "quantity": 1000,
+            "category": 1,
+            "thumbnail": "defaults/product.png"
+        }
+    }
+]

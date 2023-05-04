@@ -5,6 +5,8 @@
 __pycache__
 node_modules
 
+scripts/media/
+
 tailwind-dev.css
 # Backup files # 
 *.bak 
