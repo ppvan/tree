@@ -1,3 +1,7 @@
 from django.urls import path
 
-urlpatterns = []
+from .views import ProductSearchView
+
+urlpatterns = [
+    path("search/", ProductSearchView.as_view(), name="product_seach"),
+]

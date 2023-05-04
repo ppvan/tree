@@ -86,3 +86,21 @@
     </div>
 </div>
 {% endblock content %}
+
+{% block js %}
+<script>
+    $("#search-form>input").on("input", function () {
+        const csrftoken = getCookie('csrftoken');
+        $.ajax({
+            url: "/api/search/",
+            type: "GET",
+            data: {
+                "q": $(this).val()
+            },
+            success: function (data) {
+                console.log(data);
+            }
+        })
+    });
+</script>
+{% endblock js %}

@@ -9,13 +9,14 @@ from django.views.generic import (
     DeleteView,
     DetailView,
     ListView,
-    UpdateView,
     TemplateView,
+    UpdateView,
 )
 
-from .forms import AddToCartForm, ProductForm, CategoryForm
-from .models import Category, Order, OrderItem, Product
 from blog.models import Post
+
+from .forms import AddToCartForm, CategoryForm, ProductForm
+from .models import Category, Order, OrderItem, Product
 
 
 class PageTitleViewMixin:
@@ -55,10 +56,12 @@ class AddProductView(
     success_message = "Sản phẩm %(name)s được thêm thành công"
 
 
-class ListProductView(AdminRequiredMixin, ListView):
+class ProductListView(AdminRequiredMixin, ListView):
     model = Product
     template_name = "core/products_list.html"
     context_object_name = "products"
+    ordering = ["-updated_at"]
+    paginate_by = 50
 
 
 class DetailProductView(DetailView):
