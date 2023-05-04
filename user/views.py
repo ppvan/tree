@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.models import Group, User
+from django.contrib.auth.models import User
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.sites.shortcuts import get_current_site
 from django.http import HttpResponse
@@ -121,8 +121,8 @@ class UserActivateView(View):
             user.is_active = True
             user.profile.email_confirmed = True
             user.save()
-            group = Group.objects.get(name="Customers")
-            user.groups.add(group)
+            # group = Group.objects.get(name="Customers")
+            # user.groups.add(group)
             login(request, user)
             return redirect("core:home")
         else:
