@@ -3,19 +3,6 @@
 {% load crispy_forms_tags %}
 {% load tailwind_filters %}
 
-{% block messages %}
-{% if messages %}
-<div class="flex flex-col gap-1 mt-1 items-end">
-    {% for message in messages %}
-    <div {% if message.tags %} class="message {{ message.tags }}" {% else %}class="message" {% endif %}>
-        <p>{{ message }}</p>
-        <button class="text-lg px-2">&times;</button>
-    </div>
-    {% endfor %}
-</div>
-{% endif %}
-{% endblock messages %}
-
 {% block content %}
 
 {% endblock content %}

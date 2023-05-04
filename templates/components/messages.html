@@ -1,5 +1,5 @@
 {% if messages %}
-<div id="messages-container" class="relative flex flex-col gap-1 mt-1 items-end">
+<div id="messages-container" class="absolute right-32 offset-{{offset }} flex flex-col gap-1 mt-1 items-end">
     {% for message in messages %}
     <div {% if message.tags %} class="message {{ message.tags }}" {% else %}class="message" {% endif %}>
         <p>{{ message }}</p>

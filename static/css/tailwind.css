@@ -76,6 +76,10 @@ html {
     @apply text-gray-900 py-1 text-justify
 }
 
+.offset-4 {
+    @apply right-4;
+}
+
 
 /* Mark down theme section */
 

@@ -63,7 +63,7 @@
 
                     </div>
                     <div id="profile-menu"
-                        class="hidden z-10 w-48 h-36 bg-[#ecf0f1] gap-1 border border-[#76be8e] text-white auto-rows-fr rounded overflow-hidden drop-shadow-lg right-1 top-full mt-2 absolute">
+                        class="hidden z-10 w-48 h-max bg-[#ecf0f1] gap-1 border border-[#76be8e] text-white auto-rows-fr rounded overflow-hidden drop-shadow-lg right-1 top-full mt-2 absolute">
                         <a href="{% url 'profile' %}"
                             class="hover:bg-[#99bda4] bg-[#7f9f89] border-3 border-green-200 p-1 flex justify-between items-center gap-2">
                             <img class="object-cover w-10 border-2 border-[#76be8e] rounded-full"
@@ -88,8 +88,8 @@
 
                     {% else %}
                     <div class="rounded box-shadow items-center flex">
-                        <a href="{% url 'login' %}" class="btn bg-gray-400">Đăng nhập</a>
-                        <a href="{% url 'register' %}" class="btn bg-[#5ba503]">Đăng ký</a>
+                        <a href="{% url 'login' %}" class="btn text-white bg-gray-400">Đăng nhập</a>
+                        <a href="{% url 'register' %}" class="btn text-white    bg-[#5ba503]">Đăng ký</a>
                     </div>
                     {% endif %}
                 </div>
@@ -100,8 +100,9 @@
         </nav>
     </header>
     <hr>
-    <main class="px-32 py-4 flex">
+    <main class="px-32 py-4 flex relative min-h-screen">
         {% block message %}
+        {% include "components/messages.html" %}
         {% endblock message %}
 
         {% block content %}

@@ -64,7 +64,7 @@
             <hr>
             <div class="p-4 w-full h-full overflow-y-auto">
                 {% block message %}
-                {% include "components/messages.html" %}
+                {% include "components/messages.html" with offset="4" %}
                 {% endblock message %}
                 {% block content %}
                 {% endblock content %}
