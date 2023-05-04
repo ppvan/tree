@@ -23,6 +23,7 @@ urlpatterns = [
     path("", include("core.urls")),
     path("blog/", include("blog.urls")),
     path("user/", include("user.urls")),
+    path("api/", include("api.urls")),
     path("ckeditor/", include("ckeditor_uploader.urls")),
     path("__reload__/", include("django_browser_reload.urls")),  # Browser reload
     path("markdownx/", include("markdownx.urls")),

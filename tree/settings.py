@@ -39,8 +39,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.humanize",
     "django.forms",
-    "ckeditor",
-    "ckeditor_uploader",
     "imagekit",
     "django_browser_reload",
     "markdownx",
@@ -94,8 +92,12 @@ WSGI_APPLICATION = "tree.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "tree",
+        "USER": "postgres",
+        "PASSWORD": "",
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
 
