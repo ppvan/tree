@@ -1,42 +1,39 @@
 console.log("cart.js loaded");
 
-// Add to cart handler
-// $("#add-to-cart").click(function () {
-//     let product_id = $(this).attr("data-product-id");
-//     let quantity = parseInt($('#quantity').text());
+$('#quantity-decrease').click(function () {
+    let quantity = parseInt($('#id_quantity').val());
+    if (quantity > 1) {
+        $('#id_quantity').val(quantity - 1);
+    }
+});
 
-//     if (USER === "AnonymousUser") {
-//         console.log("User is not authenticated");
-//         window.location.replace("/user/login/?next=" + window.location.pathname);
-//     } else {
-//         console.log("User is authenticated");
-//         let url = "/cart/add/";
+$('#quantity-increase').click(function () {
+    let quantity = parseInt($('#id_quantity').val());
+    let stock = parseInt($('#stock').text());
 
-//         let body = {
-//             productId: product_id,
-//             username: USER,
-//             quantity: quantity
-//         };
-//         console.log("POST data:", body);
+    if (quantity < stock) {
+        $('#id_quantity').val(quantity + 1);
+    } else {
+        alert("Lưu trữ trong kho không đủ!");
+    }
+});
 
-//         $.ajax({
-//             url: url,
-//             method: "POST",
-//             headers: { 'X-CSRFToken': csrftoken },
-//             data: JSON.stringify(body),
-//             success: function (data) {
-//                 console.log("Response: ", data);
-//             }
-//         });
-//     }
+$('#id_quantity').change(function () {
+    let quantity = parseInt($('#id_quantity').val());
+    let stock = parseInt($('#stock').text());
 
-//     // var url = "/cart/add/" + product_id + "/";
-//     // $.ajax({
-//     //     url: url,
-//     //     success: function (data) {
-//     //         $("#cart-count").html(data.cart_count);
-//     //     }
-//     // });
+    if (quantity > stock) {
+        alert("Lưu trữ trong kho không đủ!");
+        $('#id_quantity').val(stock);
+    }
+});
 
-//     console.log("add to cart", product_id, quantity, USER);
-// });
+$('#add-to-cart').click(function () {
+    let quantity = parseInt($('#id_quantity').val());
+    let stock = parseInt($('#stock').text());
+
+    if (quantity > stock) {
+        alert("Lưu trữ trong kho không đủ!");
+        $('#id_quantity').val(stock);
+    }
+});

@@ -30,18 +30,6 @@ $(document).ready(function () {
         console.log("focusout");
     });
 
-    $('#quantity-decrease').click(function () {
-        let quantity = parseInt($('#id_quantity').val());
-        if (quantity > 1) {
-            $('#id_quantity').val(quantity - 1);
-        }
-    });
-
-    $('#quantity-increase').click(function () {
-        let quantity = parseInt($('#id_quantity').val());
-        $('#id_quantity').val(quantity + 1);
-    });
-
     // Workaround for Django MarkdownX
     var contentElem = $("#id_content");
     if (contentElem.length) {

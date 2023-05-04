@@ -20,7 +20,7 @@
                 </div>
                 <div id="product-price" class="flex justify-between">
                     <p class=" text-red-800">{{ product.price|vnd_format }}</p>
-                    <p>Kho : {{ product.quantity }}</p>
+                    <p>Kho : <span id="stock">{{ product.quantity }}</span></p>
                 </div>
                 <div>
                     <p class="text-2xl text-black py-2 pt-4">Mô tả ngắn</p>
@@ -36,7 +36,7 @@
                             <i class="fas fa-minus"></i>
                         </button>
                         <input type="hidden" name="product_id" value="{{ product.id }}">
-                        <input name="quantity" readonly class="text-lg text-center w-12 outline-none" id="id_quantity"
+                        <input name="quantity" class="text-lg text-center w-12 outline-none" id="id_quantity"
                             value="1"></input>
                         <button type="button" class="bg-gray-200 p-1 px-2 hover:bg-slate-600 hover:text-white"
                             id="quantity-increase">
