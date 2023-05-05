@@ -65,26 +65,35 @@ class Product(BaseModel):
 
 
 class Province(models.Model):
-    name = models.CharField(max_length=255, unique=True)
-    code = models.CharField(max_length=255, unique=True)
+    name = models.CharField(max_length=255)
+    code = models.CharField(max_length=255)
+
+    class Meta:
+        unique_together = ("name", "code")
 
     def __str__(self):
         return self.name
 
 
 class District(models.Model):
-    name = models.CharField(max_length=255, unique=True)
+    name = models.CharField(max_length=255)
     province = models.ForeignKey(Province, on_delete=models.CASCADE)
-    code = models.CharField(max_length=255, unique=True)
+    code = models.CharField(max_length=255)
+
+    class Meta:
+        unique_together = ("name", "code", "province")
 
     def __str__(self):
         return self.name
 
 
 class Ward(models.Model):
-    name = models.CharField(max_length=255, unique=True)
+    name = models.CharField(max_length=255)
     district = models.ForeignKey(District, on_delete=models.CASCADE)
-    code = models.CharField(max_length=255, unique=True)
+    code = models.CharField(max_length=255)
+
+    class Meta:
+        unique_together = ("name", "code", "district")
 
     def __str__(self):
         return self.name
