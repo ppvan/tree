@@ -57,7 +57,6 @@
                 </table>
             </div>
             <form method="get" action="{% url 'core:checkout' %}" class="h-max flex flex-col justify-between">
-                {% csrf_token %}
                 <button type="submit"
                     class="btn w-full text-center text-lg hover:text-white border-green-500 hover:bg-green-500">
                     Đặt hàng

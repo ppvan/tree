@@ -92,7 +92,7 @@
     $("#search-form>input").on("input", function () {
         const csrftoken = getCookie('csrftoken');
         $.ajax({
-            url: "/api/search/",
+            url: "{% url 'api:product_seach' %}",
             type: "GET",
             data: {
                 "q": $(this).val()

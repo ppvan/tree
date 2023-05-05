@@ -8,16 +8,181 @@
 
 
 {% block content %}
-<div class="mx-auto flex p-2 bg-[#f6faf0] rounded border w-full">
+<div class="mx-auto flex p-2 bg-[#f6faf0] rounded border w-full gap-1">
     <div class="w-2/3">
-        <form action="">
-            {{ form|crispy }}
-            <button type="submit" class="btn hover:text-white border-green-500 hover:bg-green-500">
-                <span>Đặt hàng</span>
+        <form id="checkout" method="post" action="{% url 'core:checkout' %}">
+            {% csrf_token %}
+            {{ form.receiver|as_crispy_field }}
+            {{ form.phone|as_crispy_field }}
+            <div class="flex justify-between gap-2">
+                <div class="w-1/3">
+                    {{ form.province|as_crispy_field }}
+                </div>
+                <div class="w-1/3">
+                    {{ form.district|as_crispy_field }}
+                </div>
+
+                <div class="w-1/3">
+                    {{ form.ward|as_crispy_field }}
+                </div>
+            </div>
+            {{ form.address|as_crispy_field }}
+            {{ form.note|as_crispy_field }}
         </form>
     </div>
-    <div class="w-1/3 bg-slate-700">
+    <div class="w-1/3 flex flex-col justify-start gap-4 border-l-2">
+        <div class="rounded">
+            <h1 class="font-semibold px-2 text-lg uppercase p-2 mb-8">Tổng cộng đơn hàng</h1>
+            <table class="w-full">
+                <tbody>
+                    {% for item in order_items %}
+                    <tr>
+                        <td class="px-2">{{ item.product.name }} x {{ item.quantity }}</td>
+                        <td class="text-right px-2">{{ item.total_price|vnd_format }}</td>
+                    </tr>
+                    {% endfor %}
 
+                    <tr class="border-t py-3 mt-4">
+                        <td class="font-semibold px-2">Tạm tính</td>
+                        <td id="order_price" class="text-right px-2">{{ order.total_price|vnd_format }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="rounded">
+            <h1 class="font-semibold px-2 text-lg uppercase p-2 mb-2">Thông tin vận chuyển</h1>
+            <div class="px-3">
+                {{ form.transport|as_crispy_field }}
+            </div>
+        </div>
+        <table class="w-full">
+            <tbody>
+                <tr class="py-3 mt-4">
+                    <td class="font-semibold px-2">Phí ship</td>
+                    <td id="transport-fee" class="text-right px-2">0 ₫</td>
+                </tr>
+
+                <tr class="border-t py-3 mt-4">
+                    <td class="font-semibold px-2">Tổng cộng</td>
+                    <td class="text-right px-2" id="order_total">{{ order.total_price|vnd_format }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <span class="grow"></span>
+        <div class="h-max px-3 flex flex-col justify-between">
+            <button form="checkout" type="submit"
+                class="btn w-full text-center text-lg hover:text-white border-green-500 hover:bg-green-500">
+                Đặt hàng
+            </button>
+        </div>
     </div>
 </div>
 {% endblock content %}
+
+{% block js %}
+<script>
+    const provinceSelect = $("[name='province']")
+    const districtSelect = $("[name='district']")
+    const wardSelect = $("[name='ward']")
+    const transportSelect = $("[name='transport']");
+    const transportFee = $("#transport-fee")
+    const orderPrice = $("#order_price")
+    const orderTotal = $("#order_total")
+
+    $.ajax({
+        url: "{% url 'api:province' %}",
+        type: "GET",
+        success: function (data) {
+            data.forEach(province => {
+                provinceSelect.append(`<option value="${province.id}">${province.name}</option>`)
+            });
+        }
+    })
+
+    provinceSelect.change(function () {
+        if (provinceSelect.val() === "0") {
+            districtSelect.html(`<option value="0">Chọn quận/huyện</option>`)
+            wardSelect.html(`<option value="0">Chọn phường/xã</option>`)
+        } else {
+            $.ajax({
+                url: "{% url 'api:district' %}",
+                type: "GET",
+                data: {
+                    province_id: provinceSelect.val()
+                },
+                success: function (data) {
+                    districtSelect.html(`<option value="0">Chọn quận/huyện</option>`)
+                    wardSelect.html(`<option value="0">Chọn phường/xã</option>`)
+                    data.forEach(distict => {
+                        districtSelect.append(`<option value="${distict.id}">${distict.name}</option>`)
+                    });
+                }
+            })
+        }
+    });
+
+
+    districtSelect.change(function () {
+        if (districtSelect.val() === "0") {
+            wardSelect.html(`<option value="0">Chọn phường/xã</option>`)
+        } else {
+            $.ajax({
+                url: "{% url 'api:ward' %}",
+                type: "GET",
+                data: {
+                    district_id: districtSelect.val()
+                },
+                success: function (data) {
+                    wardSelect.html(`<option value="0">Chọn phường/xã</option>`)
+                    data.forEach(ward => {
+                        wardSelect.append(`<option value="${ward.id}">${ward.name}</option>`)
+                    });
+                }
+            })
+        }
+    });
+
+
+    wardSelect.change(function () {
+        if (wardSelect.val() === "0") {
+            transportSelect.html(`<option value="0">Chọn phương thức vận chuyển</option>`);
+        } else {
+            $.ajax({
+                url: "{% url 'api:transport_service' %}",
+                type: "GET",
+                data: {
+                    district_id: districtSelect.val()
+                },
+                success: function (data) {
+                    console.log(data);
+                    transportSelect.html(`<option value="0">Chọn phương thức vận chuyển</option>`);
+                    data.forEach(transport => {
+                        transportSelect.append(`<option value="${transport.service_id}">${transport.short_name}</option>`)
+                    });
+                }
+            })
+        }
+    });
+
+    transportSelect.change(function () {
+        if (transportSelect.val() === "0") {
+            transportFee.text("0 ₫");
+        } else {
+            $.ajax({
+                url: "{% url 'api:transport_fee' %}",
+                type: "GET",
+                data: {
+                    service_id: transportSelect.val(),
+                    district_id: districtSelect.val(),
+                    ward_code: wardSelect.val(),
+                },
+                success: function (data) {
+                    transportFee.text(`${parseInt(data.total).toLocaleString("vi")} ₫`);
+
+                    orderTotal.text(`${(parseInt(orderPrice.text().replace(/\./g, "")) + data.total).toLocaleString("vi")} ₫`)
+                }
+            })
+        }
+    });
+</script>
+{% endblock js %}

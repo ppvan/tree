@@ -1,3 +1,5 @@
+from typing import Iterable, Optional
+
 from django.core.validators import MinValueValidator
 from django.db import models
 from django.utils.text import slugify
@@ -100,12 +102,10 @@ class Ward(models.Model):
 
 
 class Address(BaseModel):
-    address1 = models.CharField(max_length=255)
-    address2 = models.CharField(max_length=255)
+    ward = models.ForeignKey(Ward, on_delete=models.CASCADE)
+    address = models.CharField(max_length=255)
     receiver = models.CharField(max_length=255)
     phone = models.CharField(max_length=255)
-
-    # user = models.ForeignKey('user.User', on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.address1} - {self.address2}"
@@ -126,10 +126,16 @@ class Order(BaseModel):
 
     state = models.CharField(max_length=2, choices=ORDER_STATUS, default=PENDING)
     user = models.ForeignKey(User, to_field="username", on_delete=models.CASCADE)
-    # address = models.ForeignKey(Address, on_delete=models.SET_NULL, null=True)
+    items = models.ManyToManyField(Product, through="OrderItem")
+    address = models.OneToOneField(Address, on_delete=models.CASCADE)
+    total = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
     def __str__(self):
         return (self.user.username, self.state).__str__()
+
+    def save(self, *args, **kwargs) -> None:
+        self.total = sum(item.total_price() for item in self.orderitem_set.all())
+        return super().save(*args, **kwargs)
 
     def total_price(self):
         return sum(item.total_price() for item in self.orderitem_set.all())
