@@ -16,16 +16,7 @@ from django.views.generic import (
 from blog.models import Post
 
 from .forms import AddToCartForm, CategoryForm, CheckoutForm, ProductForm
-from .models import (
-    Address,
-    Category,
-    District,
-    Order,
-    OrderItem,
-    Product,
-    Province,
-    Ward,
-)
+from .models import Address, Category, Order, OrderItem, Product, Ward
 
 
 class PageTitleViewMixin:
@@ -156,7 +147,7 @@ class ProductByCategoryView(View):
         category = get_object_or_404(Category, slug=slug)
         products = Product.objects.filter(category=category)
         context = {"products": products, "category": category}
-        return render(request, "core/checkout.html", context)
+        return render(request, "core/home.html", context)
 
 
 class CheckoutView(LoginRequiredMixin, View):
@@ -182,6 +173,7 @@ class CheckoutView(LoginRequiredMixin, View):
                 receiver=form.cleaned_data["receiver"],
                 phone=form.cleaned_data["phone"],
                 ward=ward,
+                order=order,
             )
             address.save()
             order.address = address

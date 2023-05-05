@@ -1,8 +1,6 @@
-from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Fieldset, Layout, Submit
 from django import forms
 
-from .models import Address, Category, District, Product, Province, Ward
+from .models import Category, Product
 
 
 class ProductForm(forms.ModelForm):
@@ -29,6 +27,11 @@ class ProductForm(forms.ModelForm):
         }
 
 
+class ChoiceFieldNoValidation(forms.ChoiceField):
+    def validate(self, value):
+        pass
+
+
 class CategoryForm(forms.ModelForm):
     class Meta:
         model = Category
@@ -47,13 +50,17 @@ class CheckoutForm(forms.Form):
 
     receiver = forms.CharField(max_length=255, label="Người nhận")
 
-    province = forms.ChoiceField(
-        choices=[(0, "Chọn tỉnh/thành phố")], label="Tỉnh/thành phố"
+    province = ChoiceFieldNoValidation(
+        choices=[(0, "Chọn tỉnh/thành phố")],
+        label="Tỉnh/thành phố",
+        validators=[],
     )
 
-    district = forms.ChoiceField(choices=[(0, "Chọn quận/huyện")], label="Quận/huyện")
+    district = ChoiceFieldNoValidation(
+        choices=[(0, "Chọn quận/huyện")], label="Quận/huyện"
+    )
 
-    ward = forms.ChoiceField(choices=[(0, "Chọn phường/xã")], label="Phường/xã")
+    ward = ChoiceFieldNoValidation(choices=[(0, "Chọn phường/xã")], label="Phường/xã")
 
     address = forms.CharField(max_length=255, label="Địa chỉ")
 
@@ -61,6 +68,6 @@ class CheckoutForm(forms.Form):
         max_length=255, required=False, widget=forms.Textarea, label="Ghi chú"
     )
 
-    transport = forms.ChoiceField(
+    transport = ChoiceFieldNoValidation(
         choices=[(0, "Chọn phương thức vận chuyển")], label=""
     )

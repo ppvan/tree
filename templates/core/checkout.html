@@ -89,6 +89,8 @@
     const orderPrice = $("#order_price")
     const orderTotal = $("#order_total")
 
+    transportSelect.attr("form", "checkout");
+
     $.ajax({
         url: "{% url 'api:province' %}",
         type: "GET",
