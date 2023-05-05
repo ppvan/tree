@@ -64,6 +64,32 @@ class Product(BaseModel):
         return self.name
 
 
+class Province(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+    code = models.CharField(max_length=255, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
+class District(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+    province = models.ForeignKey(Province, on_delete=models.CASCADE)
+    code = models.CharField(max_length=255, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Ward(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+    district = models.ForeignKey(District, on_delete=models.CASCADE)
+    code = models.CharField(max_length=255, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
 class Address(BaseModel):
     address1 = models.CharField(max_length=255)
     address2 = models.CharField(max_length=255)

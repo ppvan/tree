@@ -6,12 +6,17 @@
 
 
 {% block content %}
-<div class="mx-auto bg-[#f6faf0] rounded border overflow-hidden">
-    <h1 class="text-xl px-6 font-bold my-10 uppercase">Thông tin giỏ hàng</h1>
-    <div class="flex justify-around overflow-hidden w-full min-h-screen m-1">
-        <div class="w-2/3 border-gray-400 border rounded">
+<div class="mx-auto bg-[#f6faf0] rounded border">
+    <div class="flex justify-between items-center mx-5">
+        <h1 class="text-xl px-6 font-bold my-10 uppercase">Thông tin giỏ hàng</h1>
+        <a href="{% url 'core:home' %}" class="btn hover:text-white border-green-500 hover:bg-green-500">
+            <span>Tiếp tục mua sắm</span>
+        </a>
+    </div>
+    <div class="flex justify-around w-full h-2/3 m-1">
+        <div class="w-2/3 border-gray-400 relative overflow-y-scroll border rounded">
             <table class="table-fixed w-full border-collapse">
-                <thead>
+                <thead class="sticky top-0 bg-green-700 text-white">
                     <th class=" uppercase border-b mb-4 border-gray-400 " colspan="5">Sản phẩm</th>
                     <th class=" uppercase text-left border-b mb-4 border-gray-400 " colspan="2">Giá</th>
                     <th class=" uppercase border-b mb-4 border-gray-400 " colspan="1">Số lượng</th>
@@ -41,9 +46,9 @@
                 </tbody>
             </table>
         </div>
-        <div class="w-1/4 flex flex-col justify-between gap-1">
+        <div class="w-1/4 flex flex-col justify-start gap-1">
             <div class="border-gray-400 border rounded grow">
-                <h1 class="font-semibold px-2">Tổng cộng giỏ hàng</h1>
+                <h1 class="font-semibold px-2 text-lg uppercase p-2">Tổng cộng giỏ hàng</h1>
                 <table class="w-full">
                     <tbody>
                         <td class="font-semibold px-2">Tạm tính</td>
@@ -51,11 +56,13 @@
                     </tbody>
                 </table>
             </div>
-            <div class="h-max flex flex-col justify-between">
-                <button class="btn w-full text-lg hover:text-white border-green-500 hover:bg-green-500">
-                    Thanh toán
+            <form method="get" action="{% url 'core:checkout' %}" class="h-max flex flex-col justify-between">
+                {% csrf_token %}
+                <button type="submit"
+                    class="btn w-full text-center text-lg hover:text-white border-green-500 hover:bg-green-500">
+                    Đặt hàng
                 </button>
-            </div>
+            </form>
         </div>
     </div>
 </div>

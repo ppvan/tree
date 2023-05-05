@@ -1,0 +1,506 @@
+[
+    {
+        "model": "core.province",
+        "pk": 269,
+        "fields": {
+            "name": "Lào Cai",
+            "code": 269
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 268,
+        "fields": {
+            "name": "Hưng Yên",
+            "code": 268
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 267,
+        "fields": {
+            "name": "Hòa Bình",
+            "code": 267
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 266,
+        "fields": {
+            "name": "Sơn La",
+            "code": 266
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 265,
+        "fields": {
+            "name": "Điện Biên",
+            "code": 265
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 264,
+        "fields": {
+            "name": "Lai Châu",
+            "code": 264
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 263,
+        "fields": {
+            "name": "Yên Bái",
+            "code": 263
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 262,
+        "fields": {
+            "name": "Bình Định",
+            "code": 262
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 261,
+        "fields": {
+            "name": "Ninh Thuận",
+            "code": 261
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 260,
+        "fields": {
+            "name": "Phú Yên",
+            "code": 260
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 259,
+        "fields": {
+            "name": "Kon Tum",
+            "code": 259
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 258,
+        "fields": {
+            "name": "Bình Thuận",
+            "code": 258
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 253,
+        "fields": {
+            "name": "Bạc Liêu",
+            "code": 253
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 252,
+        "fields": {
+            "name": "Cà Mau",
+            "code": 252
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 250,
+        "fields": {
+            "name": "Hậu Giang",
+            "code": 250
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 249,
+        "fields": {
+            "name": "Bắc Ninh",
+            "code": 249
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 248,
+        "fields": {
+            "name": "Bắc Giang",
+            "code": 248
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 247,
+        "fields": {
+            "name": "Lạng Sơn",
+            "code": 247
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 246,
+        "fields": {
+            "name": "Cao Bằng",
+            "code": 246
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 245,
+        "fields": {
+            "name": "Bắc Kạn",
+            "code": 245
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 244,
+        "fields": {
+            "name": "Thái Nguyên",
+            "code": 244
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 243,
+        "fields": {
+            "name": "Quảng Nam",
+            "code": 243
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 242,
+        "fields": {
+            "name": "Quảng Ngãi",
+            "code": 242
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 241,
+        "fields": {
+            "name": "Đắk Nông",
+            "code": 241
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 240,
+        "fields": {
+            "name": "Tây Ninh",
+            "code": 240
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 239,
+        "fields": {
+            "name": "Bình Phước",
+            "code": 239
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 238,
+        "fields": {
+            "name": "Quảng Trị",
+            "code": 238
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 237,
+        "fields": {
+            "name": "Quảng Bình",
+            "code": 237
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 236,
+        "fields": {
+            "name": "Hà Tĩnh",
+            "code": 236
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 235,
+        "fields": {
+            "name": "Nghệ An",
+            "code": 235
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 234,
+        "fields": {
+            "name": "Thanh Hóa",
+            "code": 234
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 233,
+        "fields": {
+            "name": "Ninh Bình",
+            "code": 233
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 232,
+        "fields": {
+            "name": "Hà Nam",
+            "code": 232
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 231,
+        "fields": {
+            "name": "Nam Định",
+            "code": 231
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 230,
+        "fields": {
+            "name": "Quảng Ninh",
+            "code": 230
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 229,
+        "fields": {
+            "name": "Phú Thọ",
+            "code": 229
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 228,
+        "fields": {
+            "name": "Tuyên Quang",
+            "code": 228
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 227,
+        "fields": {
+            "name": "Hà Giang",
+            "code": 227
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 226,
+        "fields": {
+            "name": "Thái Bình",
+            "code": 226
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 225,
+        "fields": {
+            "name": "Hải Dương",
+            "code": 225
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 224,
+        "fields": {
+            "name": "Hải Phòng",
+            "code": 224
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 223,
+        "fields": {
+            "name": "Thừa Thiên - Huế",
+            "code": 223
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 221,
+        "fields": {
+            "name": "Vĩnh Phúc",
+            "code": 221
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 220,
+        "fields": {
+            "name": "Cần Thơ",
+            "code": 220
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 219,
+        "fields": {
+            "name": "Kiên Giang",
+            "code": 219
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 218,
+        "fields": {
+            "name": "Sóc Trăng",
+            "code": 218
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 217,
+        "fields": {
+            "name": "An Giang",
+            "code": 217
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 216,
+        "fields": {
+            "name": "Đồng Tháp",
+            "code": 216
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 215,
+        "fields": {
+            "name": "Vĩnh Long",
+            "code": 215
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 214,
+        "fields": {
+            "name": "Trà Vinh",
+            "code": 214
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 213,
+        "fields": {
+            "name": "Bến Tre",
+            "code": 213
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 212,
+        "fields": {
+            "name": "Tiền Giang",
+            "code": 212
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 211,
+        "fields": {
+            "name": "Long An",
+            "code": 211
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 210,
+        "fields": {
+            "name": "Đắk Lắk",
+            "code": 210
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 209,
+        "fields": {
+            "name": "Lâm Đồng",
+            "code": 209
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 208,
+        "fields": {
+            "name": "Khánh Hòa",
+            "code": 208
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 207,
+        "fields": {
+            "name": "Gia Lai",
+            "code": 207
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 206,
+        "fields": {
+            "name": "Bà Rịa - Vũng Tàu",
+            "code": 206
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 205,
+        "fields": {
+            "name": "Bình Dương",
+            "code": 205
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 204,
+        "fields": {
+            "name": "Đồng Nai",
+            "code": 204
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 203,
+        "fields": {
+            "name": "Đà Nẵng",
+            "code": 203
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 202,
+        "fields": {
+            "name": "Hồ Chí Minh",
+            "code": 202
+        }
+    },
+    {
+        "model": "core.province",
+        "pk": 201,
+        "fields": {
+            "name": "Hà Nội",
+            "code": 201
+        }
+    }
+]

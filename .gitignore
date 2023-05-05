@@ -7,7 +7,7 @@ node_modules
 
 scripts/media/
 
-tailwind-dev.css
+static/css/tailwind-dev.css
 # Backup files # 
 *.bak 
 

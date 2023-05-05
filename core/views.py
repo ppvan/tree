@@ -15,7 +15,7 @@ from django.views.generic import (
 
 from blog.models import Post
 
-from .forms import AddToCartForm, CategoryForm, ProductForm
+from .forms import AddToCartForm, CategoryForm, CheckoutForm, ProductForm
 from .models import Category, Order, OrderItem, Product
 
 
@@ -147,11 +147,29 @@ class ProductByCategoryView(View):
         category = get_object_or_404(Category, slug=slug)
         products = Product.objects.filter(category=category)
         context = {"products": products, "category": category}
-        return render(request, "core/product_by_category.html", context)
+        return render(request, "core/checkout.html", context)
 
 
 class CheckoutView(LoginRequiredMixin, View):
-    pass
+    def get(self, request):
+        order, _created = Order.objects.get_or_create(
+            user=self.request.user, state=Order.PENDING
+        )
+        order_items = OrderItem.objects.filter(order=order)
+        form = CheckoutForm()
+
+        context = {"order": order, "order_items": order_items, "form": form}
+        return render(request, "core/checkout.html", context)
+
+    def post(self, request):
+        order, _created = Order.objects.get_or_create(
+            user=self.request.user, state=Order.PENDING
+        )
+        order_items = OrderItem.objects.filter(order=order)
+        form = CheckoutForm()
+
+        context = {"order": order, "order_items": order_items, "form": form}
+        return render(request, "core/checkout.html", context)
 
 
 class CategoryListView(ListView):

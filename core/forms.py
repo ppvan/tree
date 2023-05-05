@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Product, Category
+from .models import Address, Category, Product
 
 
 class ProductForm(forms.ModelForm):
@@ -38,3 +38,21 @@ class CategoryForm(forms.ModelForm):
 class AddToCartForm(forms.Form):
     product_id = forms.IntegerField()
     quantity = forms.IntegerField(initial=1)
+
+
+class CheckoutForm(forms.ModelForm):
+    class Meta:
+        model = Address
+        fields = ["phone", "receiver", "address1", "address2"]
+
+        labels = {
+            "address1": "Địa chỉ",
+            "address2": "Chi tiết",
+            "receiver": "Người nhận",
+            "phone": "Số điện thoại",
+        }
+
+        widgets = {
+            "address1": forms.TextInput(attrs={"placeholder": "Tỉnh, Thành phố"}),
+            "address2": forms.TextInput(attrs={"placeholder": "Số nhà, tên đường"}),
+        }

@@ -1,0 +1,6464 @@
+[
+    {
+        "model": "core.district",
+        "pk": 2264,
+        "fields": {
+            "name": "Huyện Si Ma Cai",
+            "code": 2264,
+            "province": 269
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2171,
+        "fields": {
+            "name": "Huyện Mường Khương",
+            "code": 2171,
+            "province": 269
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2073,
+        "fields": {
+            "name": "Huyện Bảo Thắng",
+            "code": 2073,
+            "province": 269
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2043,
+        "fields": {
+            "name": "Huyện Văn Bàn",
+            "code": 2043,
+            "province": 269
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2005,
+        "fields": {
+            "name": "Thị xã Sa Pa",
+            "code": 2005,
+            "province": 269
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1892,
+        "fields": {
+            "name": "Huyện Bắc Hà",
+            "code": 1892,
+            "province": 269
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1891,
+        "fields": {
+            "name": "Huyện Bảo Yên",
+            "code": 1891,
+            "province": 269
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1744,
+        "fields": {
+            "name": "Huyện Bát Xát",
+            "code": 1744,
+            "province": 269
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1682,
+        "fields": {
+            "name": "Thành phố Lào Cai",
+            "code": 1682,
+            "province": 269
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3451,
+        "fields": {
+            "name": "Quận Đặc Biệt",
+            "code": 3451,
+            "province": 268
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2194,
+        "fields": {
+            "name": "Huyện Phù Cừ",
+            "code": 2194,
+            "province": 268
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2046,
+        "fields": {
+            "name": "Huyện Văn Lâm",
+            "code": 2046,
+            "province": 268
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2045,
+        "fields": {
+            "name": "Huyện Văn Giang",
+            "code": 2045,
+            "province": 268
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2018,
+        "fields": {
+            "name": "Huyện Tiên Lữ",
+            "code": 2018,
+            "province": 268
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1828,
+        "fields": {
+            "name": "Huyện Yên Mỹ",
+            "code": 1828,
+            "province": 268
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1827,
+        "fields": {
+            "name": "Thị xã Mỹ Hào",
+            "code": 1827,
+            "province": 268
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1826,
+        "fields": {
+            "name": "Huyện Khoái Châu",
+            "code": 1826,
+            "province": 268
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1825,
+        "fields": {
+            "name": "Huyện Ân Thi",
+            "code": 1825,
+            "province": 268
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1717,
+        "fields": {
+            "name": "Huyện Kim Động",
+            "code": 1717,
+            "province": 268
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1680,
+        "fields": {
+            "name": "Thành phố Hưng Yên",
+            "code": 1680,
+            "province": 268
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2270,
+        "fields": {
+            "name": "Huyện Yên Thủy",
+            "code": 2270,
+            "province": 267
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2163,
+        "fields": {
+            "name": "Huyện Mai Châu",
+            "code": 2163,
+            "province": 267
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2157,
+        "fields": {
+            "name": "Huyện Lạc Thủy",
+            "code": 2157,
+            "province": 267
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2156,
+        "fields": {
+            "name": "Huyện Lạc Sơn",
+            "code": 2156,
+            "province": 267
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2146,
+        "fields": {
+            "name": "Huyện Kim Bôi",
+            "code": 2146,
+            "province": 267
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2087,
+        "fields": {
+            "name": "Huyện Cao Phong",
+            "code": 2087,
+            "province": 267
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2014,
+        "fields": {
+            "name": "Huyện Tân Lạc",
+            "code": 2014,
+            "province": 267
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1968,
+        "fields": {
+            "name": "Huyện Lương Sơn",
+            "code": 1968,
+            "province": 267
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1955,
+        "fields": {
+            "name": "Huyện Kỳ Sơn",
+            "code": 1955,
+            "province": 267
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1916,
+        "fields": {
+            "name": "Huyện Đà Bắc",
+            "code": 1916,
+            "province": 267
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1678,
+        "fields": {
+            "name": "Thành phố Hòa Bình",
+            "code": 1678,
+            "province": 267
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3266,
+        "fields": {
+            "name": "huyện Sốp Cộp",
+            "code": 3266,
+            "province": 266
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3230,
+        "fields": {
+            "name": "Huyện Mường La",
+            "code": 3230,
+            "province": 266
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2267,
+        "fields": {
+            "name": "Huyện Yên Châu",
+            "code": 2267,
+            "province": 266
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2255,
+        "fields": {
+            "name": "Huyện Vân Hồ",
+            "code": 2255,
+            "province": 266
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2204,
+        "fields": {
+            "name": "Huyện Quỳnh Nhai",
+            "code": 2204,
+            "province": 266
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2079,
+        "fields": {
+            "name": "Huyện Bắc Yên",
+            "code": 2079,
+            "province": 266
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2032,
+        "fields": {
+            "name": "Huyện Thuận Châu",
+            "code": 2032,
+            "province": 266
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2007,
+        "fields": {
+            "name": "Huyện Sông Mã",
+            "code": 2007,
+            "province": 266
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1996,
+        "fields": {
+            "name": "Huyện Phù Yên",
+            "code": 1996,
+            "province": 266
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1976,
+        "fields": {
+            "name": "Huyện Mộc Châu",
+            "code": 1976,
+            "province": 266
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1971,
+        "fields": {
+            "name": "Huyện Mai Sơn",
+            "code": 1971,
+            "province": 266
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1677,
+        "fields": {
+            "name": "Thành phố Sơn La",
+            "code": 1677,
+            "province": 266
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2179,
+        "fields": {
+            "name": "Huyện Nậm Pồ",
+            "code": 2179,
+            "province": 265
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2170,
+        "fields": {
+            "name": "Huyện Mường Ảng",
+            "code": 2170,
+            "province": 265
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2123,
+        "fields": {
+            "name": "Huyện Điện Biên Đông",
+            "code": 2123,
+            "province": 265
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2060,
+        "fields": {
+            "name": "Thị xã Mường Lay",
+            "code": 2060,
+            "province": 265
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2022,
+        "fields": {
+            "name": "Huyện Tuần Giáo",
+            "code": 2022,
+            "province": 265
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2021,
+        "fields": {
+            "name": "Huyện Tủa Chùa",
+            "code": 2021,
+            "province": 265
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1979,
+        "fields": {
+            "name": "Huyện Mường Nhé",
+            "code": 1979,
+            "province": 265
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1978,
+        "fields": {
+            "name": "Huyện Mường Chà",
+            "code": 1978,
+            "province": 265
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1923,
+        "fields": {
+            "name": "Huyện Điện Biên",
+            "code": 1923,
+            "province": 265
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1676,
+        "fields": {
+            "name": "Thành phố Điện Biên Phủ",
+            "code": 1676,
+            "province": 265
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2025,
+        "fields": {
+            "name": "Huyện Than Uyên",
+            "code": 2025,
+            "province": 264
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2017,
+        "fields": {
+            "name": "Huyện Tân Uyên",
+            "code": 2017,
+            "province": 264
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2010,
+        "fields": {
+            "name": "Huyện Tam Đường",
+            "code": 2010,
+            "province": 264
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2006,
+        "fields": {
+            "name": "Huyện Sìn Hồ",
+            "code": 2006,
+            "province": 264
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1989,
+        "fields": {
+            "name": "Huyện Phong Thổ",
+            "code": 1989,
+            "province": 264
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1984,
+        "fields": {
+            "name": "Huyện Nậm Nhùn",
+            "code": 1984,
+            "province": 264
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1980,
+        "fields": {
+            "name": "Huyện Mường Tè",
+            "code": 1980,
+            "province": 264
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1675,
+        "fields": {
+            "name": "Thành phố Lai Châu",
+            "code": 1675,
+            "province": 264
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2266,
+        "fields": {
+            "name": "Huyện Yên Bình",
+            "code": 2266,
+            "province": 263
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2248,
+        "fields": {
+            "name": "Huyện Trạm Tấu",
+            "code": 2248,
+            "province": 263
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2063,
+        "fields": {
+            "name": "Thị xã Nghĩa Lộ",
+            "code": 2063,
+            "province": 263
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2047,
+        "fields": {
+            "name": "Huyện Văn Yên",
+            "code": 2047,
+            "province": 263
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2044,
+        "fields": {
+            "name": "Huyện Văn Chấn",
+            "code": 2044,
+            "province": 263
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2039,
+        "fields": {
+            "name": "Huyện Trấn Yên",
+            "code": 2039,
+            "province": 263
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1977,
+        "fields": {
+            "name": "Huyện Mù Cang Chải",
+            "code": 1977,
+            "province": 263
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1967,
+        "fields": {
+            "name": "Huyện Lục Yên",
+            "code": 1967,
+            "province": 263
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1674,
+        "fields": {
+            "name": "Thành phố Yên Bái",
+            "code": 1674,
+            "province": 263
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3312,
+        "fields": {
+            "name": "Huyện Vân Canh",
+            "code": 3312,
+            "province": 262
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3279,
+        "fields": {
+            "name": "Huyện Tây Sơn",
+            "code": 3279,
+            "province": 262
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3254,
+        "fields": {
+            "name": "Huyện Phù Mỹ",
+            "code": 3254,
+            "province": 262
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2258,
+        "fields": {
+            "name": "Huyện Vĩnh Thạnh",
+            "code": 2258,
+            "province": 262
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2140,
+        "fields": {
+            "name": "Huyện Hoài Ân",
+            "code": 2140,
+            "province": 262
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2023,
+        "fields": {
+            "name": "Huyện Tuy Phước",
+            "code": 2023,
+            "province": 262
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1886,
+        "fields": {
+            "name": "Huyện An Lão",
+            "code": 1886,
+            "province": 262
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1771,
+        "fields": {
+            "name": "Thị xã Hoài Nhơn",
+            "code": 1771,
+            "province": 262
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1770,
+        "fields": {
+            "name": "Huyện Phù Cát",
+            "code": 1770,
+            "province": 262
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1769,
+        "fields": {
+            "name": "Thị xã An Nhơn",
+            "code": 1769,
+            "province": 262
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1662,
+        "fields": {
+            "name": "Thành phố Quy Nhơn",
+            "code": 1662,
+            "province": 262
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3302,
+        "fields": {
+            "name": "Huyện Thuận Nam",
+            "code": 3302,
+            "province": 261
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3301,
+        "fields": {
+            "name": "Huyện Thuận Bắc",
+            "code": 3301,
+            "province": 261
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3129,
+        "fields": {
+            "name": "Huyện Bác Ái",
+            "code": 3129,
+            "province": 261
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1986,
+        "fields": {
+            "name": "Huyện Ninh Phước",
+            "code": 1986,
+            "province": 261
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1985,
+        "fields": {
+            "name": "Huyện Ninh Hải",
+            "code": 1985,
+            "province": 261
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1855,
+        "fields": {
+            "name": "Huyện Ninh Sơn",
+            "code": 1855,
+            "province": 261
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1665,
+        "fields": {
+            "name": "Thành phố Phan Rang – Tháp Chàm",
+            "code": 1665,
+            "province": 261
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3284,
+        "fields": {
+            "name": "Huyện Tuy An",
+            "code": 3284,
+            "province": 260
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3278,
+        "fields": {
+            "name": "Huyện Tây Hòa",
+            "code": 3278,
+            "province": 260
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3186,
+        "fields": {
+            "name": "Huyện Đồng Xuân",
+            "code": 3186,
+            "province": 260
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3184,
+        "fields": {
+            "name": "Thị xã Đông Hòa",
+            "code": 3184,
+            "province": 260
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2211,
+        "fields": {
+            "name": "Huyện Sơn Hòa",
+            "code": 2211,
+            "province": 260
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2206,
+        "fields": {
+            "name": "Huyện Sông Hinh",
+            "code": 2206,
+            "province": 260
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1993,
+        "fields": {
+            "name": "Huyện Phú Hòa",
+            "code": 1993,
+            "province": 260
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1856,
+        "fields": {
+            "name": "Thị Xã Sông Cầu",
+            "code": 1856,
+            "province": 260
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1663,
+        "fields": {
+            "name": "Thành phố Tuy Hòa",
+            "code": 1663,
+            "province": 260
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3446,
+        "fields": {
+            "name": "Huyện Ia H Drai",
+            "code": 3446,
+            "province": 259
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2225,
+        "fields": {
+            "name": "Huyện Tu Mơ Rông",
+            "code": 2225,
+            "province": 259
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2205,
+        "fields": {
+            "name": "Huyện Sa Thầy",
+            "code": 2205,
+            "province": 259
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2187,
+        "fields": {
+            "name": "Huyện Ngọc Hồi",
+            "code": 2187,
+            "province": 259
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2148,
+        "fields": {
+            "name": "Huyện Kon Rẫy",
+            "code": 2148,
+            "province": 259
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2121,
+        "fields": {
+            "name": "Huyện Đắk Tô",
+            "code": 2121,
+            "province": 259
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1921,
+        "fields": {
+            "name": "Huyện Đắk Glei",
+            "code": 1921,
+            "province": 259
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1835,
+        "fields": {
+            "name": "Huyện Đắk Hà",
+            "code": 1835,
+            "province": 259
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1834,
+        "fields": {
+            "name": "Huyện Kon Plông",
+            "code": 1834,
+            "province": 259
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1660,
+        "fields": {
+            "name": "Thành phố Kon Tum",
+            "code": 1660,
+            "province": 259
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3196,
+        "fields": {
+            "name": "Huyện Hàm Tân",
+            "code": 3196,
+            "province": 258
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2116,
+        "fields": {
+            "name": "Huyện đảo Phú Quý",
+            "code": 2116,
+            "province": 258
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2012,
+        "fields": {
+            "name": "Huyện Tánh Linh",
+            "code": 2012,
+            "province": 258
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1781,
+        "fields": {
+            "name": "Huyện Tuy Phong",
+            "code": 1781,
+            "province": 258
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1780,
+        "fields": {
+            "name": "Huyện Bắc Bình",
+            "code": 1780,
+            "province": 258
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1779,
+        "fields": {
+            "name": "Huyện Đức Linh",
+            "code": 1779,
+            "province": 258
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1778,
+        "fields": {
+            "name": "Thị xã La Gi",
+            "code": 1778,
+            "province": 258
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1777,
+        "fields": {
+            "name": "Huyện Hàm Thuận Bắc",
+            "code": 1777,
+            "province": 258
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1776,
+        "fields": {
+            "name": "Huyện Hàm Thuận Nam",
+            "code": 1776,
+            "province": 258
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1666,
+        "fields": {
+            "name": "Thành phố Phan Thiết",
+            "code": 1666,
+            "province": 258
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2050,
+        "fields": {
+            "name": "Huyện Vĩnh Lợi",
+            "code": 2050,
+            "province": 253
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1998,
+        "fields": {
+            "name": "Huyện Phước Long",
+            "code": 1998,
+            "province": 253
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1946,
+        "fields": {
+            "name": "Huyện Hồng Dân",
+            "code": 1946,
+            "province": 253
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1935,
+        "fields": {
+            "name": "Thị Xã Giá Rai",
+            "code": 1935,
+            "province": 253
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1926,
+        "fields": {
+            "name": "Huyện Đông Hải",
+            "code": 1926,
+            "province": 253
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1723,
+        "fields": {
+            "name": "Huyện Hòa Bình",
+            "code": 1723,
+            "province": 253
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1655,
+        "fields": {
+            "name": "Thành phố Bạc Liêu",
+            "code": 1655,
+            "province": 253
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2186,
+        "fields": {
+            "name": "Huyện Ngọc Hiển",
+            "code": 2186,
+            "province": 252
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2042,
+        "fields": {
+            "name": "Huyện U Minh",
+            "code": 2042,
+            "province": 252
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2038,
+        "fields": {
+            "name": "Huyện Trần Văn Thời",
+            "code": 2038,
+            "province": 252
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1922,
+        "fields": {
+            "name": "Huyện Đầm Dơi",
+            "code": 1922,
+            "province": 252
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1901,
+        "fields": {
+            "name": "Huyện Cái Nước",
+            "code": 1901,
+            "province": 252
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1883,
+        "fields": {
+            "name": "Huyện Phú Tân",
+            "code": 1883,
+            "province": 252
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1783,
+        "fields": {
+            "name": "Huyện Năm Căn",
+            "code": 1783,
+            "province": 252
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1782,
+        "fields": {
+            "name": "Huyện Thới Bình",
+            "code": 1782,
+            "province": 252
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1654,
+        "fields": {
+            "name": "Thành phố Cà Mau",
+            "code": 1654,
+            "province": 252
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3445,
+        "fields": {
+            "name": "Huyện Long Mỹ",
+            "code": 3445,
+            "province": 250
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3218,
+        "fields": {
+            "name": "Thị xã Long Mỹ",
+            "code": 3218,
+            "province": 250
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2096,
+        "fields": {
+            "name": "Huyện Châu Thành",
+            "code": 2096,
+            "province": 250
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2048,
+        "fields": {
+            "name": "Huyện Vị Thuỷ",
+            "code": 2048,
+            "province": 250
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1912,
+        "fields": {
+            "name": "Huyện Châu Thành A",
+            "code": 1912,
+            "province": 250
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1824,
+        "fields": {
+            "name": "Huyện Phụng Hiệp",
+            "code": 1824,
+            "province": 250
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1823,
+        "fields": {
+            "name": "Thành phố Ngã Bảy",
+            "code": 1823,
+            "province": 250
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1653,
+        "fields": {
+            "name": "Thành phố Vị Thanh",
+            "code": 1653,
+            "province": 250
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1969,
+        "fields": {
+            "name": "Huyện Lương Tài",
+            "code": 1969,
+            "province": 249
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1768,
+        "fields": {
+            "name": "Huyện Yên Phong",
+            "code": 1768,
+            "province": 249
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1767,
+        "fields": {
+            "name": "Huyện Thuận Thành",
+            "code": 1767,
+            "province": 249
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1766,
+        "fields": {
+            "name": "Huyện Gia Bình",
+            "code": 1766,
+            "province": 249
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1730,
+        "fields": {
+            "name": "Thị xã Từ Sơn",
+            "code": 1730,
+            "province": 249
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1729,
+        "fields": {
+            "name": "Huyện Tiên Du",
+            "code": 1729,
+            "province": 249
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1728,
+        "fields": {
+            "name": "Huyện Quế Võ",
+            "code": 1728,
+            "province": 249
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1644,
+        "fields": {
+            "name": "Thành phố Bắc Ninh",
+            "code": 1644,
+            "province": 249
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1966,
+        "fields": {
+            "name": "Huyện Lục Ngạn",
+            "code": 1966,
+            "province": 248
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1965,
+        "fields": {
+            "name": "Huyện Lục Nam",
+            "code": 1965,
+            "province": 248
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1765,
+        "fields": {
+            "name": "Huyện Yên Thế",
+            "code": 1765,
+            "province": 248
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1764,
+        "fields": {
+            "name": "Huyện Yên Dũng",
+            "code": 1764,
+            "province": 248
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1763,
+        "fields": {
+            "name": "Huyện Việt Yên",
+            "code": 1763,
+            "province": 248
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1762,
+        "fields": {
+            "name": "Huyện Tân Yên",
+            "code": 1762,
+            "province": 248
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1761,
+        "fields": {
+            "name": "Huyện Sơn Động",
+            "code": 1761,
+            "province": 248
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1760,
+        "fields": {
+            "name": "Huyện Lạng Giang",
+            "code": 1760,
+            "province": 248
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1759,
+        "fields": {
+            "name": "Huyện Hiệp Hòa",
+            "code": 1759,
+            "province": 248
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1643,
+        "fields": {
+            "name": "Thành phố Bắc Giang",
+            "code": 1643,
+            "province": 248
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3311,
+        "fields": {
+            "name": "Huyện Văn Quan",
+            "code": 3311,
+            "province": 247
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3310,
+        "fields": {
+            "name": "Huyện Văn Lãng",
+            "code": 3310,
+            "province": 247
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3182,
+        "fields": {
+            "name": "Huyện Đình Lập",
+            "code": 3182,
+            "province": 247
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3156,
+        "fields": {
+            "name": "Huyện Chi Lăng",
+            "code": 3156,
+            "province": 247
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3138,
+        "fields": {
+            "name": "Huyện Bình Gia",
+            "code": 3138,
+            "province": 247
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3134,
+        "fields": {
+            "name": "Huyện Bắc Sơn",
+            "code": 3134,
+            "province": 247
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2036,
+        "fields": {
+            "name": "Huyện Tràng Định",
+            "code": 2036,
+            "province": 247
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1963,
+        "fields": {
+            "name": "Huyện Lộc Bình",
+            "code": 1963,
+            "province": 247
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1948,
+        "fields": {
+            "name": "Huyện Hữu Lũng",
+            "code": 1948,
+            "province": 247
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1904,
+        "fields": {
+            "name": "Huyện Cao Lộc",
+            "code": 1904,
+            "province": 247
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1642,
+        "fields": {
+            "name": "Thành phố Lạng Sơn",
+            "code": 1642,
+            "province": 247
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3694,
+        "fields": {
+            "name": "Huyện Quảng Hòa",
+            "code": 3694,
+            "province": 246
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3305,
+        "fields": {
+            "name": "Huyện Trà Lĩnh",
+            "code": 3305,
+            "province": 246
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3299,
+        "fields": {
+            "name": "Huyện Thông Nông",
+            "code": 3299,
+            "province": 246
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3289,
+        "fields": {
+            "name": "Huyện Thạch An",
+            "code": 3289,
+            "province": 246
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3259,
+        "fields": {
+            "name": "Huyện Quảng Uyên",
+            "code": 3259,
+            "province": 246
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3246,
+        "fields": {
+            "name": "Huyện Nguyên Bình",
+            "code": 3246,
+            "province": 246
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3194,
+        "fields": {
+            "name": "Huyện Hạ Lang",
+            "code": 3194,
+            "province": 246
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3130,
+        "fields": {
+            "name": "Huyện Bảo Lạc",
+            "code": 3130,
+            "province": 246
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2041,
+        "fields": {
+            "name": "Huyện Trùng Khánh",
+            "code": 2041,
+            "province": 246
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1997,
+        "fields": {
+            "name": "Huyện Phục Hòa",
+            "code": 1997,
+            "province": 246
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1943,
+        "fields": {
+            "name": "Huyện Hòa An",
+            "code": 1943,
+            "province": 246
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1939,
+        "fields": {
+            "name": "Huyện Hà Quảng",
+            "code": 1939,
+            "province": 246
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1890,
+        "fields": {
+            "name": "Huyện Bảo Lâm",
+            "code": 1890,
+            "province": 246
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1641,
+        "fields": {
+            "name": "Thành phố Cao Bằng",
+            "code": 1641,
+            "province": 246
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3249,
+        "fields": {
+            "name": "Huyện Pác Nặm",
+            "code": 3249,
+            "province": 245
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3242,
+        "fields": {
+            "name": "Huyện Ngân Sơn",
+            "code": 3242,
+            "province": 245
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3232,
+        "fields": {
+            "name": "Huyện Na Rì",
+            "code": 3232,
+            "province": 245
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1914,
+        "fields": {
+            "name": "Huyện Chợ Mới",
+            "code": 1914,
+            "province": 245
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1913,
+        "fields": {
+            "name": "Huyện Chợ Đồn",
+            "code": 1913,
+            "province": 245
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1889,
+        "fields": {
+            "name": "Huyện Bạch Thông",
+            "code": 1889,
+            "province": 245
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1887,
+        "fields": {
+            "name": "Huyện Ba Bể",
+            "code": 1887,
+            "province": 245
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1640,
+        "fields": {
+            "name": "Thành phố Bắc Kạn",
+            "code": 1640,
+            "province": 245
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2195,
+        "fields": {
+            "name": "Huyện Phú Lương",
+            "code": 2195,
+            "province": 244
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2051,
+        "fields": {
+            "name": "Huyện Võ Nhai",
+            "code": 2051,
+            "province": 244
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1991,
+        "fields": {
+            "name": "Huyện Phú Bình",
+            "code": 1991,
+            "province": 244
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1990,
+        "fields": {
+            "name": "Thị xã Phổ Yên",
+            "code": 1990,
+            "province": 244
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1924,
+        "fields": {
+            "name": "Huyện Định Hóa",
+            "code": 1924,
+            "province": 244
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1918,
+        "fields": {
+            "name": "Huyện Đại Từ",
+            "code": 1918,
+            "province": 244
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1731,
+        "fields": {
+            "name": "Huyện Đồng Hỷ",
+            "code": 1731,
+            "province": 244
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1684,
+        "fields": {
+            "name": "Thành Phố Sông Công",
+            "code": 1684,
+            "province": 244
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1639,
+        "fields": {
+            "name": "Thành phố Thái Nguyên",
+            "code": 1639,
+            "province": 244
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2239,
+        "fields": {
+            "name": "Huyện Thăng Bình",
+            "code": 2239,
+            "province": 243
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2224,
+        "fields": {
+            "name": "Huyện Tiên Phước",
+            "code": 2224,
+            "province": 243
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2219,
+        "fields": {
+            "name": "Huyện Tây Giang",
+            "code": 2219,
+            "province": 243
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2198,
+        "fields": {
+            "name": "Huyện Phước Sơn",
+            "code": 2198,
+            "province": 243
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2182,
+        "fields": {
+            "name": "Huyện Nông Sơn",
+            "code": 2182,
+            "province": 243
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2178,
+        "fields": {
+            "name": "Huyện Nam Trà My",
+            "code": 2178,
+            "province": 243
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2177,
+        "fields": {
+            "name": "Huyện Nam Giang",
+            "code": 2177,
+            "province": 243
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2139,
+        "fields": {
+            "name": "Huyện Hiệp Đức",
+            "code": 2139,
+            "province": 243
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2125,
+        "fields": {
+            "name": "Huyện Đông Giang",
+            "code": 2125,
+            "province": 243
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2078,
+        "fields": {
+            "name": "Huyện Bắc Trà My",
+            "code": 2078,
+            "province": 243
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2003,
+        "fields": {
+            "name": "Huyện Quế Sơn",
+            "code": 2003,
+            "province": 243
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1995,
+        "fields": {
+            "name": "Huyện Phú Ninh",
+            "code": 1995,
+            "province": 243
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1987,
+        "fields": {
+            "name": "Huyện Núi Thành",
+            "code": 1987,
+            "province": 243
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1917,
+        "fields": {
+            "name": "Huyện Đại Lộc",
+            "code": 1917,
+            "province": 243
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1736,
+        "fields": {
+            "name": "Thị xã Điện Bàn",
+            "code": 1736,
+            "province": 243
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1735,
+        "fields": {
+            "name": "Huyện Duy Xuyên",
+            "code": 1735,
+            "province": 243
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1632,
+        "fields": {
+            "name": "Thành phố Hội An",
+            "code": 1632,
+            "province": 243
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1631,
+        "fields": {
+            "name": "Thành phố Tam Kỳ",
+            "code": 1631,
+            "province": 243
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3304,
+        "fields": {
+            "name": "Huyện Trà Bồng",
+            "code": 3304,
+            "province": 242
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3270,
+        "fields": {
+            "name": "Huyện Sơn Tây",
+            "code": 3270,
+            "province": 242
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3226,
+        "fields": {
+            "name": "Huyện Mộ Đức",
+            "code": 3226,
+            "province": 242
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3127,
+        "fields": {
+            "name": "Huyện Ba Tơ",
+            "code": 3127,
+            "province": 242
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2222,
+        "fields": {
+            "name": "Huyện Tây Trà",
+            "code": 2222,
+            "province": 242
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2210,
+        "fields": {
+            "name": "Huyện Sơn Hà",
+            "code": 2210,
+            "province": 242
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2167,
+        "fields": {
+            "name": "Huyện Minh Long",
+            "code": 2167,
+            "province": 242
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2114,
+        "fields": {
+            "name": "Huyện đảo Lý Sơn",
+            "code": 2114,
+            "province": 242
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1988,
+        "fields": {
+            "name": "Huyện Nghĩa Hành",
+            "code": 1988,
+            "province": 242
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1930,
+        "fields": {
+            "name": "Thị xã Đức Phổ",
+            "code": 1930,
+            "province": 242
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1898,
+        "fields": {
+            "name": "Huyện Bình Sơn",
+            "code": 1898,
+            "province": 242
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1738,
+        "fields": {
+            "name": "Huyện Tư Nghĩa",
+            "code": 1738,
+            "province": 242
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1737,
+        "fields": {
+            "name": "Huyện Sơn Tịnh",
+            "code": 1737,
+            "province": 242
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1630,
+        "fields": {
+            "name": "Thành phố Quảng Ngãi",
+            "code": 1630,
+            "province": 242
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3152,
+        "fields": {
+            "name": "Huyện Cư Jút",
+            "code": 3152,
+            "province": 241
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2227,
+        "fields": {
+            "name": "Huyện Tuy Đức",
+            "code": 2227,
+            "province": 241
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2151,
+        "fields": {
+            "name": "Huyện Krông Nô",
+            "code": 2151,
+            "province": 241
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2120,
+        "fields": {
+            "name": "Huyện Đắk Song",
+            "code": 2120,
+            "province": 241
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1792,
+        "fields": {
+            "name": "Huyện Đắk Mil",
+            "code": 1792,
+            "province": 241
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1791,
+        "fields": {
+            "name": "Huyện Đắk Glong",
+            "code": 1791,
+            "province": 241
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1790,
+        "fields": {
+            "name": "Huyện Đắk R lấp",
+            "code": 1790,
+            "province": 241
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1627,
+        "fields": {
+            "name": "Thành phố Gia Nghĩa",
+            "code": 1627,
+            "province": 241
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2035,
+        "fields": {
+            "name": "Thị xã Trảng Bàng",
+            "code": 2035,
+            "province": 240
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1866,
+        "fields": {
+            "name": "Huyện Gò Dầu",
+            "code": 1866,
+            "province": 240
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1865,
+        "fields": {
+            "name": "Huyện Bến Cầu",
+            "code": 1865,
+            "province": 240
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1864,
+        "fields": {
+            "name": "Huyện Dương Minh Châu",
+            "code": 1864,
+            "province": 240
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1863,
+        "fields": {
+            "name": "Huyện Tân Châu",
+            "code": 1863,
+            "province": 240
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1862,
+        "fields": {
+            "name": "Huyện Tân Biên",
+            "code": 1862,
+            "province": 240
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1721,
+        "fields": {
+            "name": "Thị xã Hòa Thành",
+            "code": 1721,
+            "province": 240
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1720,
+        "fields": {
+            "name": "Huyện Châu Thành",
+            "code": 1720,
+            "province": 240
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1626,
+        "fields": {
+            "name": "Thành phố Tây Ninh",
+            "code": 1626,
+            "province": 240
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3444,
+        "fields": {
+            "name": "Huyện Phú Riềng",
+            "code": 3444,
+            "province": 239
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3141,
+        "fields": {
+            "name": "Huyện Bù Gia Mập",
+            "code": 3141,
+            "province": 239
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3140,
+        "fields": {
+            "name": "Huyện Bù Đốp",
+            "code": 3140,
+            "province": 239
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1964,
+        "fields": {
+            "name": "Huyện Lộc Ninh",
+            "code": 1964,
+            "province": 239
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1899,
+        "fields": {
+            "name": "Huyện Bù Đăng",
+            "code": 1899,
+            "province": 239
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1775,
+        "fields": {
+            "name": "Thị xã Phước Long",
+            "code": 1775,
+            "province": 239
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1774,
+        "fields": {
+            "name": "Thị xã Bình Long",
+            "code": 1774,
+            "province": 239
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1773,
+        "fields": {
+            "name": "Huyện Hớn Quản",
+            "code": 1773,
+            "province": 239
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1772,
+        "fields": {
+            "name": "Huyện Chơn Thành",
+            "code": 1772,
+            "province": 239
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1722,
+        "fields": {
+            "name": "Huyện Đồng Phú",
+            "code": 1722,
+            "province": 239
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1625,
+        "fields": {
+            "name": "Thành phố Đồng Xoài",
+            "code": 1625,
+            "province": 239
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2137,
+        "fields": {
+            "name": "Huyện Hải Lăng",
+            "code": 2137,
+            "province": 238
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2110,
+        "fields": {
+            "name": "Huyện đảo Cồn Cỏ",
+            "code": 2110,
+            "province": 238
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2105,
+        "fields": {
+            "name": "Huyện Đa Krông",
+            "code": 2105,
+            "province": 238
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2040,
+        "fields": {
+            "name": "Huyện Triệu Phong",
+            "code": 2040,
+            "province": 238
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1936,
+        "fields": {
+            "name": "Huyện Gio Linh",
+            "code": 1936,
+            "province": 238
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1903,
+        "fields": {
+            "name": "Huyện Cam Lộ",
+            "code": 1903,
+            "province": 238
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1861,
+        "fields": {
+            "name": "Huyện Vĩnh Linh",
+            "code": 1861,
+            "province": 238
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1860,
+        "fields": {
+            "name": "Huyện Hướng Hóa",
+            "code": 1860,
+            "province": 238
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1621,
+        "fields": {
+            "name": "Thị xã Quảng Trị",
+            "code": 1621,
+            "province": 238
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1620,
+        "fields": {
+            "name": "Thành phố Đông Hà",
+            "code": 1620,
+            "province": 238
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3286,
+        "fields": {
+            "name": "Huyện Tuyên Hóa",
+            "code": 3286,
+            "province": 237
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3258,
+        "fields": {
+            "name": "Huyện Quảng Trạch",
+            "code": 3258,
+            "province": 237
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3224,
+        "fields": {
+            "name": "Huyện Minh Hóa",
+            "code": 3224,
+            "province": 237
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2002,
+        "fields": {
+            "name": "Huyện Quảng Ninh",
+            "code": 2002,
+            "province": 237
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1859,
+        "fields": {
+            "name": "Thị xã Ba Đồn",
+            "code": 1859,
+            "province": 237
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1858,
+        "fields": {
+            "name": "Huyện Bố Trạch",
+            "code": 1858,
+            "province": 237
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1857,
+        "fields": {
+            "name": "Huyện Lệ Thủy",
+            "code": 1857,
+            "province": 237
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1619,
+        "fields": {
+            "name": "Thành phố Đồng Hới",
+            "code": 1619,
+            "province": 237
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3441,
+        "fields": {
+            "name": "Thị xã Kỳ Anh",
+            "code": 3441,
+            "province": 236
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3320,
+        "fields": {
+            "name": "Huyện Vũ Quang",
+            "code": 3320,
+            "province": 236
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3220,
+        "fields": {
+            "name": "Huyện Lộc Hà",
+            "code": 3220,
+            "province": 236
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3201,
+        "fields": {
+            "name": "Huyện Hương Sơn",
+            "code": 3201,
+            "province": 236
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3188,
+        "fields": {
+            "name": "Huyện Đức Thọ",
+            "code": 3188,
+            "province": 236
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3143,
+        "fields": {
+            "name": "Huyện Can Lộc",
+            "code": 3143,
+            "province": 236
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2024,
+        "fields": {
+            "name": "Huyện Thạch Hà",
+            "code": 2024,
+            "province": 236
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1815,
+        "fields": {
+            "name": "Huyện Cẩm Xuyên",
+            "code": 1815,
+            "province": 236
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1814,
+        "fields": {
+            "name": "Thị xã Hồng Lĩnh",
+            "code": 1814,
+            "province": 236
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1813,
+        "fields": {
+            "name": "Huyện Nghi Xuân",
+            "code": 1813,
+            "province": 236
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1812,
+        "fields": {
+            "name": "Huyện Hương Khê",
+            "code": 1812,
+            "province": 236
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1811,
+        "fields": {
+            "name": "Huyện Kỳ Anh",
+            "code": 1811,
+            "province": 236
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1618,
+        "fields": {
+            "name": "Thành phố Hà Tĩnh",
+            "code": 1618,
+            "province": 236
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3291,
+        "fields": {
+            "name": "Huyện Thanh Chương",
+            "code": 3291,
+            "province": 235
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3288,
+        "fields": {
+            "name": "Huyện Tương Dương",
+            "code": 3288,
+            "province": 235
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3261,
+        "fields": {
+            "name": "Huyện Quỳ Châu",
+            "code": 3261,
+            "province": 235
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3260,
+        "fields": {
+            "name": "Huyện Quế Phong",
+            "code": 3260,
+            "province": 235
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3233,
+        "fields": {
+            "name": "Huyện Nam Đàn",
+            "code": 3233,
+            "province": 235
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3211,
+        "fields": {
+            "name": "Huyện Kỳ Sơn",
+            "code": 3211,
+            "province": 235
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1947,
+        "fields": {
+            "name": "Huyện Hưng Nguyên",
+            "code": 1947,
+            "province": 235
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1854,
+        "fields": {
+            "name": "Huyện Nghi Lộc",
+            "code": 1854,
+            "province": 235
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1853,
+        "fields": {
+            "name": "Huyện Con Cuông",
+            "code": 1853,
+            "province": 235
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1852,
+        "fields": {
+            "name": "Huyện Quỳ Hợp",
+            "code": 1852,
+            "province": 235
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1851,
+        "fields": {
+            "name": "Huyện Nghĩa Đàn",
+            "code": 1851,
+            "province": 235
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1850,
+        "fields": {
+            "name": "Thị xã Thái Hòa",
+            "code": 1850,
+            "province": 235
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1849,
+        "fields": {
+            "name": "Thị xã Hoàng Mai",
+            "code": 1849,
+            "province": 235
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1848,
+        "fields": {
+            "name": "Huyện Quỳnh Lưu",
+            "code": 1848,
+            "province": 235
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1847,
+        "fields": {
+            "name": "Huyện Diễn Châu",
+            "code": 1847,
+            "province": 235
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1846,
+        "fields": {
+            "name": "Huyện Yên Thành",
+            "code": 1846,
+            "province": 235
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1845,
+        "fields": {
+            "name": "Huyện Tân Kỳ",
+            "code": 1845,
+            "province": 235
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1844,
+        "fields": {
+            "name": "Huyện Anh Sơn",
+            "code": 1844,
+            "province": 235
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1843,
+        "fields": {
+            "name": "Huyện Đô Lương",
+            "code": 1843,
+            "province": 235
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1842,
+        "fields": {
+            "name": "Thị xã Cửa Lò",
+            "code": 1842,
+            "province": 235
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1617,
+        "fields": {
+            "name": "Thành phố Vinh",
+            "code": 1617,
+            "province": 235
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3298,
+        "fields": {
+            "name": "Huyện Thiệu Hóa",
+            "code": 3298,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3241,
+        "fields": {
+            "name": "Huyện Nga Sơn",
+            "code": 3241,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3216,
+        "fields": {
+            "name": "Huyện Lang Chánh",
+            "code": 3216,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3147,
+        "fields": {
+            "name": "Huyện Cẩm Thủy",
+            "code": 3147,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2249,
+        "fields": {
+            "name": "Huyện Triệu Sơn",
+            "code": 2249,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2190,
+        "fields": {
+            "name": "Huyện Như Thanh",
+            "code": 2190,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2181,
+        "fields": {
+            "name": "Huyện Nông Cống",
+            "code": 2181,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2070,
+        "fields": {
+            "name": "Huyện Bá Thước",
+            "code": 2070,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2000,
+        "fields": {
+            "name": "Huyện Quan Sơn",
+            "code": 2000,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1942,
+        "fields": {
+            "name": "Huyện Hậu Lộc",
+            "code": 1942,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1927,
+        "fields": {
+            "name": "Huyện Đông Sơn",
+            "code": 1927,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1881,
+        "fields": {
+            "name": "Huyện Vĩnh Lộc",
+            "code": 1881,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1880,
+        "fields": {
+            "name": "Huyện Thạch Thành",
+            "code": 1880,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1879,
+        "fields": {
+            "name": "Huyện Quan Hóa",
+            "code": 1879,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1878,
+        "fields": {
+            "name": "Huyện Mường Lát",
+            "code": 1878,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1877,
+        "fields": {
+            "name": "Huyện Hà Trung",
+            "code": 1877,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1876,
+        "fields": {
+            "name": "Thị xã Bỉm Sơn",
+            "code": 1876,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1875,
+        "fields": {
+            "name": "Huyện Yên Định",
+            "code": 1875,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1874,
+        "fields": {
+            "name": "Huyện Ngọc Lặc",
+            "code": 1874,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1873,
+        "fields": {
+            "name": "Huyện Thọ Xuân",
+            "code": 1873,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1872,
+        "fields": {
+            "name": "Huyện Thường Xuân",
+            "code": 1872,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1871,
+        "fields": {
+            "name": "Huyện Như Xuân",
+            "code": 1871,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1870,
+        "fields": {
+            "name": "Thị Xã Nghi Sơn",
+            "code": 1870,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1748,
+        "fields": {
+            "name": "Huyện Hoằng Hóa",
+            "code": 1748,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1747,
+        "fields": {
+            "name": "Huyện Quảng Xương",
+            "code": 1747,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1712,
+        "fields": {
+            "name": "Thành phố Sầm Sơn",
+            "code": 1712,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1616,
+        "fields": {
+            "name": "Thành phố Thanh Hóa",
+            "code": 1616,
+            "province": 234
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3327,
+        "fields": {
+            "name": "Huyện Yên Mô",
+            "code": 3327,
+            "province": 233
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3247,
+        "fields": {
+            "name": "Huyện Nho Quan",
+            "code": 3247,
+            "province": 233
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3205,
+        "fields": {
+            "name": "Huyện Kim Sơn",
+            "code": 3205,
+            "province": 233
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3191,
+        "fields": {
+            "name": "Huyện Gia Viễn",
+            "code": 3191,
+            "province": 233
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1944,
+        "fields": {
+            "name": "Huyện Hoa Lư",
+            "code": 1944,
+            "province": 233
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1714,
+        "fields": {
+            "name": "Huyện Yên Khánh",
+            "code": 1714,
+            "province": 233
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1713,
+        "fields": {
+            "name": "Thành phố Tam Điệp",
+            "code": 1713,
+            "province": 233
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1615,
+        "fields": {
+            "name": "Thành phố Ninh Bình",
+            "code": 1615,
+            "province": 233
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2027,
+        "fields": {
+            "name": "Huyện Thanh Liêm",
+            "code": 2027,
+            "province": 232
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1970,
+        "fields": {
+            "name": "Huyện Lý Nhân",
+            "code": 1970,
+            "province": 232
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1952,
+        "fields": {
+            "name": "Huyện Kim Bảng",
+            "code": 1952,
+            "province": 232
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1897,
+        "fields": {
+            "name": "Huyện Bình Lục",
+            "code": 1897,
+            "province": 232
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1802,
+        "fields": {
+            "name": "Thị xã Duy Tiên",
+            "code": 1802,
+            "province": 232
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1614,
+        "fields": {
+            "name": "Thành phố Phủ Lý",
+            "code": 1614,
+            "province": 232
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3323,
+        "fields": {
+            "name": "Huyện Xuân Trường",
+            "code": 3323,
+            "province": 231
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3319,
+        "fields": {
+            "name": "Huyện Vụ Bản",
+            "code": 3319,
+            "province": 231
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3308,
+        "fields": {
+            "name": "Huyện Trực Ninh",
+            "code": 3308,
+            "province": 231
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3243,
+        "fields": {
+            "name": "Huyện Nghĩa Hưng",
+            "code": 3243,
+            "province": 231
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3193,
+        "fields": {
+            "name": "Huyện Giao Thủy",
+            "code": 3193,
+            "province": 231
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1983,
+        "fields": {
+            "name": "Huyện Nam Trực",
+            "code": 1983,
+            "province": 231
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1981,
+        "fields": {
+            "name": "Huyện Mỹ Lộc",
+            "code": 1981,
+            "province": 231
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1841,
+        "fields": {
+            "name": "Huyện Ý Yên",
+            "code": 1841,
+            "province": 231
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1840,
+        "fields": {
+            "name": "Huyện Hải Hậu",
+            "code": 1840,
+            "province": 231
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1613,
+        "fields": {
+            "name": "Thành phố Nam Định",
+            "code": 1613,
+            "province": 231
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3199,
+        "fields": {
+            "name": "Huyện Hoành Bồ",
+            "code": 3199,
+            "province": 230
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3185,
+        "fields": {
+            "name": "Thị xã Đông Triều",
+            "code": 3185,
+            "province": 230
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3180,
+        "fields": {
+            "name": "Huyện Đầm Hà",
+            "code": 3180,
+            "province": 230
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3126,
+        "fields": {
+            "name": "Huyện Ba Chẽ",
+            "code": 3126,
+            "province": 230
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2109,
+        "fields": {
+            "name": "Huyện đảo Cô Tô",
+            "code": 2109,
+            "province": 230
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2066,
+        "fields": {
+            "name": "Thị xã Quảng Yên",
+            "code": 2066,
+            "province": 230
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2019,
+        "fields": {
+            "name": "Huyện Tiên Yên",
+            "code": 2019,
+            "province": 230
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1940,
+        "fields": {
+            "name": "Huyện Hải Hà",
+            "code": 1940,
+            "province": 230
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1920,
+        "fields": {
+            "name": "Huyện đảo Vân Đồn",
+            "code": 1920,
+            "province": 230
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1896,
+        "fields": {
+            "name": "Huyện Bình Liêu",
+            "code": 1896,
+            "province": 230
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1686,
+        "fields": {
+            "name": "Thành phố Uông Bí",
+            "code": 1686,
+            "province": 230
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1683,
+        "fields": {
+            "name": "Thành phố Cẩm Phả",
+            "code": 1683,
+            "province": 230
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1604,
+        "fields": {
+            "name": "Thành phố Hạ Long",
+            "code": 1604,
+            "province": 230
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1603,
+        "fields": {
+            "name": "Thành phố Móng Cái",
+            "code": 1603,
+            "province": 230
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3290,
+        "fields": {
+            "name": "Huyện Thanh Ba",
+            "code": 3290,
+            "province": 229
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3272,
+        "fields": {
+            "name": "Huyện Tam Nông",
+            "code": 3272,
+            "province": 229
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2268,
+        "fields": {
+            "name": "Huyện Yên Lập",
+            "code": 2268,
+            "province": 229
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2237,
+        "fields": {
+            "name": "Huyện Thanh Thủy",
+            "code": 2237,
+            "province": 229
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2064,
+        "fields": {
+            "name": "Thị xã Phú Thọ",
+            "code": 2064,
+            "province": 229
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2029,
+        "fields": {
+            "name": "Huyện Thanh Sơn",
+            "code": 2029,
+            "province": 229
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2015,
+        "fields": {
+            "name": "Huyện Tân Sơn",
+            "code": 2015,
+            "province": 229
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1994,
+        "fields": {
+            "name": "Huyện Phù Ninh",
+            "code": 1994,
+            "province": 229
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1959,
+        "fields": {
+            "name": "Huyện Lâm Thao",
+            "code": 1959,
+            "province": 229
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1938,
+        "fields": {
+            "name": "Huyện Hạ Hòa",
+            "code": 1938,
+            "province": 229
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1925,
+        "fields": {
+            "name": "Huyện Đoan Hùng",
+            "code": 1925,
+            "province": 229
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1905,
+        "fields": {
+            "name": "Huyện Cẩm Khê",
+            "code": 1905,
+            "province": 229
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1602,
+        "fields": {
+            "name": "Thành phố Việt Trì",
+            "code": 1602,
+            "province": 229
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3267,
+        "fields": {
+            "name": "Huyện Sơn Dương",
+            "code": 3267,
+            "province": 228
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3157,
+        "fields": {
+            "name": "Huyện Chiêm Hóa",
+            "code": 3157,
+            "province": 228
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1982,
+        "fields": {
+            "name": "Huyện Na Hang",
+            "code": 1982,
+            "province": 228
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1957,
+        "fields": {
+            "name": "Huyện Lâm Bình",
+            "code": 1957,
+            "province": 228
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1941,
+        "fields": {
+            "name": "Huyện Hàm Yên",
+            "code": 1941,
+            "province": 228
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1745,
+        "fields": {
+            "name": "Huyện Yên Sơn",
+            "code": 1745,
+            "province": 228
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1601,
+        "fields": {
+            "name": "Thành phố Tuyên Quang",
+            "code": 1601,
+            "province": 228
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2256,
+        "fields": {
+            "name": "Huyện Vị Xuyên",
+            "code": 2256,
+            "province": 227
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2075,
+        "fields": {
+            "name": "Huyện Bắc Mê",
+            "code": 2075,
+            "province": 227
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2053,
+        "fields": {
+            "name": "Huyện Yên Minh",
+            "code": 2053,
+            "province": 227
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2052,
+        "fields": {
+            "name": "Huyện Xín Mần",
+            "code": 2052,
+            "province": 227
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2001,
+        "fields": {
+            "name": "Huyện Quang Bình",
+            "code": 2001,
+            "province": 227
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1999,
+        "fields": {
+            "name": "Huyện Quản Bạ",
+            "code": 1999,
+            "province": 227
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1973,
+        "fields": {
+            "name": "Huyện Mèo Vạc",
+            "code": 1973,
+            "province": 227
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1945,
+        "fields": {
+            "name": "Huyện Hoàng Su Phì",
+            "code": 1945,
+            "province": 227
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1928,
+        "fields": {
+            "name": "Huyện Đồng Văn",
+            "code": 1928,
+            "province": 227
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1893,
+        "fields": {
+            "name": "Huyện Bắc Quang",
+            "code": 1893,
+            "province": 227
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1600,
+        "fields": {
+            "name": "Thành phố Hà Giang",
+            "code": 1600,
+            "province": 227
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3281,
+        "fields": {
+            "name": "Huyện Tiền Hải",
+            "code": 3281,
+            "province": 226
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1951,
+        "fields": {
+            "name": "Huyện Kiến Xương",
+            "code": 1951,
+            "province": 226
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1869,
+        "fields": {
+            "name": "Huyện Thái Thụy",
+            "code": 1869,
+            "province": 226
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1868,
+        "fields": {
+            "name": "Huyện Quỳnh Phụ",
+            "code": 1868,
+            "province": 226
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1867,
+        "fields": {
+            "name": "Huyện Hưng Hà",
+            "code": 1867,
+            "province": 226
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1716,
+        "fields": {
+            "name": "Huyện Vũ Thư",
+            "code": 1716,
+            "province": 226
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1715,
+        "fields": {
+            "name": "Huyện Đông Hưng",
+            "code": 1715,
+            "province": 226
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1599,
+        "fields": {
+            "name": "Thành phố Thái Bình",
+            "code": 1599,
+            "province": 226
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3294,
+        "fields": {
+            "name": "Huyện Thanh Miện",
+            "code": 3294,
+            "province": 225
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3292,
+        "fields": {
+            "name": "Huyện Thanh Hà",
+            "code": 3292,
+            "province": 225
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3287,
+        "fields": {
+            "name": "Huyện Tứ Kỳ",
+            "code": 3287,
+            "province": 225
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3238,
+        "fields": {
+            "name": "Huyện Ninh Giang",
+            "code": 3238,
+            "province": 225
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2056,
+        "fields": {
+            "name": "Thành phố Chí Linh",
+            "code": 2056,
+            "province": 225
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1953,
+        "fields": {
+            "name": "Huyện Kim Thành",
+            "code": 1953,
+            "province": 225
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1934,
+        "fields": {
+            "name": "Huyện Gia Lộc",
+            "code": 1934,
+            "province": 225
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1818,
+        "fields": {
+            "name": "Thị xã Kinh Môn",
+            "code": 1818,
+            "province": 225
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1817,
+        "fields": {
+            "name": "Huyện Cẩm Giàng",
+            "code": 1817,
+            "province": 225
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1816,
+        "fields": {
+            "name": "Huyện Bình Giang",
+            "code": 1816,
+            "province": 225
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1727,
+        "fields": {
+            "name": "Huyện Nam Sách",
+            "code": 1727,
+            "province": 225
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1598,
+        "fields": {
+            "name": "Thành phố Hải Dương",
+            "code": 1598,
+            "province": 225
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3203,
+        "fields": {
+            "name": "Huyện Kiến Thụy",
+            "code": 3203,
+            "province": 224
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2108,
+        "fields": {
+            "name": "Huyện đảo Cát Hải",
+            "code": 2108,
+            "province": 224
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2107,
+        "fields": {
+            "name": "Huyện đảo Bạch Long Vĩ",
+            "code": 2107,
+            "province": 224
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1822,
+        "fields": {
+            "name": "Huyện Vĩnh Bảo",
+            "code": 1822,
+            "province": 224
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1821,
+        "fields": {
+            "name": "Huyện Tiên Lãng",
+            "code": 1821,
+            "province": 224
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1820,
+        "fields": {
+            "name": "Huyện An Lão",
+            "code": 1820,
+            "province": 224
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1819,
+        "fields": {
+            "name": "Huyện An Dương",
+            "code": 1819,
+            "province": 224
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1726,
+        "fields": {
+            "name": "Huyện Thủy Nguyên",
+            "code": 1726,
+            "province": 224
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1707,
+        "fields": {
+            "name": "Quận Đồ Sơn",
+            "code": 1707,
+            "province": 224
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1706,
+        "fields": {
+            "name": "Quận Dương Kinh",
+            "code": 1706,
+            "province": 224
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1591,
+        "fields": {
+            "name": "Quận Hải An",
+            "code": 1591,
+            "province": 224
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1590,
+        "fields": {
+            "name": "Quận Kiến An",
+            "code": 1590,
+            "province": 224
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1589,
+        "fields": {
+            "name": "Quận Hồng Bàng",
+            "code": 1589,
+            "province": 224
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1588,
+        "fields": {
+            "name": "Quận Lê Chân",
+            "code": 1588,
+            "province": 224
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1587,
+        "fields": {
+            "name": "Quận Ngô Quyền",
+            "code": 1587,
+            "province": 224
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3257,
+        "fields": {
+            "name": "Huyện Quảng Điền",
+            "code": 3257,
+            "province": 223
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3234,
+        "fields": {
+            "name": "Huyện Nam Đông",
+            "code": 3234,
+            "province": 223
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2193,
+        "fields": {
+            "name": "Huyện Phong Điền",
+            "code": 2193,
+            "province": 223
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1885,
+        "fields": {
+            "name": "Huyện A Lưới",
+            "code": 1885,
+            "province": 223
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1882,
+        "fields": {
+            "name": "Huyện Phú Lộc",
+            "code": 1882,
+            "province": 223
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1749,
+        "fields": {
+            "name": "Huyện Phú Vang",
+            "code": 1749,
+            "province": 223
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1698,
+        "fields": {
+            "name": "Thị xã Hương Thủy",
+            "code": 1698,
+            "province": 223
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1697,
+        "fields": {
+            "name": "Thị xã Hương Trà",
+            "code": 1697,
+            "province": 223
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1585,
+        "fields": {
+            "name": "Thành phố Huế",
+            "code": 1585,
+            "province": 223
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3271,
+        "fields": {
+            "name": "Huyện Tam Đảo",
+            "code": 3271,
+            "province": 221
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3265,
+        "fields": {
+            "name": "Huyện Sông Lô",
+            "code": 3265,
+            "province": 221
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2065,
+        "fields": {
+            "name": "Thành phố Phúc Yên",
+            "code": 2065,
+            "province": 221
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2009,
+        "fields": {
+            "name": "Huyện Tam Dương",
+            "code": 2009,
+            "province": 221
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1960,
+        "fields": {
+            "name": "Huyện Lập Thạch",
+            "code": 1960,
+            "province": 221
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1734,
+        "fields": {
+            "name": "Huyện Yên Lạc",
+            "code": 1734,
+            "province": 221
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1733,
+        "fields": {
+            "name": "Huyện Vĩnh Tường",
+            "code": 1733,
+            "province": 221
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1732,
+        "fields": {
+            "name": "Huyện Bình Xuyên",
+            "code": 1732,
+            "province": 221
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1578,
+        "fields": {
+            "name": "Thành phố Vĩnh Yên",
+            "code": 1578,
+            "province": 221
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3317,
+        "fields": {
+            "name": "Huyện Vĩnh Thạnh",
+            "code": 3317,
+            "province": 220
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3300,
+        "fields": {
+            "name": "Huyện Thới Lai",
+            "code": 3300,
+            "province": 220
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3250,
+        "fields": {
+            "name": "Huyện Phong Điền",
+            "code": 3250,
+            "province": 220
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3150,
+        "fields": {
+            "name": "Huyện Cờ Đỏ",
+            "code": 3150,
+            "province": 220
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1576,
+        "fields": {
+            "name": "Quận Thốt Nốt",
+            "code": 1576,
+            "province": 220
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1575,
+        "fields": {
+            "name": "Quận Ô Môn",
+            "code": 1575,
+            "province": 220
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1574,
+        "fields": {
+            "name": "Quận Cái Răng",
+            "code": 1574,
+            "province": 220
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1573,
+        "fields": {
+            "name": "Quận Bình Thủy",
+            "code": 1573,
+            "province": 220
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1572,
+        "fields": {
+            "name": "Quận Ninh Kiều",
+            "code": 1572,
+            "province": 220
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3125,
+        "fields": {
+            "name": "Huyện An Minh",
+            "code": 3125,
+            "province": 219
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2260,
+        "fields": {
+            "name": "Huyện Vĩnh Thuận",
+            "code": 2260,
+            "province": 219
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2251,
+        "fields": {
+            "name": "Huyện U Minh Thượng",
+            "code": 2251,
+            "province": 219
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2134,
+        "fields": {
+            "name": "Huyện Giang Thành",
+            "code": 2134,
+            "province": 219
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2132,
+        "fields": {
+            "name": "Huyện Gò Quao",
+            "code": 2132,
+            "province": 219
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2115,
+        "fields": {
+            "name": "Thành phố Phú Quốc",
+            "code": 2115,
+            "province": 219
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2113,
+        "fields": {
+            "name": "Huyện đảo Kiên Hải",
+            "code": 2113,
+            "province": 219
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2058,
+        "fields": {
+            "name": "Thành phố Hà Tiên",
+            "code": 2058,
+            "province": 219
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1950,
+        "fields": {
+            "name": "Huyện Kiên Lương",
+            "code": 1950,
+            "province": 219
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1833,
+        "fields": {
+            "name": "Huyện An Biên",
+            "code": 1833,
+            "province": 219
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1832,
+        "fields": {
+            "name": "Huyện Giồng Riềng",
+            "code": 1832,
+            "province": 219
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1831,
+        "fields": {
+            "name": "Huyện Tân Hiệp",
+            "code": 1831,
+            "province": 219
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1830,
+        "fields": {
+            "name": "Huyện Hòn Đất",
+            "code": 1830,
+            "province": 219
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1719,
+        "fields": {
+            "name": "Huyện Châu Thành",
+            "code": 1719,
+            "province": 219
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1570,
+        "fields": {
+            "name": "Thành phố Rạch Giá",
+            "code": 1570,
+            "province": 219
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2272,
+        "fields": {
+            "name": "Thị xã Vĩnh Châu",
+            "code": 2272,
+            "province": 218
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2238,
+        "fields": {
+            "name": "Huyện Thạnh Trị",
+            "code": 2238,
+            "province": 218
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2173,
+        "fields": {
+            "name": "Huyện Mỹ Tú",
+            "code": 2173,
+            "province": 218
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2161,
+        "fields": {
+            "name": "Huyện Long Phú",
+            "code": 2161,
+            "province": 218
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2093,
+        "fields": {
+            "name": "Huyện Cù Lao Dung",
+            "code": 2093,
+            "province": 218
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2062,
+        "fields": {
+            "name": "Thị xã Ngã Năm",
+            "code": 2062,
+            "province": 218
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2037,
+        "fields": {
+            "name": "Huyện Trần Đề",
+            "code": 2037,
+            "province": 218
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1949,
+        "fields": {
+            "name": "Huyện Kế Sách",
+            "code": 1949,
+            "province": 218
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1910,
+        "fields": {
+            "name": "Huyện Châu Thành",
+            "code": 1910,
+            "province": 218
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1743,
+        "fields": {
+            "name": "Huyện Mỹ Xuyên",
+            "code": 1743,
+            "province": 218
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1568,
+        "fields": {
+            "name": "Thành phố Sóc Trăng",
+            "code": 1568,
+            "province": 218
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1758,
+        "fields": {
+            "name": "Huyện Châu Phú",
+            "code": 1758,
+            "province": 217
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1757,
+        "fields": {
+            "name": "Huyện Chợ Mới",
+            "code": 1757,
+            "province": 217
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1756,
+        "fields": {
+            "name": "Huyện Phú Tân",
+            "code": 1756,
+            "province": 217
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1755,
+        "fields": {
+            "name": "Thị Xã Tân Châu",
+            "code": 1755,
+            "province": 217
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1754,
+        "fields": {
+            "name": "Huyện An Phú",
+            "code": 1754,
+            "province": 217
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1753,
+        "fields": {
+            "name": "Thành phố Châu Đốc",
+            "code": 1753,
+            "province": 217
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1752,
+        "fields": {
+            "name": "Huyện Tịnh Biên",
+            "code": 1752,
+            "province": 217
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1751,
+        "fields": {
+            "name": "Huyện Tri Tôn",
+            "code": 1751,
+            "province": 217
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1750,
+        "fields": {
+            "name": "Huyện Thoại Sơn",
+            "code": 1750,
+            "province": 217
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1718,
+        "fields": {
+            "name": "Huyện Châu Thành",
+            "code": 1718,
+            "province": 217
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1566,
+        "fields": {
+            "name": "Thành phố Long Xuyên",
+            "code": 1566,
+            "province": 217
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3696,
+        "fields": {
+            "name": "Huyện Hồng Ngự",
+            "code": 3696,
+            "province": 216
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3200,
+        "fields": {
+            "name": "Huyện Hồng Ngự",
+            "code": 3200,
+            "province": 216
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3155,
+        "fields": {
+            "name": "Huyện Châu Thành",
+            "code": 3155,
+            "province": 216
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2059,
+        "fields": {
+            "name": "Thành Phố Hồng Ngự",
+            "code": 2059,
+            "province": 216
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2030,
+        "fields": {
+            "name": "Huyện Tháp Mười",
+            "code": 2030,
+            "province": 216
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2026,
+        "fields": {
+            "name": "Huyện Thanh Bình",
+            "code": 2026,
+            "province": 216
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2013,
+        "fields": {
+            "name": "Huyện Tân Hồng",
+            "code": 2013,
+            "province": 216
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2011,
+        "fields": {
+            "name": "Huyện Tam Nông",
+            "code": 2011,
+            "province": 216
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1961,
+        "fields": {
+            "name": "Huyện Lấp Vò",
+            "code": 1961,
+            "province": 216
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1725,
+        "fields": {
+            "name": "Huyện Lai Vung",
+            "code": 1725,
+            "province": 216
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1724,
+        "fields": {
+            "name": "Huyện Cao Lãnh",
+            "code": 1724,
+            "province": 216
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1668,
+        "fields": {
+            "name": "Thành phố Sa Đéc",
+            "code": 1668,
+            "province": 216
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1564,
+        "fields": {
+            "name": "Thành phố Cao Lãnh",
+            "code": 1564,
+            "province": 216
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2263,
+        "fields": {
+            "name": "Huyện Vũng Liêm",
+            "code": 2263,
+            "province": 215
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2164,
+        "fields": {
+            "name": "Huyện Mang Thít",
+            "code": 2164,
+            "province": 215
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2081,
+        "fields": {
+            "name": "Huyện Bình Tân",
+            "code": 2081,
+            "province": 215
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2054,
+        "fields": {
+            "name": "Thị xã Bình Minh",
+            "code": 2054,
+            "province": 215
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2034,
+        "fields": {
+            "name": "Huyện Trà Ôn",
+            "code": 2034,
+            "province": 215
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2008,
+        "fields": {
+            "name": "Huyện Tam Bình",
+            "code": 2008,
+            "province": 215
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1962,
+        "fields": {
+            "name": "Huyện Long Hồ",
+            "code": 1962,
+            "province": 215
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1562,
+        "fields": {
+            "name": "Thành phố Vĩnh Long",
+            "code": 1562,
+            "province": 215
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3443,
+        "fields": {
+            "name": "Thị xã Duyên Hải",
+            "code": 3443,
+            "province": 214
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2103,
+        "fields": {
+            "name": "Huyện Duyên Hải",
+            "code": 2103,
+            "province": 214
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2091,
+        "fields": {
+            "name": "Huyện Cầu Kè",
+            "code": 2091,
+            "province": 214
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2086,
+        "fields": {
+            "name": "Huyện Càng Long",
+            "code": 2086,
+            "province": 214
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2033,
+        "fields": {
+            "name": "Huyện Trà Cú",
+            "code": 2033,
+            "province": 214
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2020,
+        "fields": {
+            "name": "Huyện Tiểu Cần",
+            "code": 2020,
+            "province": 214
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1911,
+        "fields": {
+            "name": "Huyện Châu Thành",
+            "code": 1911,
+            "province": 214
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1908,
+        "fields": {
+            "name": "Huyện Cầu Ngang",
+            "code": 1908,
+            "province": 214
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1560,
+        "fields": {
+            "name": "Thành phố Trà Vinh",
+            "code": 1560,
+            "province": 214
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3158,
+        "fields": {
+            "name": "Huyện Chợ Lách",
+            "code": 3158,
+            "province": 213
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2028,
+        "fields": {
+            "name": "Huyện Thạnh Phú",
+            "code": 2028,
+            "province": 213
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1975,
+        "fields": {
+            "name": "Huyện Mỏ Cày Nam",
+            "code": 1975,
+            "province": 213
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1974,
+        "fields": {
+            "name": "Huyện Mỏ Cày Bắc",
+            "code": 1974,
+            "province": 213
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1937,
+        "fields": {
+            "name": "Huyện Giồng Trôm",
+            "code": 1937,
+            "province": 213
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1895,
+        "fields": {
+            "name": "Huyện Bình Đại",
+            "code": 1895,
+            "province": 213
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1888,
+        "fields": {
+            "name": "Huyện Ba Tri",
+            "code": 1888,
+            "province": 213
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1742,
+        "fields": {
+            "name": "Huyện Châu Thành",
+            "code": 1742,
+            "province": 213
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1558,
+        "fields": {
+            "name": "Thành phố Bến Tre",
+            "code": 1558,
+            "province": 213
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3275,
+        "fields": {
+            "name": "Huyện Tân Phước",
+            "code": 3275,
+            "province": 212
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2216,
+        "fields": {
+            "name": "Huyện Tân Phú Đông",
+            "code": 2216,
+            "province": 212
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2084,
+        "fields": {
+            "name": "Huyện Cai Lậy",
+            "code": 2084,
+            "province": 212
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2057,
+        "fields": {
+            "name": "Thị xã Gò Công",
+            "code": 2057,
+            "province": 212
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2055,
+        "fields": {
+            "name": "Thị Xã Cai Lậy",
+            "code": 2055,
+            "province": 212
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1933,
+        "fields": {
+            "name": "Huyện Gò Công Tây",
+            "code": 1933,
+            "province": 212
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1932,
+        "fields": {
+            "name": "Huyện Gò Công Đông",
+            "code": 1932,
+            "province": 212
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1900,
+        "fields": {
+            "name": "Huyện Cái Bè",
+            "code": 1900,
+            "province": 212
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1741,
+        "fields": {
+            "name": "Huyện Chợ Gạo",
+            "code": 1741,
+            "province": 212
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1740,
+        "fields": {
+            "name": "Huyện Châu Thành",
+            "code": 1740,
+            "province": 212
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1556,
+        "fields": {
+            "name": "Thành phố Mỹ Tho",
+            "code": 1556,
+            "province": 212
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3329,
+        "fields": {
+            "name": "Thị xã Kiến Tường",
+            "code": 3329,
+            "province": 211
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3315,
+        "fields": {
+            "name": "Huyện Vĩnh Hưng",
+            "code": 3315,
+            "province": 211
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3293,
+        "fields": {
+            "name": "Huyện Thạnh Hóa",
+            "code": 3293,
+            "province": 211
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3276,
+        "fields": {
+            "name": "Huyện Tân Thạnh",
+            "code": 3276,
+            "province": 211
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3273,
+        "fields": {
+            "name": "Huyện Tân Hưng",
+            "code": 3273,
+            "province": 211
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3227,
+        "fields": {
+            "name": "Huyện Mộc Hóa",
+            "code": 3227,
+            "province": 211
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2129,
+        "fields": {
+            "name": "Huyện Đức Huệ",
+            "code": 2129,
+            "province": 211
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2031,
+        "fields": {
+            "name": "Huyện Thủ Thừa",
+            "code": 2031,
+            "province": 211
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2016,
+        "fields": {
+            "name": "Huyện Tân Trụ",
+            "code": 2016,
+            "province": 211
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1929,
+        "fields": {
+            "name": "Huyện Đức Hòa",
+            "code": 1929,
+            "province": 211
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1909,
+        "fields": {
+            "name": "Huyện Châu Thành",
+            "code": 1909,
+            "province": 211
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1907,
+        "fields": {
+            "name": "Huyện Cần Giuộc",
+            "code": 1907,
+            "province": 211
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1906,
+        "fields": {
+            "name": "Huyện Cần Đước",
+            "code": 1906,
+            "province": 211
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1894,
+        "fields": {
+            "name": "Huyện Bến Lức",
+            "code": 1894,
+            "province": 211
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1554,
+        "fields": {
+            "name": "Thành phố Tân An",
+            "code": 1554,
+            "province": 211
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3418,
+        "fields": {
+            "name": "Huyện M Đrắk",
+            "code": 3418,
+            "province": 210
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3217,
+        "fields": {
+            "name": "Huyện Lắk",
+            "code": 3217,
+            "province": 210
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3153,
+        "fields": {
+            "name": "Huyện Cư Kuin",
+            "code": 3153,
+            "province": 210
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2150,
+        "fields": {
+            "name": "Huyện Krông Búk",
+            "code": 2150,
+            "province": 210
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2131,
+        "fields": {
+            "name": "Huyện Ea Súp",
+            "code": 2131,
+            "province": 210
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1954,
+        "fields": {
+            "name": "Huyện Krông Pắc",
+            "code": 1954,
+            "province": 210
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1931,
+        "fields": {
+            "name": "Huyện Ea Kar",
+            "code": 1931,
+            "province": 210
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1884,
+        "fields": {
+            "name": "Huyện Krông Ana",
+            "code": 1884,
+            "province": 210
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1789,
+        "fields": {
+            "name": "Huyện Krông Bông",
+            "code": 1789,
+            "province": 210
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1788,
+        "fields": {
+            "name": "Thị xã Buôn Hồ",
+            "code": 1788,
+            "province": 210
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1787,
+        "fields": {
+            "name": "Huyện Krông Năng",
+            "code": 1787,
+            "province": 210
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1786,
+        "fields": {
+            "name": "Huyện Ea H leo",
+            "code": 1786,
+            "province": 210
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1785,
+        "fields": {
+            "name": "Huyện Cư M gar",
+            "code": 1785,
+            "province": 210
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1784,
+        "fields": {
+            "name": "Huyện Buôn Ðôn",
+            "code": 1784,
+            "province": 210
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1552,
+        "fields": {
+            "name": "Thành phố Buôn Ma Thuột",
+            "code": 1552,
+            "province": 210
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3160,
+        "fields": {
+            "name": "Huyện Di Linh",
+            "code": 3160,
+            "province": 209
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3146,
+        "fields": {
+            "name": "Huyện Cát Tiên",
+            "code": 3146,
+            "province": 209
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2106,
+        "fields": {
+            "name": "Huyện Đạ Tẻh",
+            "code": 2106,
+            "province": 209
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2104,
+        "fields": {
+            "name": "Huyện Đạ Huoai",
+            "code": 2104,
+            "province": 209
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1958,
+        "fields": {
+            "name": "Huyện Lâm Hà",
+            "code": 1958,
+            "province": 209
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1956,
+        "fields": {
+            "name": "Huyện Lạc Dương",
+            "code": 1956,
+            "province": 209
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1919,
+        "fields": {
+            "name": "Huyện Đam Rông",
+            "code": 1919,
+            "province": 209
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1839,
+        "fields": {
+            "name": "Huyện Bảo Lâm",
+            "code": 1839,
+            "province": 209
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1838,
+        "fields": {
+            "name": "Thành phố Bảo Lộc",
+            "code": 1838,
+            "province": 209
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1837,
+        "fields": {
+            "name": "Huyện Đức Trọng",
+            "code": 1837,
+            "province": 209
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1836,
+        "fields": {
+            "name": "Huyện Đơn Dương",
+            "code": 1836,
+            "province": 209
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1550,
+        "fields": {
+            "name": "Thành phố Đà Lạt",
+            "code": 1550,
+            "province": 209
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3213,
+        "fields": {
+            "name": "Huyện Khánh Vĩnh",
+            "code": 3213,
+            "province": 208
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3212,
+        "fields": {
+            "name": "Huyện Khánh Sơn",
+            "code": 3212,
+            "province": 208
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2117,
+        "fields": {
+            "name": "Huyện đảo Trường Sa",
+            "code": 2117,
+            "province": 208
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2061,
+        "fields": {
+            "name": "Thị xã Ninh Hòa",
+            "code": 2061,
+            "province": 208
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1902,
+        "fields": {
+            "name": "Huyện Cam Lâm",
+            "code": 1902,
+            "province": 208
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1829,
+        "fields": {
+            "name": "Huyện Vạn Ninh",
+            "code": 1829,
+            "province": 208
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1739,
+        "fields": {
+            "name": "Huyện Diên Khánh",
+            "code": 1739,
+            "province": 208
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1664,
+        "fields": {
+            "name": "Thành phố Cam Ranh",
+            "code": 1664,
+            "province": 208
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1548,
+        "fields": {
+            "name": "Thành phố Nha Trang",
+            "code": 1548,
+            "province": 208
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2165,
+        "fields": {
+            "name": "Huyện Mang Yang",
+            "code": 2165,
+            "province": 207
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2152,
+        "fields": {
+            "name": "Huyện Krông Pa",
+            "code": 2152,
+            "province": 207
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2149,
+        "fields": {
+            "name": "Huyện Kông Chro",
+            "code": 2149,
+            "province": 207
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2144,
+        "fields": {
+            "name": "Huyện Kbang",
+            "code": 2144,
+            "province": 207
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2119,
+        "fields": {
+            "name": "Huyện Đắk Pơ",
+            "code": 2119,
+            "province": 207
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2118,
+        "fields": {
+            "name": "Huyện Đắk Đoa",
+            "code": 2118,
+            "province": 207
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2101,
+        "fields": {
+            "name": "Huyện Chư Pưh",
+            "code": 2101,
+            "province": 207
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1801,
+        "fields": {
+            "name": "Huyện Chư Păh",
+            "code": 1801,
+            "province": 207
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1800,
+        "fields": {
+            "name": "Thị xã An Khê",
+            "code": 1800,
+            "province": 207
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1799,
+        "fields": {
+            "name": "Huyện Ia Pa",
+            "code": 1799,
+            "province": 207
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1798,
+        "fields": {
+            "name": "Thị xã Ayun Pa",
+            "code": 1798,
+            "province": 207
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1797,
+        "fields": {
+            "name": "Huyện Phú Thiện",
+            "code": 1797,
+            "province": 207
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1796,
+        "fields": {
+            "name": "Huyện Chư Sê",
+            "code": 1796,
+            "province": 207
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1795,
+        "fields": {
+            "name": "Huyện Chư Prông",
+            "code": 1795,
+            "province": 207
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1794,
+        "fields": {
+            "name": "Huyện Đức Cơ",
+            "code": 1794,
+            "province": 207
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1793,
+        "fields": {
+            "name": "Huyện Ia Grai",
+            "code": 1793,
+            "province": 207
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1546,
+        "fields": {
+            "name": "Thành phố Pleiku",
+            "code": 1546,
+            "province": 207
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2111,
+        "fields": {
+            "name": "Huyện đảo Côn Đảo",
+            "code": 2111,
+            "province": 206
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1709,
+        "fields": {
+            "name": "Huyện Châu Đức",
+            "code": 1709,
+            "province": 206
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1701,
+        "fields": {
+            "name": "Thị Xã Phú Mỹ",
+            "code": 1701,
+            "province": 206
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1699,
+        "fields": {
+            "name": "Huyện Xuyên Mộc",
+            "code": 1699,
+            "province": 206
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1690,
+        "fields": {
+            "name": "Huyện Đất Đỏ",
+            "code": 1690,
+            "province": 206
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1689,
+        "fields": {
+            "name": "Huyện Long Điền",
+            "code": 1689,
+            "province": 206
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1688,
+        "fields": {
+            "name": "TT Phú Mỹ - cũ",
+            "code": 1688,
+            "province": 206
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1667,
+        "fields": {
+            "name": "Thành phố Bà Rịa",
+            "code": 1667,
+            "province": 206
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1544,
+        "fields": {
+            "name": "Thành phố Vũng Tàu",
+            "code": 1544,
+            "province": 206
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3135,
+        "fields": {
+            "name": "Huyện Bắc Tân Uyên",
+            "code": 3135,
+            "province": 205
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3132,
+        "fields": {
+            "name": "Huyện Bàu Bàng",
+            "code": 3132,
+            "province": 205
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1992,
+        "fields": {
+            "name": "Huyện Phú Giáo",
+            "code": 1992,
+            "province": 205
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1746,
+        "fields": {
+            "name": "Huyện Dầu Tiếng",
+            "code": 1746,
+            "province": 205
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1696,
+        "fields": {
+            "name": "Thị xã Bến Cát",
+            "code": 1696,
+            "province": 205
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1695,
+        "fields": {
+            "name": "Thị xã Tân Uyên",
+            "code": 1695,
+            "province": 205
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1541,
+        "fields": {
+            "name": "Thành phố Thuận An",
+            "code": 1541,
+            "province": 205
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1540,
+        "fields": {
+            "name": "Thành phố Dĩ An",
+            "code": 1540,
+            "province": 205
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1538,
+        "fields": {
+            "name": "Thành phố Thủ Dầu Một",
+            "code": 1538,
+            "province": 205
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2049,
+        "fields": {
+            "name": "Huyện Vĩnh Cửu",
+            "code": 2049,
+            "province": 204
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1708,
+        "fields": {
+            "name": "Huyện Nhơn Trạch",
+            "code": 1708,
+            "province": 204
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1705,
+        "fields": {
+            "name": "Huyện Thống Nhất",
+            "code": 1705,
+            "province": 204
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1704,
+        "fields": {
+            "name": "Huyện Xuân Lộc",
+            "code": 1704,
+            "province": 204
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1702,
+        "fields": {
+            "name": "Huyện Cẩm Mỹ",
+            "code": 1702,
+            "province": 204
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1700,
+        "fields": {
+            "name": "Huyện Định Quán",
+            "code": 1700,
+            "province": 204
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1694,
+        "fields": {
+            "name": "Huyện Long Thành",
+            "code": 1694,
+            "province": 204
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1693,
+        "fields": {
+            "name": "Huyện Tân Phú",
+            "code": 1693,
+            "province": 204
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1692,
+        "fields": {
+            "name": "Thành phố Long Khánh",
+            "code": 1692,
+            "province": 204
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1691,
+        "fields": {
+            "name": "Huyện Trảng Bom",
+            "code": 1691,
+            "province": 204
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1536,
+        "fields": {
+            "name": "Thành phố Biên Hòa",
+            "code": 1536,
+            "province": 204
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2112,
+        "fields": {
+            "name": "Huyện đảo Hoàng Sa",
+            "code": 2112,
+            "province": 203
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1687,
+        "fields": {
+            "name": "Huyện Hòa Vang",
+            "code": 1687,
+            "province": 203
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1531,
+        "fields": {
+            "name": "Quận Cẩm Lệ",
+            "code": 1531,
+            "province": 203
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1530,
+        "fields": {
+            "name": "Quận Liên Chiểu",
+            "code": 1530,
+            "province": 203
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1529,
+        "fields": {
+            "name": "Quận Ngũ Hành Sơn",
+            "code": 1529,
+            "province": 203
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1528,
+        "fields": {
+            "name": "Quận Sơn Trà",
+            "code": 1528,
+            "province": 203
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1527,
+        "fields": {
+            "name": "Quận Thanh Khê",
+            "code": 1527,
+            "province": 203
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1526,
+        "fields": {
+            "name": "Quận Hải Châu",
+            "code": 1526,
+            "province": 203
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3695,
+        "fields": {
+            "name": "Thành Phố Thủ Đức",
+            "code": 3695,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2090,
+        "fields": {
+            "name": "Huyện Cần Giờ",
+            "code": 2090,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1534,
+        "fields": {
+            "name": "Huyện Nhà Bè",
+            "code": 1534,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1533,
+        "fields": {
+            "name": "Huyện Bình Chánh",
+            "code": 1533,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1463,
+        "fields": {
+            "name": "Quận Thủ Đức",
+            "code": 1463,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1462,
+        "fields": {
+            "name": "Quận Bình Thạnh",
+            "code": 1462,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1461,
+        "fields": {
+            "name": "Quận Gò Vấp",
+            "code": 1461,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1460,
+        "fields": {
+            "name": "Huyện Củ Chi",
+            "code": 1460,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1459,
+        "fields": {
+            "name": "Huyện Hóc Môn",
+            "code": 1459,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1458,
+        "fields": {
+            "name": "Quận Bình Tân",
+            "code": 1458,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1457,
+        "fields": {
+            "name": "Quận Phú Nhuận",
+            "code": 1457,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1456,
+        "fields": {
+            "name": "Quận Tân Phú",
+            "code": 1456,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1455,
+        "fields": {
+            "name": "Quận Tân Bình",
+            "code": 1455,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1454,
+        "fields": {
+            "name": "Quận 12",
+            "code": 1454,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1453,
+        "fields": {
+            "name": "Quận 11",
+            "code": 1453,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1452,
+        "fields": {
+            "name": "Quận 10",
+            "code": 1452,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1451,
+        "fields": {
+            "name": "Quận 9",
+            "code": 1451,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1450,
+        "fields": {
+            "name": "Quận 8",
+            "code": 1450,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1449,
+        "fields": {
+            "name": "Quận 7",
+            "code": 1449,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1448,
+        "fields": {
+            "name": "Quận 6",
+            "code": 1448,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1447,
+        "fields": {
+            "name": "Quận 5",
+            "code": 1447,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1446,
+        "fields": {
+            "name": "Quận 4",
+            "code": 1446,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1444,
+        "fields": {
+            "name": "Quận 3",
+            "code": 1444,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1443,
+        "fields": {
+            "name": "Quận 2",
+            "code": 1443,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1442,
+        "fields": {
+            "name": "Quận 1",
+            "code": 1442,
+            "province": 202
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3440,
+        "fields": {
+            "name": "Quận Nam Từ Liêm",
+            "code": 3440,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3303,
+        "fields": {
+            "name": "Huyện Thường Tín",
+            "code": 3303,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 3255,
+        "fields": {
+            "name": "Huyện Phú Xuyên",
+            "code": 3255,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 2004,
+        "fields": {
+            "name": "Huyện Quốc Oai",
+            "code": 2004,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1915,
+        "fields": {
+            "name": "Huyện Chương Mỹ",
+            "code": 1915,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1810,
+        "fields": {
+            "name": "Huyện Ứng Hòa",
+            "code": 1810,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1809,
+        "fields": {
+            "name": "Huyện Thanh Oai",
+            "code": 1809,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1808,
+        "fields": {
+            "name": "Huyện Thạch Thất",
+            "code": 1808,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1807,
+        "fields": {
+            "name": "Huyện Phúc Thọ",
+            "code": 1807,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1806,
+        "fields": {
+            "name": "Huyện Mỹ Đức",
+            "code": 1806,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1805,
+        "fields": {
+            "name": "Huyện Hoài Đức",
+            "code": 1805,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1804,
+        "fields": {
+            "name": "Huyện Đan Phượng",
+            "code": 1804,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1803,
+        "fields": {
+            "name": "Huyện Ba Vì",
+            "code": 1803,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1711,
+        "fields": {
+            "name": "Thị xã Sơn Tây",
+            "code": 1711,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1710,
+        "fields": {
+            "name": "Huyện Thanh Trì",
+            "code": 1710,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1703,
+        "fields": {
+            "name": "Huyện Gia Lâm",
+            "code": 1703,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1583,
+        "fields": {
+            "name": "Huyện Sóc Sơn",
+            "code": 1583,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1582,
+        "fields": {
+            "name": "Huyện Đông Anh",
+            "code": 1582,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1581,
+        "fields": {
+            "name": "Huyện Mê Linh",
+            "code": 1581,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1542,
+        "fields": {
+            "name": "Quận Hà Đông",
+            "code": 1542,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1493,
+        "fields": {
+            "name": "Quận Thanh Xuân",
+            "code": 1493,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1492,
+        "fields": {
+            "name": "Quận Tây Hồ",
+            "code": 1492,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1491,
+        "fields": {
+            "name": "Quận Long Biên",
+            "code": 1491,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1490,
+        "fields": {
+            "name": "Quận Hoàng Mai",
+            "code": 1490,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1489,
+        "fields": {
+            "name": "Quận Hoàn Kiếm",
+            "code": 1489,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1488,
+        "fields": {
+            "name": "Quận Hai Bà Trưng",
+            "code": 1488,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1486,
+        "fields": {
+            "name": "Quận Đống Đa",
+            "code": 1486,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1485,
+        "fields": {
+            "name": "Quận Cầu Giấy",
+            "code": 1485,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1484,
+        "fields": {
+            "name": "Quận Ba Đình",
+            "code": 1484,
+            "province": 201
+        }
+    },
+    {
+        "model": "core.district",
+        "pk": 1482,
+        "fields": {
+            "name": "Quận Bắc Từ Liêm",
+            "code": 1482,
+            "province": 201
+        }
+    }
+]
