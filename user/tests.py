@@ -4,6 +4,7 @@ from django.db import IntegrityError
 from django.test import TestCase
 
 # Create your tests here.
+from .models import Profile
 
 
 class UserTestCase(TestCase):
@@ -38,7 +39,7 @@ class UserTestCase(TestCase):
             username="testavatar", email="test@gmail.com", password="testpassword"
         )
         user.refresh_from_db()
-        self.assertEqual(user.profile.avatar, "defaults/avatar.png", "Avatar not set")
+        self.assertEqual(user.profile.avatar, Profile.DEFAULT_AVATAR, "Avatar not set")
 
     def test_dupplicate_username(self):
         with self.assertRaises(IntegrityError) as context:

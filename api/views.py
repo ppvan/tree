@@ -2,7 +2,7 @@ import os
 
 import requests
 from django.contrib.postgres.search import SearchQuery, SearchVector
-from django.http import JsonResponse
+from django.http import HttpResponse, JsonResponse
 from django.views import View
 
 from core.models import District, Product, Province, Ward
@@ -113,3 +113,11 @@ class TransportServiceView(View):
             return JsonResponse([], safe=False)
 
         return JsonResponse(r.json()["data"], safe=False)
+
+
+class GenerateAvatarView(View):
+    API = "https://ui-avatars.com/api/"
+
+    def get(self, request, name):
+        r = requests.get(self.API, params={"name": name}, stream=True)
+        return HttpResponse(r.content, content_type="image/png")

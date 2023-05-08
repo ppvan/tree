@@ -59,7 +59,7 @@
                     <div id="avatar" class="cursor-pointer">
                         <!-- <span class="text-white font-bold mx-3 grow max-w-max">{{ user.get_username }}</span> -->
                         <img class="object-cover w-10 border-2 border-[#76be8e] rounded-full"
-                            src="{{ user.profile.avatar.url }}" alt="">
+                            src="{{ user.profile.avatar_url }}" alt="">
 
                     </div>
                     <div id="profile-menu"
@@ -67,7 +67,7 @@
                         <a href="{% url 'profile' %}"
                             class="hover:bg-[#99bda4] bg-[#7f9f89] border-3 border-green-200 p-1 flex justify-between items-center gap-2">
                             <img class="object-cover w-10 border-2 border-[#76be8e] rounded-full"
-                                src="{{ user.profile.avatar.url }}" alt="">
+                                src="{{ user.profile.avatar_url }}" alt="">
                             <span class="grow">{{ user.profile.full_name }}</span>
                         </a>
 

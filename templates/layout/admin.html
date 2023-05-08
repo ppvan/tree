@@ -58,7 +58,7 @@
                 </a>
                 <a href="{% url 'profile' %}" class="p-4 flex items-center gap-4">
                     <span class="text-lg font-medium opacity-70 hover:opacity-100">{{ user.profile.full_name }}</span>
-                    <img class="rounded-full w-10" src="{{ user.profile.avatar.url }}" alt="">
+                    <img class="rounded-full w-10" src="{{ user.profile.avatar_url }}" alt="">
                 </a>
             </header>
             <hr>

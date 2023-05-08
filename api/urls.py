@@ -2,6 +2,7 @@ from django.urls import path
 
 from .views import (
     DistrictView,
+    GenerateAvatarView,
     ProductSearchView,
     ProvinceView,
     TransportFeeView,
@@ -12,6 +13,11 @@ from .views import (
 app_name = "api"
 
 urlpatterns = [
+    path(
+        "generate-avatar/<name>",
+        GenerateAvatarView.as_view(),
+        name="avatar_generate",
+    ),
     path("search/", ProductSearchView.as_view(), name="product_seach"),
     path("province/", ProvinceView.as_view(), name="province"),
     path("district/", DistrictView.as_view(), name="district"),
