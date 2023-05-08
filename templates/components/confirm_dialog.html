@@ -1,0 +1,16 @@
+<dialog id="{{ id }}" class="z-50 w-2/5 h-96 rounded-md shadow-lg">
+    <div class="w-full h-full flex flex-col justify-evenly gap-8">
+        <h1 class="font-semibold text-2xl">{{ title }}</h1>
+        <p>
+            {{ message|default:"Thông tin sẽ bị xóa vĩnh viễn" }}
+        </p>
+
+        <span class="grow"></span>
+        <div class="">
+            <div class="flex justify-end items-end gap-2">
+                <button class="ok btn w-28 text-white bg-[#667260] hover:bg-[#373d32]">Xác nhận</button>
+                <button class="cancel btn w-28 border-gray-400 text-[#667260] hover:bg-gray-200">Hủy</button>
+            </div>
+        </div>
+    </div>
+</dialog>

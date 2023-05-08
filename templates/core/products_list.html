@@ -18,6 +18,8 @@
             </div>
         </div>
 
+        {% include "components/confirm_dialog.html" with id="dialog" title="Bạn chắc chắn muốn xóa sản phẩm?" message="Thông tin về sản phẩm sẽ bị xóa vĩnh viễn" %}
+
         <div id="product-list" class="">
 
             <div class="relative overflow-x-auto bg-[#ecf0f1]">
@@ -36,6 +38,7 @@
                             <th scope="col" class="px-6 py-3">
                                 Đơn giá
                             </th>
+                            <th>Thao tác</th>
                         </tr>
                     </thead>
                     <tbody class="bg-[#ecf0f1]">
@@ -58,6 +61,19 @@
                             <td class="px-6 py-4">
                                 {{ product.price|vnd_format }}
                             </td>
+                            <td>
+                                <a href="{% url 'core:product_update' product.id %}"
+                                    class="p-4 pr-2 hover:text-yellow-700">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                                <button id="product-delete" href="#" class="p-4 pl-2 hover:text-red-500">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+
+                                <form id="product-delete-form" class="hidden" action="{% url 'core:product_delete' product.id %}" method="post">
+                                    {% csrf_token %}
+                                </form>
+                            </td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -68,3 +84,28 @@
     </div>
 </div>
 {% endblock content %}
+
+{% block js %}
+
+<script>
+    let dialog = document.querySelector('#dialog');
+    let dialogOK = dialog.querySelector('.ok');
+    let dialogCancel = dialog.querySelector('.cancel');
+    let productDelete = document.querySelector('#product-delete');
+    let productDeleteForm = document.querySelector('#product-delete-form');
+
+    dialogCancel.addEventListener('click', () => {
+        dialog.close();
+    });
+
+    dialogOK.addEventListener('click', () => {
+        productDeleteForm.submit();
+        dialog.close();
+    });
+
+    productDelete.addEventListener('click', () => {
+        dialog.showModal();
+    });
+</script>
+
+{% endblock js %}

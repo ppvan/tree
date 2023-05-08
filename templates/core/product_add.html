@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 {% load tailwind_filters %}
 {% block content %}
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
     <legend class="text-2xl mb-3">Thêm sản phẩm mới</legend>
     {% csrf_token %}
     {{ form|crispy }}

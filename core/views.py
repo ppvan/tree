@@ -74,7 +74,7 @@ class DetailProductView(DetailView):
         return context
 
 
-class UpdateProductView(AdminRequiredMixin, SuccessMessageMixin, UpdateView):
+class ProductUpdateView(AdminRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Product
     form_class = ProductForm
     template_name = "core/product_update.html"
@@ -85,8 +85,8 @@ class UpdateProductView(AdminRequiredMixin, SuccessMessageMixin, UpdateView):
 class DeleteProductView(AdminRequiredMixin, SuccessMessageMixin, DeleteView):
     model = Product
     template_name = "core/product_delete.html"
-    success_url = reverse_lazy("core:list_product")
-    success_message = "Sản phẩm %(name)s đã được xóa thành công"
+    success_url = reverse_lazy("core:product_list")
+    success_message = "Sản phẩm đã được xóa thành công"
 
 
 class AddToCartView(LoginRequiredMixin, View):
@@ -147,7 +147,7 @@ class ProductByCategoryView(View):
         category = get_object_or_404(Category, slug=slug)
         products = Product.objects.filter(category=category)
         context = {"products": products, "category": category}
-        return render(request, "core/home.html", context)
+        return render(request, "home.html", context)
 
 
 class CheckoutView(LoginRequiredMixin, View):
