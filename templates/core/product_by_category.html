@@ -2,9 +2,41 @@
 
 {% load static %}
 {% load tailwind_filters %}
+{% load concurency %}
 
 {% block content %}
-<div>
-
+<div class="bg-[#f6faf0] flex flex-col m-auto gap-5 rounded shadow">
+    <h1 class="text-left p-4 text-4xl font-bold text-[#2b2d42]">{{ category.label }}</h1>
+    <div class="grid grid-cols-4 px-4 gap-2">
+        {% for product in page_obj %}
+        <a href="{% url 'core:product_detail' product.id %}"
+            class="hover:scale-105 transition-transform rounded shadow overflow-hidden bg-[#F6FAF0] border flex flex-col items-center gap-1">
+            <img class="w-full object-fill brightness-90" src="{{ product.thumbnail.url }}" alt="">
+            <h2 class="font-medium text-lg">{{ product.name }}</h2>
+            <p class="text-red-400">{{ product.price|vnd_format }}</p>
+        </a>
+        {% endfor %}
+    </div>
+    <div id="pagination" class="flex items-center justify-center gap-2 p-2">
+        {% if page_obj.has_previous %}
+        <a href="?page={{ pageobj.previous_page_number }}" class="mr-4">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+        {% endif %}
+        {% for i in page_obj.paginator.page_range %}
+        {% if i == page_obj.number %}
+        <a href="#" class="px-3 py-2 rounded-md bg-[#667260]">
+            {{ i }}
+        </a>
+        {% else %}
+        <a href="?page={{ i }}" class="px-3 py-2 border rounded-md">{{ i }}</a>
+        {% endif %}
+        {% endfor %}
+        {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}" class="ml-4">
+            <i class="fas fa-chevron-right"></i>
+        </a>
+        {% endif %}
+    </div>
 </div>
 {% endblock content %}

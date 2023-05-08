@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
+from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
@@ -145,9 +146,12 @@ class HomePageView(TemplateView):
 class ProductByCategoryView(View):
     def get(self, request, slug):
         category = get_object_or_404(Category, slug=slug)
-        products = Product.objects.filter(category=category)
-        context = {"products": products, "category": category}
-        return render(request, "home.html", context)
+        products = Product.objects.filter(category=category).order_by("-created_at")
+        paginator = Paginator(products, 12)
+        page_number = request.GET.get("page")
+        page_obj = paginator.get_page(page_number)
+        context = {"products": products, "category": category, "page_obj": page_obj}
+        return render(request, "core/product_by_category.html", context)
 
 
 class CheckoutView(LoginRequiredMixin, View):

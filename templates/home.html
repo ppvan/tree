@@ -50,7 +50,7 @@
         <div class="grid grid-cols-4 px-4 gap-2">
             {% for product in products %}
             <a href="{% url 'core:product_detail' product.id %}"
-                class="rounded shadow overflow-hidden bg-[#F6FAF0] border flex flex-col items-center gap-1">
+                class="rounded hover:scale-105 transition-transform shadow overflow-hidden bg-[#F6FAF0] border flex flex-col items-center gap-1">
                 <img class="w-full object-fill brightness-90" src="{{ product.thumbnail.url }}" alt="">
                 <h2 class="font-medium text-lg">{{ product.name }}</h2>
                 <p class="text-red-400">{{ product.price|vnd_format }}</p>
