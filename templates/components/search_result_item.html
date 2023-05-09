@@ -1,0 +1,17 @@
+{% load concurency %}
+
+
+{% for product in products %}
+<a class="bg-[#fefefe] hover:bg-[#dce9e2] p-1 rounded block" href="{% url 'core:product_detail' product.id %}">
+    <div class="flex gap-2 items-center h-14">
+        <img class="img rounded-full w-12" src="{{ product.thumbnail.url|default:"https://via.placeholder.com/50" }}" alt="">
+        <p class="name">{{ product.name }}</p>
+        <span class="grow"></span>
+        <p class="price font-light">{{ product.price|vnd_format }}</p>
+    </div>
+</a>
+{% empty %}
+<div class="h-20 flex items-center justify-center">
+    <p class="text-center">Không có sản phẩm nào</p>
+</div>
+{% endfor %}

@@ -3,10 +3,10 @@ import os
 import requests
 from django.contrib.postgres.search import SearchQuery, SearchVector
 from django.http import HttpResponse, JsonResponse
+from django.shortcuts import render
 from django.views import View
 
 from core.models import District, Product, Province, Ward
-from core.serializers import ModelSerializer
 
 # Create your views here.
 
@@ -25,8 +25,9 @@ class ProductSearchView(View):
             .filter(search=search_query)
             .order_by("-rank")[:20]
         )
-        result = ModelSerializer(products).to_dict()
-        return JsonResponse(result, safe=False)
+        return render(
+            request, "components/search_result_item.html", {"products": products}
+        )
 
 
 class ProvinceView(View):

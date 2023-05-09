@@ -24,7 +24,10 @@ if (pySitePackages) {
 }
 
 const contentPaths = [...projectPaths, ...pyPackagesPaths];
-console.log(`tailwindcss will scan ${contentPaths}`);
+console.log("tailwindcss will scan");
+for (let path of contentPaths) {
+    console.log(path);
+}
 
 module.exports = {
     content: contentPaths,

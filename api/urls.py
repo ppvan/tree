@@ -18,7 +18,7 @@ urlpatterns = [
         GenerateAvatarView.as_view(),
         name="avatar_generate",
     ),
-    path("search/", ProductSearchView.as_view(), name="product_seach"),
+    path("search/", ProductSearchView.as_view(), name="product_search"),
     path("province/", ProvinceView.as_view(), name="province"),
     path("district/", DistrictView.as_view(), name="district"),
     path("ward/", WardView.as_view(), name="ward"),
