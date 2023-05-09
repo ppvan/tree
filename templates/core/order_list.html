@@ -15,10 +15,10 @@
     </div>
     <div class="flex justify-around flex-col gap-4">
         {% for order in orders %}
-        <a href="#" class="rounded overflow-hidden border border-gray-300 w-2/3 px-2 shadow">
+        <a href="{% url 'core:order_detail' order.id %}" class="rounded overflow-hidden border border-gray-300 w-2/3 px-2 shadow">
             <h2 class="font-light mb-2 italic">2 sản phẩm</h2>
             <div class="flex items-center justify-between  gap-3">
-                {% with product=order.items.first %}
+                {% with product=order.items.first.product %}
                 <img class="w-20" src="{{ product.thumbnail.url }}" alt="">
                 <div class="grow">
                     <h2 class="text-lg">{{ product.name }}</h2>

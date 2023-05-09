@@ -26,8 +26,10 @@
                     {{ form.ward|as_crispy_field }}
                 </div>
             </div>
-            {{ form.address|as_crispy_field }}
+            {{ form.address1|as_crispy_field }}
+            {{ form.address2|as_crispy_field }}
             {{ form.note|as_crispy_field }}
+
         </form>
     </div>
     <div class="w-1/3 flex flex-col justify-start gap-4 border-l-2">
@@ -81,13 +83,41 @@
 
 {% block js %}
 <script>
-    const provinceSelect = $("[name='province']")
-    const districtSelect = $("[name='district']")
-    const wardSelect = $("[name='ward']")
+    const provinceSelect = $("[name='province']");
+    const districtSelect = $("[name='district']");
+    const wardSelect = $("[name='ward']");
     const transportSelect = $("[name='transport']");
-    const transportFee = $("#transport-fee")
-    const orderPrice = $("#order_price")
-    const orderTotal = $("#order_total")
+    const address1 = $("[name='address1']");
+    const transportFee = $("#transport-fee");
+    const orderPrice = $("#order_price");
+    const orderTotal = $("#order_total");
+    const checkoutForm = $("#checkout");
+
+    checkoutForm.on("submit", function (event) {
+        event.preventDefault();
+        if (provinceSelect.val() === "0") {
+            alert("Vui lòng chọn tỉnh/thành phố");
+            return;
+        }
+        if (districtSelect.val() === "0") {
+            alert("Vui lòng chọn quận/huyện");
+            return;
+        }
+        if (wardSelect.val() === "0") {
+            alert("Vui lòng chọn phường/xã");
+            return;
+        }
+        if (transportSelect.val() === "0") {
+            alert("Vui lòng chọn hình thức vận chuyển");
+            return;
+        }
+        if (address1.val() === "") {
+            alert("Vui lòng nhập địa chỉ");
+            return;
+        }
+
+        checkoutForm.unbind("submit").submit();
+    });
 
     transportSelect.attr("form", "checkout");
 
@@ -102,6 +132,8 @@
     })
 
     provinceSelect.change(function () {
+        address1.val("")
+
         if (provinceSelect.val() === "0") {
             districtSelect.html(`<option value="0">Chọn quận/huyện</option>`)
             wardSelect.html(`<option value="0">Chọn phường/xã</option>`)
@@ -125,8 +157,10 @@
 
 
     districtSelect.change(function () {
+        address1.val("")
         if (districtSelect.val() === "0") {
             wardSelect.html(`<option value="0">Chọn phường/xã</option>`)
+            address1.val("")
         } else {
             $.ajax({
                 url: "{% url 'api:ward' %}",
@@ -148,6 +182,7 @@
     wardSelect.change(function () {
         if (wardSelect.val() === "0") {
             transportSelect.html(`<option value="0">Chọn phương thức vận chuyển</option>`);
+            address1.val("")
         } else {
             $.ajax({
                 url: "{% url 'api:transport_service' %}",
@@ -157,6 +192,11 @@
                 },
                 success: function (data) {
                     console.log(data);
+                    // Calculate address1
+                    address1.val(`${wardSelect.find(":selected").text()}, ${districtSelect.find(":selected").text()}, ${provinceSelect.find(":selected").text()}`)
+
+
+                    // Add transport service
                     transportSelect.html(`<option value="0">Chọn phương thức vận chuyển</option>`);
                     data.forEach(transport => {
                         transportSelect.append(`<option value="${transport.service_id}">${transport.short_name}</option>`)
@@ -179,8 +219,23 @@
                     ward_code: wardSelect.val(),
                 },
                 success: function (data) {
-                    transportFee.text(`${parseInt(data.total).toLocaleString("vi")} ₫`);
 
+                    $.ajax({
+                        url: "{% url 'core:checkout' %}",
+                        type: "PUT",
+                        headers: {
+                            "X-CSRFToken": getCookie("csrftoken"),
+                        },
+                        data: {
+                            delivery_fee: data.total,
+                        },
+                        success: function (data) {
+                            console.log(data);
+                        }
+                    })
+
+
+                    transportFee.text(`${parseInt(data.total).toLocaleString("vi")} ₫`);
                     orderTotal.text(`${(parseInt(orderPrice.text().replace(/\./g, "")) + data.total).toLocaleString("vi")} ₫`)
                 }
             })

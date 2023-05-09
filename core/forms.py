@@ -62,7 +62,22 @@ class CheckoutForm(forms.Form):
 
     ward = ChoiceFieldNoValidation(choices=[(0, "Chọn phường/xã")], label="Phường/xã")
 
-    address = forms.CharField(max_length=255, label="Địa chỉ")
+    address2 = forms.CharField(
+        max_length=255,
+        label="Địa chỉ chi tiết",
+        widget=forms.TextInput(attrs={"placeholder": "Số nhà, tên đường, ..."}),
+    )
+
+    address1 = forms.CharField(
+        max_length=255,
+        label="Địa chỉ",
+        widget=forms.TextInput(
+            attrs={
+                "readonly": True,
+                "placeholder": "Tỉnh/thành phố, Quận/huyện, Phường/xã",
+            }
+        ),
+    )
 
     note = forms.CharField(
         max_length=255, required=False, widget=forms.Textarea, label="Ghi chú"

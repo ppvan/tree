@@ -13,6 +13,7 @@ from .views import (
     DeleteProductView,
     DetailProductView,
     HomePageView,
+    OrderDetailView,
     OrderListView,
     ProductByCategoryView,
     ProductListView,
@@ -55,5 +56,6 @@ urlpatterns = [
     path("cart/list/", CartListView.as_view(), name="cart_list"),
     # Checkout
     path("checkout/", CheckoutView.as_view(), name="checkout"),
-    path("order/list", OrderListView.as_view(), name="order_list"),
+    path("order/list/", OrderListView.as_view(), name="order_list"),
+    path("order/<int:pk>/", OrderDetailView.as_view(), name="order_detail"),
 ]

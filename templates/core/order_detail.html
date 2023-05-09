@@ -1,0 +1,84 @@
+{% extends "layout/base.html" %}
+{% load static %}
+{% load humanize %}
+{% load concurency %}
+{% block title %}Cart{% endblock title %}
+
+
+{% block content %}
+<div class="mx-auto bg-[#f6faf0] rounded border">
+    <div class="flex justify-between items-center mx-5">
+        <h1 class="text-xl px-6 font-bold my-10 uppercase">Thông tin đơn hàng</h1>
+        <a href="{% url 'core:home' %}" class="btn hover:text-white border-green-500 hover:bg-green-500">
+            <span>Tiếp tục mua sắm</span>
+        </a>
+    </div>
+    <div class="flex justify-around w-full h-2/3 m-1">
+        <div class="w-2/3 border-gray-400 relative overflow-y-scroll border rounded">
+            <table class="table-fixed w-full border-collapse">
+                <thead class="sticky top-0 bg-green-700 text-white">
+                    <th class=" uppercase border-b mb-4 border-gray-400 " colspan="5">Sản phẩm</th>
+                    <th class=" uppercase text-left border-b mb-4 border-gray-400 " colspan="2">Giá</th>
+                    <th class=" uppercase border-b mb-4 border-gray-400 " colspan="1">Số lượng</th>
+                    <th class=" uppercase text-right px-2 border-b mb-4 border-gray-400 " colspan="3">Tạm tính</th>
+                </thead>
+
+                <tbody class="overflow-x-hidden overflow-y-auto">
+                    {% for item in order_items %}
+                    <tr class="">
+                        <td class="border-y border-gray-500" colspan="1">
+                            <img src="{{ item.product.thumbnail.url }}" alt="">
+                        </td>
+                        <td class="border-y p-1 pl-4 text-lg border-gray-500" colspan="4">
+                            <a href="{% url 'core:product_detail' item.product.id %}"
+                                class="text-green-600 hover:text-green-400">
+                                {{ item.product.name }}</a>
+                        </td>
+                        <td class="border-y p-1 border-gray-500 text-left px-2" colspan="2">
+                            {{ item.product.price|vnd_format }}
+                        </td>
+                        <td class="border-y p-1 border-gray-500 text-center" colspan="1">{{ item.quantity }}</td>
+                        <td class="border-y p-1 border-gray-500 text-right px-2" colspan="3">
+                            {{ item.total_price|vnd_format}}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="w-1/4 flex flex-col justify-start gap-1">
+            <div class="border-gray-400 border rounded grow">
+                <h1 class="font-semibold px-2 text-lg uppercase p-2">Thanh toán</h1>
+                <table class="w-full">
+                    <tbody>
+                        <tr>
+                            <td class="font-semibold px-2">Tạm tính</td>
+                            <td class="text-right px-2">{{ order.price|vnd_format }}</td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold px-2">Phí vận chuyển</td>
+                            <td class="text-right px-2">{{ order.delivery_fee|vnd_format }}</td>
+                        </tr>
+                        <tr class="border-t border-gray-400">
+                            <td class="font-semibold px-2">Tổng cộng</td>
+                            <td class="text-right px-2">{{ order.total_price|vnd_format }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <form method="get" action="{% url 'core:checkout' %}" class="h-max flex flex-col justify-between">
+                <button type="submit"
+                    class="btn w-full text-center text-lg text-white bg-green-500 hover:bg-green-600 hover:text-gray-100">
+                    Đã nhận được hàng
+                </button>
+            </form>
+            <form method="get" action="{% url 'core:checkout' %}" class="h-max flex flex-col justify-between">
+                <button type="submit"
+                    class="btn w-full text-center text-lg text-red-500 hover:text-white hover:bg-red-500 border-red-500">
+                    Hủy đơn hàng
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

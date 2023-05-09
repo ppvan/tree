@@ -1,7 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.core.paginator import Paginator
-from django.http import HttpResponse
+from django.http import HttpResponse, QueryDict
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.views import View
@@ -17,7 +17,7 @@ from django.views.generic import (
 from blog.models import Post
 
 from .forms import AddToCartForm, CategoryForm, CheckoutForm, ProductForm
-from .models import Address, Category, Order, OrderItem, Product, Ward
+from .models import Address, Category, Order, OrderItem, Product
 
 
 class PageTitleViewMixin:
@@ -122,13 +122,14 @@ class CartListView(LoginRequiredMixin, ListView):
         order, _created = Order.objects.get_or_create(
             user=self.request.user, state=Order.PENDING
         )
+        order.refresh_from_db()
         return OrderItem.objects.filter(order=order)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["order"] = Order.objects.get_or_create(
+        context["order"], created = Order.objects.get_or_create(
             user=self.request.user, state=Order.PENDING
-        )[0]
+        )
         return context
 
 
@@ -171,23 +172,32 @@ class CheckoutView(LoginRequiredMixin, View):
         )
         form = CheckoutForm(request.POST)
         if form.is_valid():
-            ward = get_object_or_404(Ward, pk=form.cleaned_data["ward"])
             address = Address.objects.create(
-                address=form.cleaned_data["address"],
+                address1=form.cleaned_data["address1"],
+                address2=form.cleaned_data["address2"],
                 receiver=form.cleaned_data["receiver"],
                 phone=form.cleaned_data["phone"],
-                ward=ward,
-                order=order,
             )
             address.save()
             order.address = address
-            order.state = Order.DELIVERY
+            order.state = Order.VERIFY
             order.save()
-            return redirect("core:home")
+            return redirect("core:order_detail", pk=order.pk)
         else:
             order_items = OrderItem.objects.filter(order=order)
             context = {"order": order, "order_items": order_items, "form": form}
             return render(request, "core/checkout.html", context)
+
+    def put(self, request):
+        params = QueryDict(request.body)
+
+        order, _created = Order.objects.get_or_create(
+            user=self.request.user, state=Order.PENDING
+        )
+        order.delivery_fee = params.get("delivery_fee")
+        order.save()
+
+        return HttpResponse("Update success")
 
 
 class CategoryListView(ListView):
@@ -232,6 +242,17 @@ class OrderListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         return Order.objects.filter(user=self.request.user).order_by("-created_at")
+
+
+class OrderDetailView(LoginRequiredMixin, DetailView):
+    model = Order
+    template_name = "core/order_detail.html"
+    context_object_name = "order"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["order_items"] = OrderItem.objects.filter(order=self.object)
+        return context
 
 
 def category_product(request):
