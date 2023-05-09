@@ -16,7 +16,7 @@
     <div class="flex justify-around w-full h-2/3 m-1">
         <div class="w-2/3 border-gray-400 relative overflow-y-scroll border rounded">
             <table class="table-fixed w-full border-collapse">
-                <thead class="sticky top-0 bg-green-700 text-white">
+                <thead class="sticky top-0 bg-[#bee9e8] text-slate-800">
                     <th class=" uppercase border-b mb-4 border-gray-400 " colspan="5">Sản phẩm</th>
                     <th class=" uppercase text-left border-b mb-4 border-gray-400 " colspan="2">Giá</th>
                     <th class=" uppercase border-b mb-4 border-gray-400 " colspan="1">Số lượng</th>
@@ -66,18 +66,27 @@
                     </tbody>
                 </table>
             </div>
-            <form method="get" action="{% url 'core:checkout' %}" class="h-max flex flex-col justify-between">
+            {% if  order.not_completed %}
+            <form method="post" action="{% url 'core:order_completed' order.id %}" class="h-max flex flex-col justify-between">
+                {% csrf_token %}
+                
                 <button type="submit"
                     class="btn w-full text-center text-lg text-white bg-green-500 hover:bg-green-600 hover:text-gray-100">
                     Đã nhận được hàng
                 </button>
             </form>
-            <form method="get" action="{% url 'core:checkout' %}" class="h-max flex flex-col justify-between">
+            {% endif %}
+
+            {% if order.cancellable %}
+            <form method="post" action="{% url 'core:order_cancel' order.id %}" class="h-max flex flex-col justify-between">
+                {% csrf_token %}
+                
                 <button type="submit"
                     class="btn w-full text-center text-lg text-red-500 hover:text-white hover:bg-red-500 border-red-500">
                     Hủy đơn hàng
                 </button>
             </form>
+            {% endif %}
         </div>
     </div>
 </div>

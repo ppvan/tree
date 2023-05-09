@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Category, Product
+from .models import Category, Order, Product
 
 
 class ProductForm(forms.ModelForm):
@@ -43,6 +43,12 @@ class CategoryForm(forms.ModelForm):
 class AddToCartForm(forms.Form):
     product_id = forms.IntegerField()
     quantity = forms.IntegerField(initial=1)
+
+
+class OrderForm(forms.ModelForm):
+    class Meta:
+        model = Order
+        fields = ["state"]
 
 
 class CheckoutForm(forms.Form):

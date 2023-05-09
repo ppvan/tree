@@ -1,7 +1,8 @@
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.core.paginator import Paginator
-from django.http import HttpResponse, QueryDict
+from django.http import HttpResponse, HttpResponseForbidden, QueryDict
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.views import View
@@ -16,7 +17,7 @@ from django.views.generic import (
 
 from blog.models import Post
 
-from .forms import AddToCartForm, CategoryForm, CheckoutForm, ProductForm
+from .forms import AddToCartForm, CategoryForm, CheckoutForm, OrderForm, ProductForm
 from .models import Address, Category, Order, OrderItem, Product
 
 
@@ -239,12 +240,13 @@ class OrderListView(LoginRequiredMixin, ListView):
     model = Order
     template_name = "core/order_list.html"
     context_object_name = "orders"
+    paginate_by = 3
 
     def get_queryset(self):
         return Order.objects.filter(user=self.request.user).order_by("-created_at")
 
 
-class OrderDetailView(LoginRequiredMixin, DetailView):
+class OrderDetailView(LoginRequiredMixin, UserPassesTestMixin, DetailView):
     model = Order
     template_name = "core/order_detail.html"
     context_object_name = "order"
@@ -253,6 +255,58 @@ class OrderDetailView(LoginRequiredMixin, DetailView):
         context = super().get_context_data(**kwargs)
         context["order_items"] = OrderItem.objects.filter(order=self.object)
         return context
+
+    def test_func(self):
+        order = self.get_object()
+        if self.request.user == order.user:
+            return True
+        return False
+
+
+class OrderUpdateView(AdminRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = Order
+    form_class = OrderForm
+    template_name = "core/order_update.html"
+    success_url = reverse_lazy("core:order_list")
+    success_message = "Đơn hàng '%(id)s' đã được cập nhật thành công"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["order"] = self.get_object()
+        return context
+
+
+class OrderCompletedView(LoginRequiredMixin, View):
+    def post(self, request, pk):
+        order = get_object_or_404(Order, pk=pk)
+
+        if order.user != request.user:
+            return HttpResponseForbidden()
+
+        if order.state == Order.DELIVERY:
+            order.state = Order.COMPLETED
+            order.save()
+            messages.success(request, "Đơn hàng đã được hoàn thành")
+            return redirect("core:order_list")
+        else:
+            messages.success(request, "Đơn hàng chưa được giao, không thể hoàn thành")
+            return redirect("core:order_list")
+
+
+class OrderCancelView(LoginRequiredMixin, View):
+    def post(self, request, pk):
+        order = get_object_or_404(Order, pk=pk)
+
+        if order.user != request.user:
+            return HttpResponseForbidden()
+
+        if order.state == Order.VERIFY:
+            order.state = Order.CANCEL
+            order.save()
+            messages.success(request, "Đơn hàng đã được hủy")
+            return redirect("core:order_detail", pk=order.pk)
+        else:
+            return redirect("core:order_detail", pk=order.pk)
 
 
 def category_product(request):

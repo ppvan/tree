@@ -139,6 +139,15 @@ class Order(BaseModel):
     def total_price(self):
         return self.price() + self.delivery_fee
 
+    def not_completed(self):
+        return self.state == self.DELIVERY
+
+    def size(self):
+        return self.items.count()
+
+    def cancellable(self):
+        return self.state == self.PENDING or self.state == self.VERIFY
+
 
 class OrderItem(BaseModel):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)

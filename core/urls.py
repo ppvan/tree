@@ -13,8 +13,11 @@ from .views import (
     DeleteProductView,
     DetailProductView,
     HomePageView,
+    OrderCancelView,
+    OrderCompletedView,
     OrderDetailView,
     OrderListView,
+    OrderUpdateView,
     ProductByCategoryView,
     ProductListView,
     ProductUpdateView,
@@ -54,8 +57,13 @@ urlpatterns = [
     # Add to cart
     path("cart/add/", AddToCartView.as_view(), name="cart_add"),
     path("cart/list/", CartListView.as_view(), name="cart_list"),
-    # Checkout
-    path("checkout/", CheckoutView.as_view(), name="checkout"),
+    # Order
+    path("order/checkout/", CheckoutView.as_view(), name="checkout"),
     path("order/list/", OrderListView.as_view(), name="order_list"),
     path("order/<int:pk>/", OrderDetailView.as_view(), name="order_detail"),
+    path("order/<int:pk>/update", OrderUpdateView.as_view(), name="order_cancel"),
+    path(
+        "order/<int:pk>/completed", OrderCompletedView.as_view(), name="order_completed"
+    ),
+    path("order/<int:pk>/cancel", OrderCancelView.as_view(), name="order_cancel"),
 ]

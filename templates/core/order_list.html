@@ -13,10 +13,10 @@
             <span>Tiếp tục mua sắm</span>
         </a>
     </div>
-    <div class="flex justify-around flex-col gap-4">
+    <div class="flex grow justify-start flex-col gap-4 items-center">
         {% for order in orders %}
-        <a href="{% url 'core:order_detail' order.id %}" class="rounded overflow-hidden border border-gray-300 w-2/3 px-2 shadow">
-            <h2 class="font-light mb-2 italic">2 sản phẩm</h2>
+        <a href="{% url 'core:order_detail' order.id %}" class="rounded overflow-hidden border border-gray-300 w-5/6 px-2 shadow hover:bg-[#f0f9f8] transition">
+            <h2 class="font-light mb-2 italic">{{ order.size }} sản phẩm</h2>
             <div class="flex items-center justify-between  gap-3">
                 {% with product=order.items.first.product %}
                 <img class="w-20" src="{{ product.thumbnail.url }}" alt="">
@@ -35,6 +35,28 @@
             </h2>
         </a>
         {% endfor %}
+    </div>
+
+    <div id="pagination" class="flex items-center justify-center gap-2 p-2">
+        {% if page_obj.has_previous %}
+        <a href="?page={{ pageobj.previous_page_number }}" class="mr-4">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+        {% endif %}
+        {% for i in page_obj.paginator.page_range %}
+        {% if i == page_obj.number %}
+        <a href="#" class="px-3 py-2 rounded-md bg-[#667260]">
+            {{ i }}
+        </a>
+        {% else %}
+        <a href="?page={{ i }}" class="px-3 py-2 border rounded-md">{{ i }}</a>
+        {% endif %}
+        {% endfor %}
+        {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}" class="ml-4">
+            <i class="fas fa-chevron-right"></i>
+        </a>
+        {% endif %}
     </div>
 </div>
 {% endblock content %}
