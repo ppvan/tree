@@ -92,3 +92,14 @@ class CheckoutForm(forms.Form):
     transport = ChoiceFieldNoValidation(
         choices=[(0, "Chọn phương thức vận chuyển")], label=""
     )
+
+
+class OrderFilterForm(forms.Form):
+    FILTER_STATE = [("all", "Tất cả")] + Order.ORDER_STATUS
+
+    state = forms.ChoiceField(
+        label="",
+        choices=FILTER_STATE,
+        required=False,
+        widget=forms.Select(attrs={"class": "mt-3"}),
+    )

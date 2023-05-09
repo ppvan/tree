@@ -1,0 +1,13 @@
+{% extends "layout/admin.html" %}
+{% load crispy_forms_tags %}
+{% load tailwind_filters %}
+{% block content %}
+<form action="" method="post" enctype="multipart/form-data">
+    <legend class="text-2xl mb-3">Cập nhật đơn hàng</legend>
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="float-right">
+        <input class="btn text-white bg-[#373d32] hover:bg-[#292d25]" type="submit" value="Xác nhận">
+    </div>
+</form>
+{% endblock content %}

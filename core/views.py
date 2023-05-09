@@ -1,3 +1,5 @@
+from typing import Any, Dict
+
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
@@ -17,7 +19,14 @@ from django.views.generic import (
 
 from blog.models import Post
 
-from .forms import AddToCartForm, CategoryForm, CheckoutForm, OrderForm, ProductForm
+from .forms import (
+    AddToCartForm,
+    CategoryForm,
+    CheckoutForm,
+    OrderFilterForm,
+    OrderForm,
+    ProductForm,
+)
 from .models import Address, Category, Order, OrderItem, Product
 
 
@@ -236,14 +245,38 @@ class CategoryDeleteView(AdminRequiredMixin, SuccessMessageMixin, DeleteView):
     success_message = "Danh mục đã được xóa thành công"
 
 
+class AdminOrderListView(AdminRequiredMixin, ListView):
+    model = Order
+    template_name = "core/admin_order_list.html"
+    context_object_name = "orders"
+    paginate_by = 3
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context["order_status"] = Order.ORDER_STATUS
+        context["form"] = OrderFilterForm(self.request.GET)
+        return context
+
+    def get_queryset(self):
+        filter_type = self.request.GET.get("state")
+
+        if filter_type is None or filter_type == "all":
+            return Order.objects.all().order_by("-updated_at")
+
+        return Order.objects.filter(state=filter_type).order_by("-updated_at")
+
+
 class OrderListView(LoginRequiredMixin, ListView):
     model = Order
     template_name = "core/order_list.html"
     context_object_name = "orders"
     paginate_by = 3
+    ordering = ["-updated_at"]
 
-    def get_queryset(self):
-        return Order.objects.filter(user=self.request.user).order_by("-created_at")
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context["order_status"] = Order.ORDER_STATUS
+        return context
 
 
 class OrderDetailView(LoginRequiredMixin, UserPassesTestMixin, DetailView):
@@ -268,12 +301,19 @@ class OrderUpdateView(AdminRequiredMixin, SuccessMessageMixin, UpdateView):
     form_class = OrderForm
     template_name = "core/order_update.html"
     success_url = reverse_lazy("core:order_list")
-    success_message = "Đơn hàng '%(id)s' đã được cập nhật thành công"
+    success_message = "Đơn hàng đã được cập nhật thành công"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["order"] = self.get_object()
         return context
+
+
+class OrderDeleteView(AdminRequiredMixin, SuccessMessageMixin, DeleteView):
+    model = Order
+    template_name = "core/order_delete.html"
+    success_url = reverse_lazy("core:order_list")
+    success_message = "Đơn hàng đã được xóa thành công"
 
 
 class OrderCompletedView(LoginRequiredMixin, View):

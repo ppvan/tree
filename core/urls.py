@@ -4,6 +4,7 @@ from django.views.generic import TemplateView
 from .views import (
     AddProductView,
     AddToCartView,
+    AdminOrderListView,
     CartListView,
     CategoryCreateView,
     CategoryDeleteView,
@@ -15,6 +16,7 @@ from .views import (
     HomePageView,
     OrderCancelView,
     OrderCompletedView,
+    OrderDeleteView,
     OrderDetailView,
     OrderListView,
     OrderUpdateView,
@@ -60,10 +62,12 @@ urlpatterns = [
     # Order
     path("order/checkout/", CheckoutView.as_view(), name="checkout"),
     path("order/list/", OrderListView.as_view(), name="order_list"),
+    path("order/admin-list/", AdminOrderListView.as_view(), name="admin_order_list"),
     path("order/<int:pk>/", OrderDetailView.as_view(), name="order_detail"),
-    path("order/<int:pk>/update", OrderUpdateView.as_view(), name="order_cancel"),
+    path("order/<int:pk>/update", OrderUpdateView.as_view(), name="order_update"),
     path(
         "order/<int:pk>/completed", OrderCompletedView.as_view(), name="order_completed"
     ),
+    path("order/<int:pk>/delete", OrderDeleteView.as_view(), name="order_delete"),
     path("order/<int:pk>/cancel", OrderCancelView.as_view(), name="order_cancel"),
 ]
