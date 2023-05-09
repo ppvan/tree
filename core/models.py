@@ -104,9 +104,11 @@ class Order(BaseModel):
     DELIVERY = "DE"
     COMPLETED = "CO"
     CANCEL = "CA"
+    VERIFY = "VE"
 
     ORDER_STATUS = [
         (PENDING, "Chưa xác nhận"),
+        (VERIFY, "Đã xác nhận"),
         (DELIVERY, "Đang giao"),
         (COMPLETED, "Hoàn thành"),
         (CANCEL, "Đã hủy"),

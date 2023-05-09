@@ -1,0 +1,40 @@
+{% extends "layout/base.html" %}
+{% load static %}
+{% load humanize %}
+{% load concurency %}
+{% block title %}Cart{% endblock title %}
+
+
+{% block content %}
+<div class="mx-auto w-full bg-[#f6faf0] rounded border flex flex-col px-8">
+    <div class="flex justify-between items-center">
+        <h1 class="text-xl font-bold my-10 uppercase">Đơn hàng của tôi</h1>
+        <a href="{% url 'core:home' %}" class="btn hover:text-white border-green-500 hover:bg-green-500">
+            <span>Tiếp tục mua sắm</span>
+        </a>
+    </div>
+    <div class="flex justify-around flex-col gap-4">
+        {% for order in orders %}
+        <a href="#" class="rounded overflow-hidden border border-gray-300 w-2/3 px-2 shadow">
+            <h2 class="font-light mb-2 italic">2 sản phẩm</h2>
+            <div class="flex items-center justify-between  gap-3">
+                {% with product=order.items.first %}
+                <img class="w-20" src="{{ product.thumbnail.url }}" alt="">
+                <div class="grow">
+                    <h2 class="text-lg">{{ product.name }}</h2>
+                    <p class="text-gray-400">{{ product.category.label }}</p>
+                    <p class="text-red-500">{{ product.price|vnd_format }}</p>
+                </div>
+                {% endwith %}
+                <div class="text-center h-full font-semibold uppercase px-2">
+                    {{ order.get_state_display }}
+                </div>
+            </div>
+            <h2 class="text-right p-1 border-t mt-2 border-gray-400 text-gray-500 hover:text-gray-600">
+                Tổng cộng: <span class="text-red-500">{{ order.total_price|vnd_format }}</span>
+            </h2>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

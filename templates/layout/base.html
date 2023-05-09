@@ -77,6 +77,12 @@
                             <div class="w-10 flex"><i class="m-auto fas fa-edit"></i></div>
                             <span class="grow">Bảng điều khiển</span>
                         </a>
+                        {% else %}
+                        <a href="{% url 'core:order_list' %}"
+                            class="hover:bg-[#99bda4] bg-[#7f9f89] border-3 border-green-200 p-1 flex justify-between items-center gap-2">
+                            <div class="w-10 flex"><i class="m-auto fas fa-cart-shopping"></i></div>
+                            <span class="grow">Đơn hàng của tôi</span>
+                        </a>
                         {% endif %}
 
                         <a href="{% url 'logout' %}"

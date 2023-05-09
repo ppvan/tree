@@ -18,7 +18,8 @@ class UserTestCase(TestCase):
         user.save()
         user.refresh_from_db()
 
-        self.assertEqual(user.username, "testuser", "User not created")
+        # self.assertEqual(user.username, "testuser", "User not created")
+        self.assertFalse(user.username != "testuser", "User not created")
         self.assertEqual(user.email, "test@gmail.com", "Email not set")
         self.assertTrue(user.check_password("testpassword"), "Password not set")
         self.assertFalse(
@@ -91,3 +92,7 @@ class EmailTest(TestCase):
 
         # Verify that the subject of the first message is correct.
         self.assertEqual(mail.outbox[0].subject, "Subject here")
+
+
+class ProfileTestCase(TestCase):
+    pass
