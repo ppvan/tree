@@ -1,5 +1,7 @@
 from django import forms
 
+from blog.models import Post
+
 from .models import Category, Order, Product
 
 
@@ -103,3 +105,13 @@ class OrderFilterForm(forms.Form):
         required=False,
         widget=forms.Select(attrs={"class": "mt-3"}),
     )
+
+
+class BugReportForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ["title", "cover_image", "content"]
+
+        widgets = {
+            "content": forms.Textarea(attrs={"cols": 60}),
+        }

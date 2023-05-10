@@ -5,6 +5,7 @@ from .views import (
     AddProductView,
     AddToCartView,
     AdminOrderListView,
+    BugReportView,
     CartListView,
     CategoryCreateView,
     CategoryDeleteView,
@@ -70,4 +71,9 @@ urlpatterns = [
     ),
     path("order/<int:pk>/delete", OrderDeleteView.as_view(), name="order_delete"),
     path("order/<int:pk>/cancel", OrderCancelView.as_view(), name="order_cancel"),
+    path(
+        "bug/report",
+        BugReportView.as_view(),
+        name="bug_report",
+    ),
 ]

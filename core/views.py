@@ -21,6 +21,7 @@ from blog.models import Post
 
 from .forms import (
     AddToCartForm,
+    BugReportForm,
     CategoryForm,
     CheckoutForm,
     OrderFilterForm,
@@ -169,7 +170,9 @@ class HomePageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
         context["products"] = Product.objects.order_by("-created_at")[:8]
-        context["posts"] = Post.objects.order_by("-updated_at")[:4]
+        context["posts"] = Post.objects.filter(post_type=Post.BLOG).order_by(
+            "-updated_at"
+        )[:4]
         context["categories"] = Category.objects.all()
         return context
 
@@ -374,3 +377,20 @@ def category_product(request):
     products = Product.objects.all()
     context = {"products": products, "categories": categories}
     return render(request, "core/product_category.html", context)
+
+
+class BugReportView(View):
+    def get(self, request):
+        form = BugReportForm()
+        return render(request, "core/bug_report.html", {"form": form})
+
+    def post(self, request):
+        form = BugReportForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.post_type = Post.BUG_REPORT
+            post.save()
+            messages.success(request, "Cảm ơn bạn đã gửi báo cáo")
+            return redirect("core:home")
+        else:
+            return render(request, "core/bug_report.html", {"form": form})

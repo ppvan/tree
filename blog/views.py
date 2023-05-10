@@ -1,13 +1,17 @@
+from typing import Any
+
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
+from django.db.models.query import QuerySet
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import CreateView, DetailView, ListView, UpdateView
 
+from core.models import Category
+
 from .forms import PostForm
 from .models import Post
-from core.models import Category
 
 # Create your views here.
 
@@ -18,6 +22,20 @@ class ListPostView(ListView):
     ordering = "-updated_at"
     template_name = "blog/posts_list.html"
     context_object_name = "posts_list"
+
+    def get_queryset(self) -> QuerySet[Any]:
+        return Post.objects.filter(post_type=Post.BLOG)
+
+
+class BugReportListView(ListView):
+    model = Post
+    paginate_by = 8
+    ordering = "-updated_at"
+    template_name = "core/bug_list.html"
+    context_object_name = "bug_list"
+
+    def get_queryset(self) -> QuerySet[Any]:
+        return Post.objects.filter(post_type=Post.BUG_REPORT)
 
 
 class AddPostView(SuccessMessageMixin, CreateView):
