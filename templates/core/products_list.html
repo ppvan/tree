@@ -40,7 +40,7 @@
                     </thead>
                     <tbody class="bg-[#ecf0f1]">
                         {% for product in products %}
-                        <tr class="border-b">
+                        <tr class="product-item border-b">
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                 <a href="{% url 'core:product_detail' product.id %}" class="hover:text-[#588f2a]">
                                     {{ product.name }}
@@ -63,11 +63,11 @@
                                     class="p-4 pr-2 hover:text-yellow-700">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
-                                <button id="product-delete" href="#" class="p-4 pl-2 hover:text-red-500">
+                                <button href="#" class="product-delete p-4 pl-2 hover:text-red-500">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
 
-                                <form id="product-delete-form" class="hidden" action="{% url 'core:product_delete' product.id %}" method="post">
+                                <form class="hidden product-delete" action="{% url 'core:product_delete' product.id %}" method="post">
                                     {% csrf_token %}
                                 </form>
                             </td>
@@ -107,23 +107,27 @@
 
 <script>
     let dialog = document.querySelector('#dialog');
-    let dialogOK = dialog.querySelector('.ok');
-    let dialogCancel = dialog.querySelector('.cancel');
-    let productDelete = document.querySelector('#product-delete');
-    let productDeleteForm = document.querySelector('#product-delete-form');
 
-    dialogCancel.addEventListener('click', () => {
-        dialog.close();
-    });
+    for (const item of document.querySelectorAll(".product-item")) {
+        let dialogOK = dialog.querySelector('.ok');
+        let dialogCancel = dialog.querySelector('.cancel');
+        let productDelete = item.querySelector('.product-delete');
+        let productDeleteForm = item.querySelector('.product-delete-form');
 
-    dialogOK.addEventListener('click', () => {
-        productDeleteForm.submit();
-        dialog.close();
-    });
+        dialogCancel.addEventListener('click', () => {
+            dialog.close();
+        });
 
-    productDelete.addEventListener('click', () => {
-        dialog.showModal();
-    });
+        dialogOK.addEventListener('click', () => {
+            dialog.form.submit();
+            dialog.close();
+        });
+
+        productDelete.addEventListener('click', () => {
+            dialog.showModal();
+            dialog.form = productDeleteForm;
+        });
+    }
 </script>
 
 {% endblock js %}

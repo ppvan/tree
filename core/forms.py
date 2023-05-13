@@ -49,6 +49,11 @@ class AddToCartForm(forms.Form):
     quantity = forms.IntegerField(initial=1)
 
 
+class UpdateCartForm(forms.Form):
+    product_id = forms.IntegerField()
+    quantity = forms.IntegerField()
+
+
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order

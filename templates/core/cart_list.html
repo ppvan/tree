@@ -8,28 +8,34 @@
 {% block content %}
 <div class="mx-auto bg-[#f6faf0] rounded border">
     <div class="flex justify-between items-center mx-5">
-        <h1 class="text-xl px-6 font-bold my-10 uppercase">Thông tin giỏ hàng</h1>
+        <div class="flex w-3/4 items-center justify-between">
+            <h1 class="text-xl px-6 font-bold my-10 uppercase">Thông tin giỏ hàng</h1>
+            <button id="cart_update" class="btn border-green-500 hover:bg-green-500 hover:text-white  mx-20">Cập
+                nhật</button>
+        </div>
         <a href="{% url 'core:home' %}" class="btn hover:text-white border-green-500 hover:bg-green-500">
             <span>Tiếp tục mua sắm</span>
         </a>
     </div>
     <div class="flex justify-around w-full h-2/3 m-1">
-        <div class="w-2/3 border-gray-400 relative overflow-y-scroll border rounded">
+        <div class="w-2/3 border-gray-400 relative flex flex-col overflow-y-scroll border rounded">
             <table class="table-fixed w-full border-collapse">
                 <thead class="sticky top-0 bg-green-700 text-white">
-                    <th class=" uppercase border-b mb-4 border-gray-400 " colspan="5">Sản phẩm</th>
+                    <th class=" uppercase border-b mb-4 border-gray-400 " colspan="4">Sản phẩm</th>
                     <th class=" uppercase text-left border-b mb-4 border-gray-400 " colspan="2">Giá</th>
                     <th class=" uppercase border-b mb-4 border-gray-400 " colspan="1">Số lượng</th>
-                    <th class=" uppercase text-right px-2 border-b mb-4 border-gray-400 " colspan="3">Tạm tính</th>
+                    <th class=" uppercase text-right px-2 border-b mb-4 border-gray-400 " colspan="2">Tạm tính</th>
+                    <th class=" uppercase text-right px-2 border-b mb-4 border-gray-400 " colspan="2">Thao tác</th>
                 </thead>
 
                 <tbody class="overflow-x-hidden overflow-y-auto">
                     {% for item in order_items %}
-                    <tr class="">
+                    <tr class="order-item">
+
                         <td class="border-y border-gray-500" colspan="1">
                             <img src="{{ item.product.thumbnail.url }}" alt="">
                         </td>
-                        <td class="border-y p-1 pl-4 text-lg border-gray-500" colspan="4">
+                        <td class="border-y p-1 pl-4 text-lg border-gray-500" colspan="3">
                             <a href="{% url 'core:product_detail' item.product.id %}"
                                 class="text-green-600 hover:text-green-400">
                                 {{ item.product.name }}</a>
@@ -38,7 +44,7 @@
                             {{ item.product.price|vnd_format }}
                         </td>
                         <td class="border-y p-1 border-gray-500 text-center" colspan="1">
-                            <div class="quantity-block flex scale-90 justify-center items-center">
+                            <div class="flex scale-90 justify-center items-center">
                                 <button type="button"
                                     class="quantity-decrease bg-gray-200 hover:bg-slate-600 hover:text-white p-1 rounded-l px-2">
                                     <i class="fas fa-minus"></i>
@@ -54,6 +60,12 @@
                         </td>
                         <td class="border-y p-1 border-gray-500 text-right px-2" colspan="3">
                             {{ item.total_price|vnd_format}}
+                        </td>
+                        <td class="border-y p-1 border-gray-500 text-right px-2">
+                            <button data-item-id="{{ item.id }}" type="submit"
+                                class="btn-delete p-2 hover:text-red-500">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
                         </td>
                     </tr>
                     {% endfor %}
@@ -83,29 +95,62 @@
 
 {% block js %}
 <script>
-    for (let quantityBlock of $(".quantity-block")) {
-        let quantityDecrease = $('.quantity-decrease', quantityBlock);
-        let quantityIncrease = $('.quantity-increase', quantityBlock);
-        let quantityInput = $('[name="quantity"]', quantityBlock);
-        let product_id = $('[name="product_id"]', quantityBlock).val();
+    $.ajax({
+        url: "{% url 'core:cart_update' %}",
+        type: "GET",
+
+        success: function (response) {
+            console.log(response);
+            window.currentCart = response;
+        }
+    })
+
+    for (let item of $(".order-item")) {
+
+        let quantityDecrease = $('.quantity-decrease', item);
+        let quantityIncrease = $('.quantity-increase', item);
+        let quantityInput = $('[name="quantity"]', item);
+        let productId = $('[name="product_id"]', item).val();
+        let deleteBtn = $('.btn-delete', item);
+
         quantityDecrease.on('click', () => {
             let quantity = parseInt(quantityInput.val());
-            if (quantity >= 1) {
+            if (quantity > 1) {
                 quantityInput.val(quantity - 1);
-                updateCartItem(product_id, quantity - 1, function () {
-                    location.reload();
-                });
+                currentCart[productId].quantity = quantity - 1;
             }
         });
 
         quantityIncrease.on('click', () => {
             let quantity = parseInt(quantityInput.val());
             quantityInput.val(quantity + 1);
-            updateCartItem(product_id, quantity + 1, function () {
-                location.reload();
-            });
+            currentCart[productId].quantity = quantity + 1;
         });
+
+        deleteBtn.on('click', function () {
+            currentCart[productId].quantity = 0;
+            $(this).closest('.order-item').remove();
+        });
+
     }
+
+
+    $("#cart_update").on('click', function () {
+        $.ajax({
+            url: "{% url 'core:cart_update' %}",
+            type: "PUT",
+            headers: {
+                "X-CSRFToken": getCookie('csrftoken')
+            },
+            data: {
+                cart: JSON.stringify(currentCart)
+            },
+            success: function (response) {
+                console.log(response);
+                location.reload()
+            }
+        });
+    });
 
     function updateCartItem(product_id, quantity, callback) {
         let csrf = getCookie('csrftoken')

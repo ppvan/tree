@@ -24,6 +24,7 @@ from .views import (
     ProductByCategoryView,
     ProductListView,
     ProductUpdateView,
+    UpdateCartView,
 )
 
 app_name = "core"
@@ -59,6 +60,7 @@ urlpatterns = [
     path("product/<int:pk>/update", ProductUpdateView.as_view(), name="product_update"),
     # Add to cart
     path("cart/add/", AddToCartView.as_view(), name="cart_add"),
+    path("cart/update/", UpdateCartView.as_view(), name="cart_update"),
     path("cart/list/", CartListView.as_view(), name="cart_list"),
     # Order
     path("order/checkout/", CheckoutView.as_view(), name="checkout"),

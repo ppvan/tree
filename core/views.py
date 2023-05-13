@@ -1,3 +1,4 @@
+import json
 from typing import Any, Dict
 
 from django.contrib import messages
@@ -136,24 +137,6 @@ class AddToCartView(LoginRequiredMixin, View):
         else:
             return HttpResponse("Fobidden", status=403)
 
-    def put(self, request):
-        data = QueryDict(request.body)
-        quantity = int(data["quantity"])
-        order, _created = Order.objects.get_or_create(
-            user=request.user, state=Order.PENDING
-        )
-        product = get_object_or_404(Product, pk=data["product_id"])
-        item = self._update_item(order, product, quantity)
-
-        return JsonResponse(
-            {
-                "message": "Cập nhật thành công",
-                "quantity": item.quantity,
-                "order_price": order.total_price(),
-                "item_price": item.total_price(),
-            }
-        )
-
     def _update_item(self, order, product, quantity):
         if quantity == 0:
             OrderItem.objects.filter(order=order, product=product).delete()
@@ -166,6 +149,45 @@ class AddToCartView(LoginRequiredMixin, View):
         order_item.save()
 
         return order_item
+
+
+class UpdateCartView(LoginRequiredMixin, View):
+    def put(self, request):
+        json_str = QueryDict(request.body)
+        order_items = json.loads(json_str.get("cart"))
+        for item in order_items.values():
+            item_id = item.get("id")
+            quantity = item["quantity"]
+            order_item = OrderItem.objects.get(id=item_id)
+            order_item.quantity = quantity
+            if quantity == 0:
+                order_item.delete()
+            else:
+                order_item.save()
+
+        return JsonResponse({"message": "Successs"}, safe=False)
+
+    def get(self, request):
+        order, _created = Order.objects.get_or_create(
+            user=request.user, state=Order.PENDING
+        )
+
+        data = {}
+        for item in order.items.all():
+            data[str(item.product.id)] = {"id": item.id, "quantity": item.quantity}
+
+        return JsonResponse(data)
+
+
+class RemoveCartItemView(LoginRequiredMixin, View):
+    def post(self, request, id):
+        order_item = get_object_or_404(OrderItem, pk=id)
+        if order_item.order.user != request.user:
+            return HttpResponse("Forbidden", status=403)
+
+        order_item.delete()
+
+        return redirect("core:cart_list")
 
 
 class CartListView(LoginRequiredMixin, ListView):
@@ -185,6 +207,7 @@ class CartListView(LoginRequiredMixin, ListView):
         context["order"], created = Order.objects.get_or_create(
             user=self.request.user, state=Order.PENDING
         )
+
         return context
 
 
