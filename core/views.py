@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.core.paginator import Paginator
-from django.http import HttpResponse, HttpResponseForbidden, QueryDict
+from django.http import HttpResponse, HttpResponseForbidden, JsonResponse, QueryDict
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.views import View
@@ -135,6 +135,23 @@ class AddToCartView(LoginRequiredMixin, View):
         else:
             return HttpResponse("Fobidden", status=403)
 
+    def put(self, request):
+        data = QueryDict(request.body)
+        order, _created = Order.objects.get_or_create(
+            user=request.user, state=Order.PENDING
+        )
+        product = get_object_or_404(Product, pk=data["product_id"])
+        item = self._update_item(order, product, int(data["quantity"]))
+
+        return JsonResponse(
+            {
+                "message": "Cập nhật thành công",
+                "quantity": item.quantity,
+                "order_price": order.total_price(),
+                "item_price": item.total_price(),
+            }
+        )
+
     def _update_item(self, order, product, quantity):
         order_item, _created = OrderItem.objects.get_or_create(
             order=order, product=product
@@ -154,7 +171,7 @@ class CartListView(LoginRequiredMixin, ListView):
             user=self.request.user, state=Order.PENDING
         )
         order.refresh_from_db()
-        return OrderItem.objects.filter(order=order)
+        return OrderItem.objects.filter(order=order).order_by("-created_at")
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

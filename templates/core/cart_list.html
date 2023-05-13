@@ -37,7 +37,21 @@
                         <td class="border-y p-1 border-gray-500 text-left px-2" colspan="2">
                             {{ item.product.price|vnd_format }}
                         </td>
-                        <td class="border-y p-1 border-gray-500 text-center" colspan="1">{{ item.quantity }}</td>
+                        <td class="border-y p-1 border-gray-500 text-center" colspan="1">
+                            <div class="quantity-block flex scale-90 justify-center items-center">
+                                <button type="button"
+                                    class="quantity-decrease bg-gray-200 hover:bg-slate-600 hover:text-white p-1 rounded-l px-2">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <input type="hidden" name="product_id" value="{{ item.product.id }}">
+                                <input readonly name="quantity" class="text-lg text-center w-10 outline-none"
+                                    value="1"></input>
+                                <button type="button"
+                                    class="quantity-increase bg-gray-200 p-1 px-2 hover:bg-slate-600 hover:text-white rounded-r">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </td>
                         <td class="border-y p-1 border-gray-500 text-right px-2" colspan="3">
                             {{ item.total_price|vnd_format}}
                         </td>
@@ -66,3 +80,52 @@
     </div>
 </div>
 {% endblock content %}
+
+{% block js %}
+<script>
+    for (let quantityBlock of $(".quantity-block")) {
+        let quantityDecrease = $('.quantity-decrease', quantityBlock);
+        let quantityIncrease = $('.quantity-increase', quantityBlock);
+        let quantityInput = $('[name="quantity"]', quantityBlock);
+        let product_id = $('[name="product_id"]', quantityBlock).val();
+        quantityDecrease.on('click', () => {
+            let quantity = parseInt(quantityInput.val());
+            if (quantity > 1) {
+                quantityInput.val(quantity - 1);
+                updateCartItem(product_id, quantity - 1, function () {
+                    location.reload();
+                });
+            }
+        });
+
+        quantityIncrease.on('click', () => {
+            let quantity = parseInt(quantityInput.val());
+            quantityInput.val(quantity + 1);
+            updateCartItem(product_id, quantity + 1, function () {
+                location.reload();
+            });
+        });
+    }
+
+    function updateCartItem(product_id, quantity, callback) {
+        let csrf = getCookie('csrftoken')
+        $.ajax(
+            {
+                url: "{% url 'core:cart_add' %}",
+                type: "PUT",
+                headers: {
+                    "X-CSRFToken": csrf
+                },
+                data: {
+                    product_id: product_id,
+                    quantity: quantity
+                },
+                success: function (response) {
+                    callback(response);
+                    console.log(response);
+                }
+            }
+        )
+    }
+</script>
+{% endblock js %}

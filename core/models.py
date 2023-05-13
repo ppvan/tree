@@ -158,7 +158,7 @@ class OrderItem(BaseModel):
         return f"{self.quantity} of {self.product.name}"
 
     def total_price(self):
-        return self.quantity * self.product.price
+        return self.product.price * self.quantity
 
 
 class Payment(BaseModel):
