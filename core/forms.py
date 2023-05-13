@@ -1,3 +1,5 @@
+import re
+
 from django import forms
 
 from blog.models import Post
@@ -54,28 +56,22 @@ class OrderForm(forms.ModelForm):
 
 
 class CheckoutForm(forms.Form):
-    phone = forms.CharField(max_length=255, label="Số điện thoại")
-
+    phone_number = forms.CharField(max_length=255, label="Số điện thoại")
     receiver = forms.CharField(max_length=255, label="Người nhận")
-
     province = ChoiceFieldNoValidation(
         choices=[(0, "Chọn tỉnh/thành phố")],
         label="Tỉnh/thành phố",
         validators=[],
     )
-
     district = ChoiceFieldNoValidation(
         choices=[(0, "Chọn quận/huyện")], label="Quận/huyện"
     )
-
     ward = ChoiceFieldNoValidation(choices=[(0, "Chọn phường/xã")], label="Phường/xã")
-
     address2 = forms.CharField(
         max_length=255,
         label="Địa chỉ chi tiết",
         widget=forms.TextInput(attrs={"placeholder": "Số nhà, tên đường, ..."}),
     )
-
     address1 = forms.CharField(
         max_length=255,
         label="Địa chỉ",
@@ -86,14 +82,18 @@ class CheckoutForm(forms.Form):
             }
         ),
     )
-
     note = forms.CharField(
         max_length=255, required=False, widget=forms.Textarea, label="Ghi chú"
     )
-
     transport = ChoiceFieldNoValidation(
         choices=[(0, "Chọn phương thức vận chuyển")], label=""
     )
+
+    def clean_phone_number(self):
+        data = self.cleaned_data["phone_number"]
+        if not re.match(r"^[0-9]{10}$", data):
+            raise forms.ValidationError("Số điện thoại không hợp lệ")
+        return data
 
 
 class OrderFilterForm(forms.Form):

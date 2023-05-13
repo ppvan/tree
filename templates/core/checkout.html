@@ -13,7 +13,7 @@
         <form id="checkout" method="post" action="{% url 'core:checkout' %}">
             {% csrf_token %}
             {{ form.receiver|as_crispy_field }}
-            {{ form.phone|as_crispy_field }}
+            {{ form.phone_number|as_crispy_field }}
             <div class="flex justify-between gap-2">
                 <div class="w-1/3">
                     {{ form.province|as_crispy_field }}

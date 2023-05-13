@@ -226,7 +226,7 @@ class CheckoutView(LoginRequiredMixin, View):
                 address1=form.cleaned_data["address1"],
                 address2=form.cleaned_data["address2"],
                 receiver=form.cleaned_data["receiver"],
-                phone=form.cleaned_data["phone"],
+                phone=form.cleaned_data["phone_number"],
             )
             address.save()
             order.address = address
