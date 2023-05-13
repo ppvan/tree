@@ -232,7 +232,7 @@ class HomePageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
-        context["products"] = Product.objects.order_by("-created_at")[:8]
+        context["products"] = Product.objects.order_by("-updated_at")[:8]
         context["posts"] = Post.objects.filter(post_type=Post.BLOG).order_by(
             "-updated_at"
         )[:4]
@@ -281,6 +281,7 @@ class CheckoutView(LoginRequiredMixin, View):
                 with transaction.atomic():
                     self._update_stock(order)
                     order.state = Order.VERIFY
+                    order.total = order.total_price()
                     order.save()
                     return redirect("core:order_detail", pk=order.pk)
             except IntegrityError:
