@@ -63,6 +63,10 @@ function callSearchAPI(query, callback) {
 }
 
 function updateResult(data) {
+    if (data.length === 0) {
+        $("#search-result").addClass("hidden");
+        return;
+    }
     let searchResult = $("#search-result");
     searchResult.removeClass("hidden");
     searchResult.empty();
@@ -77,6 +81,13 @@ let debounceFunction = function (func, delay) {
     // Executes the func after delay time.
     timerId = setTimeout(func, delay)
 }
+
+$(document).on("click", function () {
+    if (!$("#search-form>input").is(":focus")) {
+        $("#search-result").addClass("hidden");
+        $("#search-form>input").val("");
+    }
+});
 
 $("#search-form>input").on("input", function () {
 

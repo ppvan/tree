@@ -6,14 +6,14 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.views import View
 
+from blog.models import Post
 from core.models import District, Product, Province, Ward
 
 # Create your views here.
 
 
 class ProductSearchView(View):
-    def get(self, request):
-        query = request.GET.get("q", "")
+    def search_product(self, query):
         search_vector = SearchVector(
             "name__unaccent", "summary__unaccent", "description__unaccent"
         )
@@ -25,8 +25,31 @@ class ProductSearchView(View):
             .filter(search=search_query)
             .order_by("-rank")[:20]
         )
+        return products
+
+    def search_post(self, query):
+        search_vector = SearchVector("title__unaccent")
+        search_query = SearchQuery(query)
+        posts = (
+            Post.objects.annotate(
+                search=search_vector, rank=SearchVector(search_vector, search_query)
+            )
+            .filter(search=search_query)
+            .order_by("-rank")[:5]
+        )
+        return posts
+
+    def get(self, request):
+        query = request.GET.get("q", "")
+        products = self.search_product(query)
+        posts = self.search_post(query)
         return render(
-            request, "components/search_result_item.html", {"products": products}
+            request,
+            "components/search_result_item.html",
+            {
+                "products": products,
+                "posts": posts,
+            },
         )
 
 
