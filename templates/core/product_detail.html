@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="grow"></div>
-                <form action="{% url 'core:cart_add' %}" method="post" class="flex items-center justify-between py-4">
+                <form id="cart_add" action="{% url 'core:cart_add' %}" method="post" class="flex items-center justify-between py-4">
                     {% csrf_token %}
                     <div class="flex border rounded overflow-hidden">
                         <button type="button" class="bg-gray-200 hover:bg-slate-600 hover:text-white p-1 px-2"
@@ -45,7 +45,8 @@
                     </div>
                     <button data-product-id="{{ product.id }}" data-quantity="{{ 1 }}" id="add-to-cart"
                         class="btn bg-green-600 text-white hover:bg-green-700 hover:text-gray-300">Thêm vào giỏ
-                        hàng</button>
+                        hàng
+                    </button>
                 </form>
             </div>
         </div>
@@ -57,7 +58,7 @@
     </div>
 
     <div id="sidebar" class="w-1/5 bg-white gap-2 ml-1 border rounded overflow-hidden flex flex-col">
-        <h1 class="bg-[#16a34a] text-white text-lg px-2 py-4">Các loại cây bán chạy</h1>
+        <h1 class="bg-[#16a34a] text-white text-lg px-2 py-4">Danh mục cây</h1>
         {% for cate in categories %}
         <a href="{% url 'core:product_by_category' cate.slug %}"
             class="flex justify-left gap-3 items-center p-2 px-8 text-base font-semibold hover:text-[#16a34a]">

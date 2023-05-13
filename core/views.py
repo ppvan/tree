@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.core.paginator import Paginator
+from django.db import IntegrityError, transaction
 from django.http import HttpResponse, HttpResponseForbidden, JsonResponse, QueryDict
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
@@ -73,7 +74,7 @@ class ProductListView(AdminRequiredMixin, ListView):
     template_name = "core/products_list.html"
     context_object_name = "products"
     ordering = ["-updated_at"]
-    paginate_by = 3
+    paginate_by = 9
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -137,11 +138,12 @@ class AddToCartView(LoginRequiredMixin, View):
 
     def put(self, request):
         data = QueryDict(request.body)
+        quantity = int(data["quantity"])
         order, _created = Order.objects.get_or_create(
             user=request.user, state=Order.PENDING
         )
         product = get_object_or_404(Product, pk=data["product_id"])
-        item = self._update_item(order, product, int(data["quantity"]))
+        item = self._update_item(order, product, quantity)
 
         return JsonResponse(
             {
@@ -153,11 +155,16 @@ class AddToCartView(LoginRequiredMixin, View):
         )
 
     def _update_item(self, order, product, quantity):
+        if quantity == 0:
+            OrderItem.objects.filter(order=order, product=product).delete()
+            return
+
         order_item, _created = OrderItem.objects.get_or_create(
             order=order, product=product
         )
         order_item.quantity = quantity
         order_item.save()
+
         return order_item
 
 
@@ -230,9 +237,19 @@ class CheckoutView(LoginRequiredMixin, View):
             )
             address.save()
             order.address = address
-            order.state = Order.VERIFY
-            order.save()
-            return redirect("core:order_detail", pk=order.pk)
+
+            try:
+                with transaction.atomic():
+                    self._update_stock(order)
+                    order.state = Order.VERIFY
+                    order.save()
+                    return redirect("core:order_detail", pk=order.pk)
+            except IntegrityError:
+                self._handle_out_of_stock(order)
+                order.state = Order.PENDING
+                order.save()
+                messages.info(request, "Sản phẩm đã hết hàng")
+                return redirect("core:cart_list")
         else:
             order_items = OrderItem.objects.filter(order=order)
             context = {"order": order, "order_items": order_items, "form": form}
@@ -248,6 +265,26 @@ class CheckoutView(LoginRequiredMixin, View):
         order.save()
 
         return HttpResponse("Update success")
+
+    def _update_stock(self, order):
+        order_items = OrderItem.objects.filter(order=order)
+        for order_item in order_items:
+            product = order_item.product
+            product.quantity -= order_item.quantity
+            product.save()
+
+    def _handle_out_of_stock(self, order):
+        order_items = OrderItem.objects.filter(order=order)
+        for order_item in order_items:
+            product = order_item.product
+            if product.quantity < order_item.quantity:
+                order_item.quantity = product.quantity
+                order_item.save()
+                product.quantity = 0
+
+            if order_item.quantity == 0:
+                order_item.delete()
+            product.save()
 
 
 class CategoryListView(ListView):
@@ -313,7 +350,11 @@ class OrderListView(LoginRequiredMixin, ListView):
     paginate_by = 3
 
     def get_queryset(self):
-        return Order.objects.filter(user=self.request.user).order_by("-updated_at")
+        return (
+            Order.objects.filter(user=self.request.user)
+            .exclude(state=Order.PENDING)
+            .order_by("-updated_at")
+        )
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)

@@ -28,11 +28,12 @@ $('#id_quantity').change(function () {
     }
 });
 
-$('#add-to-cart').click(function () {
+$('#cart_add').submit(function (event) {
     let quantity = parseInt($('#id_quantity').val());
     let stock = parseInt($('#stock').text());
 
     if (quantity > stock) {
+        event.preventDefault();
         alert("Lưu trữ trong kho không đủ!");
         $('#id_quantity').val(stock);
     }

@@ -44,7 +44,7 @@ class Product(BaseModel):
     )
     summary = models.TextField(default="")
     description = models.TextField(default="")
-    quantity = models.PositiveIntegerField(default=0)
+    quantity = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1)])
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     thumbnail = ProcessedImageField(
         upload_to=hashed_filename,

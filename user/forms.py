@@ -1,3 +1,5 @@
+from typing import Any, Dict
+
 from django import forms
 from django.contrib.auth.forms import (
     AuthenticationForm,
@@ -47,6 +49,12 @@ class UserRegisterForm(UserCreationForm):
             "first_name": "Ngắn hơn 150 ký tự",
             "last_name": "Ngắn hơn 30 ký tự",
         }
+
+    def clean_email(self):
+        data = self.cleaned_data["email"]
+        if User.objects.filter(email=data).exists():
+            raise forms.ValidationError("Email đã được sử dụng")
+        return data
 
 
 class ProfileForm(forms.ModelForm):

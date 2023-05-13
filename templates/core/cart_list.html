@@ -45,7 +45,7 @@
                                 </button>
                                 <input type="hidden" name="product_id" value="{{ item.product.id }}">
                                 <input readonly name="quantity" class="text-lg text-center w-10 outline-none"
-                                    value="1"></input>
+                                    value="{{ item.quantity }}"></input>
                                 <button type="button"
                                     class="quantity-increase bg-gray-200 p-1 px-2 hover:bg-slate-600 hover:text-white rounded-r">
                                     <i class="fas fa-plus"></i>
@@ -66,7 +66,7 @@
                 <table class="w-full">
                     <tbody>
                         <td class="font-semibold px-2">Tạm tính</td>
-                        <td class="text-right px-2">{{ order.total_price|vnd_format }}</td>
+                        <td class="text-right px-2">{{ order.price|vnd_format }}</td>
                     </tbody>
                 </table>
             </div>
@@ -90,7 +90,7 @@
         let product_id = $('[name="product_id"]', quantityBlock).val();
         quantityDecrease.on('click', () => {
             let quantity = parseInt(quantityInput.val());
-            if (quantity > 1) {
+            if (quantity >= 1) {
                 quantityInput.val(quantity - 1);
                 updateCartItem(product_id, quantity - 1, function () {
                     location.reload();
