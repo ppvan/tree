@@ -28,7 +28,8 @@
                 </div>
 
                 <div class="grow"></div>
-                <form id="cart_add" action="{% url 'core:cart_add' %}" method="post" class="flex items-center justify-between py-4">
+                <form id="cart_add" action="{% url 'core:cart_add' %}" method="post"
+                    class="flex items-center justify-between py-4">
                     {% csrf_token %}
                     <div class="flex border rounded overflow-hidden">
                         <button type="button" class="bg-gray-200 hover:bg-slate-600 hover:text-white p-1 px-2"
@@ -71,5 +72,46 @@
 {% endblock content %}
 
 {% block js %}
-<script src="{% static 'js/cart.js' %}"></script>
+<script>
+    console.log("cart.js loaded");
+
+    $('#quantity-decrease').click(function () {
+        let quantity = parseInt($('#id_quantity').val());
+        if (quantity > 1) {
+            $('#id_quantity').val(quantity - 1);
+        }
+    });
+
+    $('#quantity-increase').click(function () {
+        let quantity = parseInt($('#id_quantity').val());
+        let stock = parseInt($('#stock').text());
+
+        if (quantity < stock) {
+            $('#id_quantity').val(quantity + 1);
+        } else {
+            alert("Lưu trữ trong kho không đủ!");
+        }
+    });
+
+    $('#id_quantity').change(function () {
+        let quantity = parseInt($('#id_quantity').val());
+        let stock = parseInt($('#stock').text());
+
+        if (quantity > stock) {
+            alert("Lưu trữ trong kho không đủ!");
+            $('#id_quantity').val(stock);
+        }
+    });
+
+    $('#cart_add').submit(function (event) {
+        let quantity = parseInt($('#id_quantity').val());
+        let stock = parseInt($('#stock').text());
+
+        if (quantity > stock) {
+            event.preventDefault();
+            alert("Lưu trữ trong kho không đủ!");
+            // $('#id_quantity').val(stock);
+        }
+    });
+</script>
 {% endblock js %}
