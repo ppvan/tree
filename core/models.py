@@ -117,8 +117,8 @@ class Order(BaseModel):
     VERIFY = "VE"
 
     ORDER_STATUS = [
-        (PENDING, "Chưa xác nhận"),
-        (VERIFY, "Đã xác nhận"),
+        (PENDING, "Giỏ hàng"),
+        (VERIFY, "Chờ xác nhận"),
         (DELIVERY, "Đang giao"),
         (COMPLETED, "Hoàn thành"),
         (CANCEL, "Đã hủy"),

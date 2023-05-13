@@ -8,26 +8,13 @@ from django.http import HttpResponse, HttpResponseForbidden, QueryDict
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import (
-    CreateView,
-    DeleteView,
-    DetailView,
-    ListView,
-    TemplateView,
-    UpdateView,
-)
+from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
+                                  TemplateView, UpdateView)
 
 from blog.models import Post
 
-from .forms import (
-    AddToCartForm,
-    BugReportForm,
-    CategoryForm,
-    CheckoutForm,
-    OrderFilterForm,
-    OrderForm,
-    ProductForm,
-)
+from .forms import (AddToCartForm, BugReportForm, CategoryForm, CheckoutForm,
+                    OrderFilterForm, OrderForm, ProductForm)
 from .models import Address, Category, Order, OrderItem, Product
 
 
