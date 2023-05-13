@@ -38,3 +38,51 @@ $(document).ready(function () {
 
     // End of UI Effects section
 });
+
+function callSearchAPI(query, callback) {
+    if (query.length > 0) {
+        console.log(query);
+        $.ajax({
+            url: "/api/search/",
+            type: "GET",
+            data: {
+                "q": query
+            },
+            success: function (data) {
+                callback(data);
+            },
+            error: function (error) {
+                console.log(error);
+                callback([]);
+            }
+        });
+    } else {
+        console.log("Empty query");
+        callback([]);
+    }
+}
+
+function updateResult(data) {
+    let searchResult = $("#search-result");
+    searchResult.removeClass("hidden");
+    searchResult.empty();
+    searchResult.html(data);
+}
+
+let timerId = undefined;
+let debounceFunction = function (func, delay) {
+    // Cancels the setTimeout method execution
+    clearTimeout(timerId)
+
+    // Executes the func after delay time.
+    timerId = setTimeout(func, delay)
+}
+
+$("#search-form>input").on("input", function () {
+
+    let query = $(this).val();
+
+    debounceFunction(function () {
+        callSearchAPI(query, updateResult)
+    }, 50);
+});

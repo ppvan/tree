@@ -36,9 +36,18 @@
             <!-- End Logo section -->
 
             <!-- Begin search section -->
-            {% block searchbar %}
-            {% include 'components/searchbar.html' %}
-            {% endblock %}
+            <div class="w-1/3 relative" tabindex="0">
+                <form id="search-form" action=""
+                    class="h-fit bg-white overflow-hidden rounded-full border-2 items-stretch border-slate-900 focus-within:border-green-500 w-full flex">
+                    <input class="p-2 pl-4 border-none outline-none h-full grow block" type="text" placeholder="Từ khóa">
+                    <button class="p-2 pt-[0.65rem] hover:bg-green-500 hover:text-white transition-colors">
+                        <i class="fa fa-search text-lg"></i>
+                    </button>
+                </form>
+                <div id="search-result"
+                    class="bg-[#fefefe] hidden absolute shadow w-full max-h-96 z-50 rounded border border-green-500 overflow-x-hidden overflow-y-auto mt-2">
+                </div>
+            </div>
             <!-- End search section -->
 
             <div class="rounded flex items-stretch gap-2">
