@@ -6,7 +6,14 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.core.paginator import Paginator
 from django.db import IntegrityError, transaction
-from django.http import HttpResponse, HttpResponseForbidden, JsonResponse, QueryDict
+from django.db.models.query import QuerySet
+from django.http import (
+    Http404,
+    HttpResponse,
+    HttpResponseForbidden,
+    JsonResponse,
+    QueryDict,
+)
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.views import View
@@ -74,8 +81,10 @@ class ProductListView(AdminRequiredMixin, ListView):
     model = Product
     template_name = "core/products_list.html"
     context_object_name = "products"
-    ordering = ["-updated_at"]
     paginate_by = 9
+
+    def get_queryset(self) -> QuerySet[Any]:
+        return Product.objects.order_by("-updated_at")
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -101,6 +110,13 @@ class ProductListView(AdminRequiredMixin, ListView):
 class DetailProductView(DetailView):
     model = Product
     template_name = "core/product_detail.html"
+
+    def get_object(self, queryset=None):
+        product = super().get_object(queryset)
+        if product.is_deleted:
+            raise Http404("Sản phẩm không tồn tại")
+
+        return product
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -316,6 +332,9 @@ class CategoryListView(ListView):
     context_object_name = "categories"
     ordering = ["-updated_at"]
 
+    def get_queryset(self) -> QuerySet[Any]:
+        return Category.objects.all()
+
 
 class CategoryCreateView(AdminRequiredMixin, SuccessMessageMixin, CreateView):
     model = Category
@@ -389,6 +408,13 @@ class OrderDetailView(LoginRequiredMixin, UserPassesTestMixin, DetailView):
     model = Order
     template_name = "core/order_detail.html"
     context_object_name = "order"
+
+    def get_object(self, queryset=None):
+        order = super().get_object(queryset)
+        if order.is_deleted:
+            raise Http404("Đơn hàng không tồn tại")
+
+        return order
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

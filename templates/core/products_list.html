@@ -67,7 +67,7 @@
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
 
-                                <form class="hidden product-delete" action="{% url 'core:product_delete' product.id %}" method="post">
+                                <form class="hidden product-delete-form" action="{% url 'core:product_delete' product.id %}" method="post">
                                     {% csrf_token %}
                                 </form>
                             </td>
@@ -107,26 +107,20 @@
 
 <script>
     let dialog = document.querySelector('#dialog');
+    let dialogOK = dialog.querySelector('.ok');
+    let dialogCancel = dialog.querySelector('.cancel');
 
     for (const item of document.querySelectorAll(".product-item")) {
-        let dialogOK = dialog.querySelector('.ok');
-        let dialogCancel = dialog.querySelector('.cancel');
         let productDelete = item.querySelector('.product-delete');
         let productDeleteForm = item.querySelector('.product-delete-form');
 
-        dialogCancel.addEventListener('click', () => {
-            dialog.close();
-        });
-
-        dialogOK.addEventListener('click', () => {
-            dialog.form.submit();
-            dialog.close();
-        });
-
-        productDelete.addEventListener('click', () => {
-            dialog.showModal();
+        productDelete.onclick = () => {
             dialog.form = productDeleteForm;
-        });
+            dialogCancel.onclick = () => dialog.close();
+            dialogOK.onclick = () => dialog.form.submit();
+            dialog.showModal();
+            console.log(productDeleteForm);
+        };
     }
 </script>
 

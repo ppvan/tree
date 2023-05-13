@@ -10,9 +10,40 @@ from user.models import User
 # Create your models here.
 
 
+class BaseQuerySet(models.QuerySet):
+    def delete(self):
+        return super().update(is_deleted=True)
+
+    def hard_delete(self):
+        return super().delete()
+
+    def restore(self):
+        return super().update(is_deleted=False)
+
+
+class SoftDeleteManager(models.Manager):
+    def get_queryset(self):
+        return BaseQuerySet(self.model, using=self.db).exclude(is_deleted=True)
+
+
 class BaseModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    is_deleted = models.BooleanField(default=False)
+
+    all_objects = models.Manager()
+    objects = SoftDeleteManager()
+
+    def hard_delete(self):
+        super(BaseModel, self).delete()
+
+    def delete(self):
+        self.is_deleted = True
+        self.save()
+
+    def restore(self):
+        self.is_deleted = False
+        self.save()
 
     class Meta:
         abstract = True

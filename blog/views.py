@@ -1,8 +1,5 @@
-from typing import Any
-
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
-from django.db.models.query import QuerySet
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import View
@@ -23,7 +20,7 @@ class ListPostView(ListView):
     template_name = "blog/posts_list.html"
     context_object_name = "posts_list"
 
-    def get_queryset(self) -> QuerySet[Any]:
+    def get_queryset(self):
         return Post.objects.filter(post_type=Post.BLOG)
 
 
@@ -34,7 +31,7 @@ class BugReportListView(ListView):
     template_name = "core/bug_list.html"
     context_object_name = "bug_list"
 
-    def get_queryset(self) -> QuerySet[Any]:
+    def get_queryset(self):
         return Post.objects.filter(post_type=Post.BUG_REPORT)
 
 
