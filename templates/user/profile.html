@@ -26,6 +26,14 @@
             {{ u_form|crispy }}
             {{ p_form|crispy }}
         </fieldset>
+        <div class="flex justify-between my-4 px-1 text-gray-400">
+            <div id="id_rememberme" class="">
+                <span class="text-[#515b69]">Cập nhật mật khẩu mới?</span>
+            </div>
+            <div id="forgot-password">
+                <a href="{% url 'password_change' %}" class="link">Đổi mật khẩu</a>
+            </div>
+        </div>
         <div id="id_submit" class="my-4 text-white text-lg">
             <input class="cursor-pointer bg-[#5ba503] p-2 rounded w-full h-full" type="submit" value="Cập nhật">
         </div>

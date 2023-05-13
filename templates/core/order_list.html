@@ -34,6 +34,9 @@
                 Tổng cộng: <span class="text-red-500">{{ order.total_price|vnd_format }}</span>
             </h2>
         </a>
+        {% empty %}
+        <h2 class="text-center text-xl font-bold mt-20 mb-4 uppercase">Bạn chưa có đơn hàng nào</h2>
+        <img class="w-96" src="{% static 'tree/no-order.jpg'%}"></img>
         {% endfor %}
     </div>
 

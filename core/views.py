@@ -8,13 +8,26 @@ from django.http import HttpResponse, HttpResponseForbidden, QueryDict
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
-                                  TemplateView, UpdateView)
+from django.views.generic import (
+    CreateView,
+    DeleteView,
+    DetailView,
+    ListView,
+    TemplateView,
+    UpdateView,
+)
 
 from blog.models import Post
 
-from .forms import (AddToCartForm, BugReportForm, CategoryForm, CheckoutForm,
-                    OrderFilterForm, OrderForm, ProductForm)
+from .forms import (
+    AddToCartForm,
+    BugReportForm,
+    CategoryForm,
+    CheckoutForm,
+    OrderFilterForm,
+    OrderForm,
+    ProductForm,
+)
 from .models import Address, Category, Order, OrderItem, Product
 
 
@@ -282,6 +295,9 @@ class OrderListView(LoginRequiredMixin, ListView):
     context_object_name = "orders"
     paginate_by = 3
     ordering = ["-updated_at"]
+
+    def get_queryset(self):
+        return Order.objects.filter(user=self.request.user)
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)

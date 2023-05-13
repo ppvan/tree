@@ -159,3 +159,9 @@ class UserPasswordResetConfirm(
     form_class = UserPasswordResetConfirmForm
     success_message = "Đổi mật khẩu thành công"
     success_url = reverse_lazy("login")
+
+
+class UserPasswordChangeView(SuccessMessageMixin, auth_views.PasswordChangeView):
+    template_name = "user/password_change.html"
+    success_message = "Đổi mật khẩu thành công"
+    success_url = reverse_lazy("core:home")
