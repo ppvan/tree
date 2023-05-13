@@ -34,7 +34,7 @@
                         <h2 class="text-left">
                             {{ post.title|truncatewords:6 }}
                         </h2>
-                        <p class="text-gray-500">{{ post.updated_at|date }}</p>
+                        <p class="text-gray-500">{{ post.updated_at|naturaltime }}</p>
                     </div>
                 </a>
                 {% endfor %}

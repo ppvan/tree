@@ -1,9 +1,9 @@
-<div class="markdownx flex items-stretch gap-2">
+<div class="markdownx flex items-stretch gap-2 h-screen overflow-auto">
 
-    <div class="flex items-stretch">
+    <div class="flex text-base items-stretch border-2 border-slate-800">
         {% include 'django/forms/widgets/textarea.html' with cols=80 %}
     </div>
-    <div class="grow">
-        <div class="markdownx-preview"></div>
+    <div class="max-w-8xl grow overflow-y-scroll">
+        <div class="text-base markdownx-preview"></div>
     </div>
 </div>

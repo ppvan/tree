@@ -3,13 +3,15 @@
 {% load crispy_forms_tags %}
 {% load humanize %}
 {% block content %}
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.media }}
-    {{ form|crispy }}
-    <div class="float-left">
-        <input class="btn text-white border-none cursor-pointer bg-[#667260] hover:bg-[#373d32]" type="submit"
-            value="Cập nhật bài viết">
-    </div>
-</form>
+<div class="h-full">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form|crispy }}
+        <div class="float-left">
+            <input class="btn text-white border-none cursor-pointer bg-[#667260] hover:bg-[#373d32]" type="submit"
+                value="Cập nhật bài viết">
+        </div>
+    </form>
+</div>
 {% endblock content %}
