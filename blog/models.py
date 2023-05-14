@@ -19,7 +19,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     cover_image = ProcessedImageField(
         upload_to=hashed_filename,
-        default="posts/default.jpg",
+        default="defaults/post.jpg",
         processors=[ResizeToFill(320, 240)],
         format="JPEG",
         options={"quality": 60},
