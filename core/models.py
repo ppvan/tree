@@ -168,7 +168,9 @@ class Order(BaseModel):
         return sum(item.total_price() for item in self.items.all())
 
     def total_price(self):
-        return self.price() + self.delivery_fee
+        if self.total == 0:
+            return self.price() + self.delivery_fee
+        return self.total
 
     def not_completed(self):
         return self.state == self.DELIVERY
