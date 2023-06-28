@@ -16,6 +16,7 @@ django-js-asset==2.0.0
 django-markdownx==4.0.2
 executing==1.2.0
 flake8==6.0.0
+gunicorn==20.1.0
 idna==3.4
 ipython==8.12.0
 jedi==0.18.2
@@ -34,6 +35,7 @@ platformdirs==3.2.0
 prompt-toolkit==3.0.38
 psycopg==3.1.9
 psycopg-binary==3.1.9
+# psycopg2==2.9.6
 ptyprocess==0.7.0
 pure-eval==0.2.2
 pycodestyle==2.10.0
